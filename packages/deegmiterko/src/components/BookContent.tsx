@@ -1,104 +1,87 @@
-import React, { FunctionComponent, ReactNode, useEffect, useState } from "react";
-import { ChevronsRight, ChevronsLeft } from "react-feather";
-import VisibilitySensor from "react-visibility-sensor";
-import { useSwipeable } from "react-swipeable";
+import React, { FunctionComponent, ReactNode, useEffect, useRef, useCallback } from "react";
+import clsx from "clsx";
 
-import useApp from "../hooks/useApp";
 import useBook from "../hooks/useBook";
+import ThumbnailNav from "./ThumbnailNav";
+import { ThumbnailNode } from "../pages/index";
 
 const BookContent: FunctionComponent<{
   title: string,
   current: number,
   setCurrent: (i: number) => void,
   children: Array<ReactNode>,
-}> = ({ title, current, setCurrent, children }) => {
-  const {bookPageSize} = useApp();
-  const {book} = useBook();
-  
-  const [swipingDir, setSwipingDir] = useState<number>(0);
-  const [bookVisible, setBookVisible] = useState<boolean>(false);
-  const [firstNudge, setFirstNudge] = useState<boolean>(true);
-  const swipeableHandlers = useSwipeable({
-    trackTouch: true,
-    trackMouse: true,
-    onSwiping: ({ dir }) => {
-      if(dir == "Left") {
-        setSwipingDir(1);
-      } else if (dir == "Right") {
-        setSwipingDir(-1);
-      } else {
-        setSwipingDir(0);
+  thumbnails: ThumbnailNode[],
+}> = ({ title, current, setCurrent, children, thumbnails }) => {
+  const { book } = useBook();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const pageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const isScrolling = useRef(false);
+
+  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
+    if (isScrolling.current) return;
+
+    for (const entry of entries) {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        const index = pageRefs.current.findIndex(ref => ref === entry.target);
+        if (index !== -1 && index !== current) {
+          setCurrent(index);
+        }
       }
-    },
-    onSwiped: () => setSwipingDir(0),
-    onSwipedLeft: () => current < children.length ? setCurrent(current+1) : null,
-    onSwipedRight: () => current > 0 ? setCurrent(current-1) : null,
-  });
+    }
+  }, [current, setCurrent]);
 
   useEffect(() => {
-    if(book.pages[current]) {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: container,
+      threshold: 0.5,
+    });
+
+    pageRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, [handleIntersection, children.length]);
+
+  useEffect(() => {
+    if (book.pages[current]) {
       const hash = `#${book.pages[current].pageId}`;
       history.pushState({}, `Dee Gmiterko - ${title}`, hash);
     }
-  }, [current]);
+  }, [current, book.pages, title]);
 
-  useEffect(() => {
-    let timeout: NodeJS.Timeout|undefined;
-    if(bookVisible && current == 0) {
-      if(swipingDir == 0) {
-        timeout = setTimeout(() => {
-          setSwipingDir(1);
-          setFirstNudge(false);
-        }, firstNudge ? 1000 : 5000);
-      } else {
-        timeout = setTimeout(() => {
-          setSwipingDir(0);
-        }, 600);
-      }
+  const scrollToPage = useCallback((index: number) => {
+    const page = pageRefs.current[index];
+    if (page) {
+      isScrolling.current = true;
+      page.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => { isScrolling.current = false; }, 500);
     }
-    return () => {
-      if(timeout) clearTimeout(timeout);
-    }
-  }, [bookVisible, current, swipingDir, firstNudge])
+  }, []);
 
   return (
-    <VisibilitySensor
-      partialVisibility={true}
-      offset={{
-        top: bookPageSize*0.45,
-        right: bookPageSize*0.45,
-        bottom: bookPageSize*0.45,
-        left: bookPageSize*0.45,
-      }}
-      intervalCheck={true}
-      intervalDelay={1000}
-      scrollCheck={true}
-      scrollDelay={500}
-      onChange={setBookVisible}
-    >
-      <div className="book">
-        <div
-          className="pages-wrapper"
-          style={{ transform: `translateX(-${current * (bookPageSize+32) + swipingDir*bookPageSize*0.1}px)` }}
-          {...swipeableHandlers}
-        >
-          {children.map((child, i) => (
-            <div key={i} className="page-wrapper">
-              {child}
-              {current != i && (
-                <button className="page-navigate" onClick={() => { setCurrent(i); setSwipingDir(0); }}>
-                  {i > current ? (
-                    <ChevronsRight />
-                  ) : (
-                    <ChevronsLeft />
-                  )}
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
+    <div className={clsx("book", current === children.length - 1 && "last-page")} ref={scrollContainerRef}>
+      <ThumbnailNav
+        count={children.length}
+        current={current}
+        thumbnails={thumbnails}
+        onSelect={scrollToPage}
+      />
+      <div className="pages-wrapper">
+        {children.map((child, i) => (
+          <div
+            key={i}
+            className="page-wrapper"
+            ref={el => pageRefs.current[i] = el}
+          >
+            {child}
+          </div>
+        ))}
       </div>
-    </VisibilitySensor>
+    </div>
   )
 }
 

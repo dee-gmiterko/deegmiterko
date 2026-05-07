@@ -20,13 +20,14 @@ import imgSimulation from "../../images/content/simulation.png";
 import vidSimulation from "../../images/content/simulation.mp4";
 import LightboxButton from "../LightboxButton";
 import Scramble from "../Scramble";
+import { ThumbnailNode } from "../../pages/index";
 
-const SlidesGenerativeDesign: FunctionComponent = () => {
+const SlidesGenerativeDesign: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thumbnails }) => {
 
   return (
-    <Book id="generative-design" title="Generative Design">
+    <Book id="generative-design" title="Generative Design" thumbnails={thumbnails}>
 
-      <TitlePage title="Generative Design" lecture={2}>
+      <TitlePage title="Generative Design" lecture={3}>
         <p>
           The process of creating media with the help of scripts and purpose built programs.
         </p>

@@ -5,13 +5,14 @@ import TagList from "../TagList";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
+import { ThumbnailNode } from "../../pages/index";
 
-const SlidesProfessional: FunctionComponent = () => {
-  
+const SlidesProfessional: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thumbnails }) => {
+
   return (
-    <Book id="professional" title="Professional">
+    <Book id="professional" title="Professional" thumbnails={thumbnails}>
 
-      <TitlePage title="Professional" subtitle="AKA “a real job”" lecture={4}>
+      <TitlePage title="Professional" subtitle="AKA “a real job”" lecture={5}>
         <p>
           Working with others may provide it's own challenges, but it's essential to scale the things you can do well beyond what you could do alone.
         </p>

@@ -30,6 +30,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `pageThumbnails`,
+        path: path.join(__dirname, `src`, `images/page-thumbnails`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `content`,
         path: path.join(__dirname, `src`, `content`),
       },
@@ -123,7 +130,7 @@ module.exports = {
         resolvePages: ({
           allSitePage: { nodes: allPages },
         }) => {
-          return allPages
+          return allPages.filter(page => !page.path.startsWith('/render/'))
         },
         resolveSiteUrl: ({site}) => site.siteMetadata.siteUrl,
         serialize: ({ path }) => {

@@ -4,20 +4,20 @@ import Book from "../Book";
 import Page from "../Page";
 import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
-import { StaticImage } from "gatsby-plugin-image";
 
 import imgOpenGlForest from "../../images/content/opengl-forest.png";
 import vidOpenGlForest from "../../images/content/opengl-forest.webm";
 import imgTrainwreck from "../../images/content/trainwreck.png";
 import vidTrainwreck from "../../images/content/trainwreck.webm";
 import LightboxButton from "../LightboxButton";
+import { ThumbnailNode } from "../../pages/index";
 
-const SlidesGameExperiments: FunctionComponent = () => {
+const SlidesGameExperiments: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thumbnails }) => {
 
   return (
-    <Book id="game-experiments" title="Games and Experiments">
+    <Book id="game-experiments" title="Games and Experiments" thumbnails={thumbnails}>
 
-      <TitlePage title="Games and Experiments" lecture={3}>
+      <TitlePage title="Games and Experiments" lecture={4}>
         <p>
           Games were always pushing the boundaries of what is possible. All in the persuit of telling a story, or creating an unforgetable experience.
         </p>

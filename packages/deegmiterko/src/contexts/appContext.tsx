@@ -1,4 +1,4 @@
-import React, { createContext, useContext, FunctionComponent, ReactNode, useState, useLayoutEffect, useRef, useEffect } from "react";
+import React, { createContext, FunctionComponent, ReactNode, useState, useLayoutEffect, useRef, useEffect } from "react";
 import { BookStore } from "./bookContext";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
@@ -15,14 +15,12 @@ export type AppType = {
 const AppContext = createContext<AppType|undefined>(undefined);
 
 export const AppProvider: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
-  const [size, setSize] = useState<[number, number]>([
-    window.innerWidth, window.innerHeight
-  ]);
+  const [size, setSize] = useState<[number, number]>([1200, 1200]);
   const books = useRef<Record<string, BookStore>>({});
   const [lightboxImage, setLightboxImage] = useState<IGatsbyImageData>();
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  
-  useLayoutEffect(() => {
+
+  useEffect(() => {
     function updateSize() {
       setSize([window.innerWidth, window.innerHeight]);
     }

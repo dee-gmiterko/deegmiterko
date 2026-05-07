@@ -34,11 +34,18 @@ export const BookProvider: FunctionComponent<{
 
   bookStore.current.openToPage = (i: number) => {
     setCurrent(i);
-    const book = parentByClass(bookStore.current.pages[i].element, "book");
-    window.scrollTo({
-      left: 0,
-      top: book.offsetTop,
-    });
+    const page = bookStore.current.pages[i]?.element;
+    if (page) {
+      page.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+      const book = parentByClass(page, "book");
+      if (book) {
+        window.scrollTo({
+          left: 0,
+          top: book.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }
   };
 
   registerBook(id, bookStore.current);

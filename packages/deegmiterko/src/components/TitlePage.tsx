@@ -17,7 +17,7 @@ const TitlePage: FunctionComponent<{
       <div className="grow"></div>
       {children}
       <div className="footer">
-        <span>
+        <span className="lecture-subheading">
           {lecture}th lecture, {day.format('ddd MMMM Do')}
         </span>
         <span className="subheading">

@@ -17,6 +17,15 @@ import SlidesGameExperiments from "../components/slides/SlidesGameExperiments";
 import SlidesProfessional from "../components/slides/SlidesProfessional";
 import SlidesMe from "../components/slides/SlidesMe";
 import { SiteData } from "../types";
+import { IGatsbyImageData } from "gatsby-plugin-image";
+import SlidesStyloma from "../components/slides/SlidesStyloma";
+
+export type ThumbnailNode = {
+  name: string,
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData,
+  },
+}
 
 type IndexData = {
   site: SiteData,
@@ -28,16 +37,46 @@ type IndexData = {
       },
     }[],
   },
+  pageThumbnails: {
+    nodes: ThumbnailNode[],
+  },
 }
 
-const IndexPage = ({ data: { content, site } }: PageProps<IndexData>) => {
+const IndexPage = ({ data: { content, site, pageThumbnails } }: PageProps<IndexData>) => {
   const location = useLocation();
   const { books, bookPageSize, bookPageScale } = useApp();
-  
-  const contentMap = {};
-  content.edges.forEach(({node: {name, childChatParsed: {conversations}}}) => {
-    contentMap[name] = conversations[0].messages;
-  });
+
+  const contentMap = React.useMemo(() => {
+    const map: Record<string, any> = {};
+    content.edges.forEach(({node: {name, childChatParsed: {conversations}}}) => {
+      map[name] = conversations[0].messages;
+    });
+    return map;
+  }, [content]);
+
+  // Group thumbnails by book id (memoized)
+  const thumbnailsByBook = React.useMemo(() => {
+    const byBook: Record<string, ThumbnailNode[]> = {};
+    pageThumbnails.nodes.forEach(node => {
+      const match = node.name.match(/^(.+)-(\d+)$/);
+      if (match) {
+        const bookId = match[1];
+        if (!byBook[bookId]) {
+          byBook[bookId] = [];
+        }
+        byBook[bookId].push(node);
+      }
+    });
+    // Sort each book's thumbnails by index
+    Object.keys(byBook).forEach(bookId => {
+      byBook[bookId].sort((a, b) => {
+        const indexA = parseInt(a.name.match(/-(\d+)$/)?.[1] || '0');
+        const indexB = parseInt(b.name.match(/-(\d+)$/)?.[1] || '0');
+        return indexA - indexB;
+      });
+    });
+    return byBook;
+  }, [pageThumbnails]);
 
   useEffect(() => {
     if(location.hash) {
@@ -53,6 +92,8 @@ const IndexPage = ({ data: { content, site } }: PageProps<IndexData>) => {
       }, 25);
     }
   }, [location.hash]);
+
+  console.log(thumbnailsByBook);
   
   return (
     <>
@@ -63,24 +104,26 @@ const IndexPage = ({ data: { content, site } }: PageProps<IndexData>) => {
 
         <main id="about">
           <Conversation messages={contentMap["introduction"]} />
+
+          <SlidesStyloma thumbnails={thumbnailsByBook["styloma"]} />
           
-          <SlidesArtful />
-          
+          <SlidesArtful thumbnails={thumbnailsByBook["artful"]} />
+
           <Conversation messages={contentMap["artful"]} />
 
-          <SlidesGenerativeDesign />
-          
+          <SlidesGenerativeDesign thumbnails={thumbnailsByBook["generative-design"]} />
+
           <Conversation messages={contentMap["generative-design"]} />
-          
-          <SlidesGameExperiments />
-          
+
+          <SlidesGameExperiments thumbnails={thumbnailsByBook["game-experiments"]} />
+
           <Conversation messages={contentMap["game-experiments"]} />
-          
-          <SlidesProfessional />
-          
+
+          <SlidesProfessional thumbnails={thumbnailsByBook["professional"]} />
+
           <Conversation messages={contentMap["professional"]} />
-          
-          <SlidesMe />
+
+          <SlidesMe thumbnails={thumbnailsByBook["me"]} />
 
           <Conversation messages={contentMap["me"]} />
         </main>
@@ -134,6 +177,16 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    pageThumbnails: allFile(
+      filter: {sourceInstanceName: {eq: "pageThumbnails"}}
+    ) {
+      nodes {
+        name
+        childImageSharp {
+          gatsbyImageData(width: 100, height: 100, placeholder: BLURRED)
         }
       }
     }

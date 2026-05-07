@@ -7,13 +7,14 @@ import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
 import MasonryPage from "../MasonryPage";
+import { ThumbnailNode } from "../../pages/index";
 
-const SlidesArtful: FunctionComponent = () => {
-  
+const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thumbnails }) => {
+
   return (
-    <Book id="artful" title="Artful">
+    <Book id="artful" title="Artful" thumbnails={thumbnails}>
 
-      <TitlePage title="Art," subtitle="it's media" titleClassName="bigger" lecture={1}>
+      <TitlePage title="Art," subtitle="it's media" titleClassName="bigger" lecture={2}>
         <p>
           You don't ask why art is made, do you?
         </p>
