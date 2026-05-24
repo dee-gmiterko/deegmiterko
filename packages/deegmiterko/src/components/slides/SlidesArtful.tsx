@@ -7,6 +7,7 @@ import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
 import MasonryPage from "../MasonryPage";
+import ExampleGrid4in6 from "../ExampleGrid4in6";
 import { ThumbnailNode } from "../../pages/index";
 
 const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thumbnails }) => {
@@ -148,23 +149,40 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thum
         </p>
       </Page>
 
+      <Page title="Technical drawing">
+        <p>
+          Technical drawing can be considered a precise form of art that communicates structure and construction, right? It surely feels like it when working on it.
+        </p>
+        <ExampleGrid4in6
+          images={[
+            { path: "nas-server/1-sketch.png", alt: "Dimensioned orthographic technical drawing of the NAS enclosure" },
+            { path: "nas-server/2-virtual-assembly.png", alt: "3D CAD model of the assembled NAS box with transparent panels showing internal layout" },
+            { path: "nas-server/3-3D-print.png", alt: "Exploded view of 3D-printed frame parts — yellow outer frame and grey inner structure" },
+            { path: "nas-server/4-build.jpg", alt: "Finished NAS build — black printed case with hard drives, cooling fans, and exposed motherboard" },
+          ]}
+        >
+          <h4>NAS server</h4>
+          <p>With a spare old laptop and abundance of unconventional adapters avaliable i found it too inspiring to pass on an oppotunity to convert it into a self sufficient NAS server. After couple days of measuring, drawing, printing, (lots of waiting), and putting it together it was ready to be loaded with 32TB of drives (24TB of usable space).</p>
+        </ExampleGrid4in6>
+      </Page>
+
       <Page title="Virtual (3D)" className="position-relative">
         <p>
           Another huge expansion to capabilities of an artist was the introduction of 3D modeling. Most distinctly it allowed for a new way of creating audiovisual media with much less work needed.
         </p>
         <div className="example">
           <div className="example-title">
-            <h4>Girl papercraft (2014)</h4>
+            <h4>VTuber model (2026)</h4>
           </div>
           <p>
-            My 3D modelling skills are not extensive at all, but I have made a few functional pieces. For example this low poly model was intended to be unrolled into a papercraft template.
+            My 3D modelling skills are not that extensive, but I have made a few functional pieces in Blender. For example this modelled, textured, rigged VRM exported model.
           </p>
-          <div>
-            <a href="/files/girl-papercraft.pdf" className="btn-source">Download template</a>
-          </div>
+          <h5>
+            Version 1.0, wave and slight smile in live tracked renderer
+          </h5>
           <div className="grow" />
         </div>
-        <StaticImage src="../../images/content/girl-render.png" layout="fixed" width={1200} height={1200} alt="Girl papercarft 3D render" className="page-overlay" backgroundColor="transparent" placeholder="blurred" />
+        <StaticImage src="../../images/content/vtuber-bg.png" layout="fixed" width={1200} height={1200} alt="3D model wireframe with armature and final render from VTuber software facing to the camera and waving. Model is fox-girl in red coat with pencil on her back." className="page-overlay" backgroundColor="transparent" placeholder="blurred" />
       </Page>
 
       <Page title="Visual space">

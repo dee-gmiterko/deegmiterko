@@ -207,6 +207,7 @@ const SlidesGenerativeDesign: FunctionComponent<{ thumbnails: ThumbnailNode[] }>
         <p>
           Only once you add all these concepts together you can start to see the full potential of generative design. It can be used to create art, visualize data, simulate complex systems, or even generate new content based on existing one. The most powerful use cases are still in game development. But I can imagine understanding individual concepts can help you create visuals of any kind.
         </p>
+        {/*
         <div className="example-bar">
           <div className="example-title">
             <h4>Puzzles (<em title="To be defined"> TBD </em>)</h4>
@@ -220,6 +221,7 @@ const SlidesGenerativeDesign: FunctionComponent<{ thumbnails: ThumbnailNode[] }>
           </p>
         </div>
         <p className="text-center">...</p>
+        */}
         <div className="grow" />
       </Page>
 

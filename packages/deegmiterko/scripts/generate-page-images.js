@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
-const { PAGE_COUNTS } = require('../gatsby-node');
+const { pageCounts } = require('../constants.js');
 
 const OUTPUT_DIR = path.join(__dirname, '../src/images/page-thumbnails');
 
@@ -13,7 +13,7 @@ async function generateImages() {
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 1200 });
 
-  for (const [bookId, pageCount] of Object.entries(PAGE_COUNTS)) {
+  for (const [bookId, pageCount] of Object.entries(pageCounts)) {
     for (let i = 0; i < pageCount; i++) {
       const outputPath = path.join(OUTPUT_DIR, `${bookId}-${i}.png`);
         

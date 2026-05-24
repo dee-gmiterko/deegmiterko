@@ -93,8 +93,6 @@ const IndexPage = ({ data: { content, site, pageThumbnails } }: PageProps<IndexD
     }
   }, [location.hash]);
 
-  console.log(thumbnailsByBook);
-  
   return (
     <>
       <HeaderAnnouncement siteMetadata={site.siteMetadata} />
@@ -105,7 +103,7 @@ const IndexPage = ({ data: { content, site, pageThumbnails } }: PageProps<IndexD
         <main id="about">
           <Conversation messages={contentMap["introduction"]} />
 
-          <SlidesStyloma thumbnails={thumbnailsByBook["styloma"]} />
+          {/*<SlidesStyloma thumbnails={thumbnailsByBook["styloma"]} />*/}
           
           <SlidesArtful thumbnails={thumbnailsByBook["artful"]} />
 
