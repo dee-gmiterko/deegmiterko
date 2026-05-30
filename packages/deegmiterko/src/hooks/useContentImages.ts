@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { IGatsbyImageData } from "gatsby-plugin-image";
+import { IGatsbyImageData, Layout, Placeholder } from "gatsby-plugin-image";
 import { useMemo } from "react";
 
 export const useContentImages = () => {
@@ -11,6 +11,7 @@ export const useContentImages = () => {
           childImageSharp: {
             gatsbyImageData: IGatsbyImageData;
           };
+          publicURL: string;
         };
       }[];
     };
@@ -21,6 +22,7 @@ export const useContentImages = () => {
           childImageSharp: {
             gatsbyImageData: IGatsbyImageData;
           };
+          publicURL: string;
         };
       }[];
     };
@@ -55,19 +57,18 @@ export const useContentImages = () => {
 
   const imageMap = useMemo(() => {
     
-    const imageMap: Record<string, [IGatsbyImageData, IGatsbyImageData]> = {};
-    for (const image of data.contentImages.edges) {
-      const { node: { relativePath, childImageSharp } } = image;
+    const imageMap: Record<string, [null | IGatsbyImageData, IGatsbyImageData]> = {};
+    for (const { node: { relativePath, childImageSharp, publicURL } } of data.contentImages.edges) {
       if(childImageSharp) {
         imageMap[relativePath] = [null, childImageSharp.gatsbyImageData];
       }
     }
-    for (const { node: { relativePath, childImageSharp } } of data.contentImagesSmall.edges) {
+    for (const { node: { relativePath, childImageSharp, publicURL } } of data.contentImagesSmall.edges) {
       if(childImageSharp) {
         imageMap[relativePath][0] = childImageSharp.gatsbyImageData;
       }
     }
-    return imageMap;
+    return imageMap as Record<string, [IGatsbyImageData, IGatsbyImageData]>;
   }, [data]);
 
   return imageMap;

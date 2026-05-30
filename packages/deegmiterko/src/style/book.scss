@@ -329,6 +329,10 @@ body {
     .grow {
       flex-grow: 2;
     }
+
+    .text-left {
+      text-align: left;
+    }
     
     .text-right {
       text-align: right;
@@ -705,6 +709,18 @@ body {
       padding: 50px;
       height: 100%;
       box-sizing: border-box;
+    }
+
+    .styloma-architecture-diagram {
+      width: 80%;
+      margin: 0 auto 50px auto;
+
+      svg {
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(0 0 32px white);
+        color: #3F2B96;
+      }
     }
   }
 }

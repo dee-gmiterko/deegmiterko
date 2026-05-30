@@ -2,13 +2,15 @@ import React, { FunctionComponent } from "react";
 
 import Book from "../Book";
 import ReferencesPage from "../ReferencesPage";
-import TagList from "../TagList";
 import Timeline from "../Timeline";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
+import StylomaArchitectureDiagram from "../StylomaArchitectureDiagram";
 import AgenticDiagram from "../agentic/AgenticDiagram";
 import { ThumbnailNode } from "../../pages/index";
+
+import { StaticImage } from "gatsby-plugin-image";
 
 const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thumbnails }) => {
 
@@ -26,7 +28,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
         <div className="col-12">
           <div>
             <p>
-              You want a dress like that one. Normally, you'd visit Zara, filter by category and size. Then H&M, same filters. Then ASOS. Each site separately&hellip;
+              You want a dress just like that one; you visit Zara, filter by category and size. Then H&M, same filters. Then ASOS. Each site separately&hellip;
             </p>
             <h4>Visual semantic search</h4>
             <p>
@@ -35,12 +37,19 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
           </div>
         </div>
         <div className="example-bar">
-          <div>
-            <ul>
-              <li><strong>Image search</strong>: Upload photo → find similar items</li>
-              <li><strong>Text search</strong>: Natural language semantic understanding</li>
-              <li><strong>URL search</strong>: Paste product link → find it elsewhere</li>
-            </ul>
+          <div className="col-3">
+            <div>
+              <h4 className="text-left">Image search</h4>
+              <p className="text-left">Upload photo, iteratively explore similar items, until you find exactly what you're looking for!</p>
+            </div>
+            <div>
+              <h4 className="text-left">Text search</h4>
+              <p className="text-left">With natural language semantic understanding, you can give even more details.</p>
+            </div>
+            <div>
+              <h4 className="text-left">URL search</h4>
+              <p className="text-left">Paste product link → find it elsewhere, maybe even cheaper?</p>
+            </div>
           </div>
           <div className="col-3">
             <div>
@@ -61,16 +70,12 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
           <p>
             I architected this as 15+ microservices on Google Cloud Platform. Services coordinate through Pub/Sub events - when a new item gets ingested, it triggers embedding generation, duplicate detection, and search indexing automatically.
           </p>
-          <TagList tags={["TypeScript", "Node.js", "React", "PostgreSQL", "pgvector", "Google Cloud Platform", "Pub/Sub", "Redis", "Docker", "Terraform", "TypeORM", "InversifyJS"]} />
-          <div className="example-bar-w-image">
-            <LightboxButton path="styloma/architecture-diagram.png" alt="Styloma architecture diagram" />
-          </div>
+          <StylomaArchitectureDiagram />
         </div>
-        <div className="grow"></div>
         <div>
-          <h3>Data ingestion challenges</h3>
+          <h4>Data ingestion challenges</h4>
           <p>
-            Retailers have different data formats - some provide APIs, others require scraping. Built configurable parsers handling each source's specific access method and rate limits.
+            Retailers can expose different data formats - some provide APIs, feeds, others require scraping. I constructed a set of configurable parsers handling each source's specific access method and limitations.
           </p>
         </div>
       </Page>
