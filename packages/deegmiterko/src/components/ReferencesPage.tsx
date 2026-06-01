@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare, faContactBook } from '@fortawesome/free-solid-svg-icons';
@@ -7,8 +7,10 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const ReferencesPage: FunctionComponent<{
   references?: Array<"github" | "linkedin" | "deviantart" | "ienze.me" | "instagram" | "contact">
+  children?: ReactNode,
 }> = ({
   references=["github", "linkedin"],
+  children,
 }) => {
 
   const referenceNodes = {
@@ -40,6 +42,11 @@ const ReferencesPage: FunctionComponent<{
 
   return (
     <div className="page">
+      {children ? (
+        <div className="container-references-additonal">
+          {children}
+        </div>
+      ) : null}
       <div className="container-references">
         <div>
           <span>Made by</span>

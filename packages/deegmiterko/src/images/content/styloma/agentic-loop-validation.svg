@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="402" height="31" style="background:0 0;background-color:transparent;color-scheme:light dark" viewBox="-0.5 -0.5 402 31">
+  <title>Validation flow diagram</title>
+  <desc>A horizontal sequence of steps.</desc>
+  <g data-cell-id="0">
+    <g data-cell-id="1">
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-66">
+        <path stroke-miterlimit="10" d="M0 0h70l10 15-10 15H0l10-15Z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:15px;margin-left:40px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:nowrap">typecheck</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-67">
+        <path stroke-miterlimit="10" d="M80 0h70l10 15-10 15H80l10-15Z" class="box" />
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:15px;margin-left:120px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:nowrap">lint</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-68">
+        <path stroke-miterlimit="10" d="M160 0h70l10 15-10 15h-70l10-15Z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:15px;margin-left:200px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:nowrap">format</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-69">
+        <path stroke-miterlimit="10" d="M240 0h70l10 15-10 15h-70l10-15Z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:15px;margin-left:280px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:nowrap">a11y</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-70">
+        <path stroke-miterlimit="10" d="M320 0h70l10 15-10 15h-70l10-15Z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:1px;height:1px;padding-top:15px;margin-left:360px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:nowrap">dep. audit</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+    </g>
+  </g>
+</svg>

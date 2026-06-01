@@ -46,7 +46,7 @@ const EventMarker: FunctionComponent<{ date: Date; label: string }> = ({ date, l
   );
 };
 
-const Timeline: FunctionComponent = () => {
+const StylomaTimeline: FunctionComponent = () => {
   const getX = (month: number) => (month / TOTAL_MONTHS) * WIDTH;
 
   return (
@@ -92,4 +92,4 @@ const Timeline: FunctionComponent = () => {
   );
 };
 
-export default Timeline;
+export default StylomaTimeline;

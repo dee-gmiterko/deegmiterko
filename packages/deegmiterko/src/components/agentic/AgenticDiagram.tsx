@@ -15,6 +15,8 @@ import ValidationCell from "./ValidationCell";
 const AgenticDiagram: FunctionComponent = () => (
   <div className="agentic-diagram">
 
+    {/* <h4>The agentic development sub-system</h4> */}
+        
     <div className="agentic-upper">
       <div className="agentic-flow">
 

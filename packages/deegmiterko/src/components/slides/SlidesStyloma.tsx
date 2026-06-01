@@ -1,16 +1,16 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, lazy, Suspense } from "react";
 
 import Book from "../Book";
 import ReferencesPage from "../ReferencesPage";
-import Timeline from "../Timeline";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
-import StylomaArchitectureDiagram from "../StylomaArchitectureDiagram";
 import AgenticDiagram from "../agentic/AgenticDiagram";
 import { ThumbnailNode } from "../../pages/index";
+import StylomaTimeline from "../styloma/StylomaTimeline";
 
-import { StaticImage } from "gatsby-plugin-image";
+const StylomaArchitectureDiagram = lazy(() => import("../styloma/StylomaArchitectureDiagram.tsx"));
+const StylomaAgenticLoopPage = lazy(() => import("../styloma/StylomaAgenticLoopPage.tsx"));
 
 const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thumbnails }) => {
 
@@ -24,7 +24,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
         <p className="subtitle">Lead solo developer</p>
       </TitlePage>
 
-      <Page title="Search fashion visually">
+      <Page title="Search fashion, visually">
         <div className="col-12">
           <div>
             <p>
@@ -51,18 +51,19 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
               <p className="text-left">Paste product link → find it elsewhere, maybe even cheaper?</p>
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-3" style={{marginBottom: '-360px'}}>
             <div>
-              <LightboxButton path="styloma/homepage.png" alt="Homepage with recommendations" />
+              <LightboxButton path="styloma/homepage.png" alt="Homepage with a central search bar and recommendations underneath" />
             </div>
             <div>
-              <LightboxButton path="styloma/search-results.png" alt="Search results" />
+              <LightboxButton path="styloma/search-results.png" alt="Search results view with grid of items matching the query" />
             </div>
             <div>
-              <LightboxButton path="styloma/user-profile.png" alt="User profile with notifications" />
+              <LightboxButton path="styloma/url-search.png" alt="Illustration of URL being copied into search and seeing alternate retatilers" />
             </div>
           </div>
         </div>
+        <div className="grow"></div>
       </Page>
 
       <Page title="Event-driven microservices">
@@ -70,7 +71,9 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
           <p>
             I architected this as 15+ microservices on Google Cloud Platform. Services coordinate through Pub/Sub events - when a new item gets ingested, it triggers embedding generation, duplicate detection, and search indexing automatically.
           </p>
-          <StylomaArchitectureDiagram />
+          <Suspense fallback={null}>
+            <StylomaArchitectureDiagram />
+          </Suspense>
         </div>
         <div>
           <h4>Data ingestion challenges</h4>
@@ -82,46 +85,50 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
 
       <Page title="Vector embeddings for similarity">
         <p>
-          I built the embedding system to understand fashion semantically, not just match pixels. Fine-tuned CLIP on fashion datasets so it distinguishes between a wrap dress and a shift dress, not just "blue dress." Text embeddings capture semantic meaning - "vintage floral midi" understood as a concept, not keywords. Together, they enable search that combines visual similarity with semantic understanding.
+          A picture is worth a thousand words? I think so, but a pixel match is not enough. We need to go further to understand for example the difference between a wrap dress and a shift dress, not just "blue dress.". Since beginning I knew that embeddings need to capture semantic meaning, not keywords.
         </p>
-        <div className="example-bar-w-image">
-          <div className="example-title">
-            <h4>Two embedding types</h4>
-          </div>
-          <ul>
-            <li>
-              <strong>Image embeddings</strong> - Visual similarity
-              <p className="mb-1">Product photos encoded with CLIP. Matching by color, style, pattern - "find items that look like this."</p>
-            </li>
-            <li>
-              <strong>Item embeddings</strong> - Semantic similarity
-              <p className="mb-1">Text descriptions as vectors. Understanding "long sleeve blue silk blouse with bow" not as keywords but as meaning.</p>
-            </li>
-          </ul>
-          <LightboxButton path="styloma/embedding-space.png" alt="Visualization of embedding space" />
-        </div>
-        <div className="grow"></div>
+        <p></p>
         <div className="example">
           <div className="example-title">
-            <h4>PostgreSQL pgvector at scale</h4>
+            <h4>Embedding types</h4>
           </div>
-          <p>
-            All similarity search happens in PostgreSQL using the pgvector extension for vector similarity queries.
-          </p>
-          <p>
-            Hybrid searches run image and text embeddings in parallel, then fuse results. A dress photo plus "but in red" - both visual and semantic matching working together.
-          </p>
-          <p className="text-center">
-            <LightboxButton path="styloma/search-results.png" alt="Search results showing similarity matches" buttonClassName="w-50" />
-          </p>
-        </div>
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
-          <Timeline />
+          <div className="col-4">
+            <div>
+              <h5 className="text-left">Image embeddings</h5>
+              <p className="text-left">Visual similarity - Individual photos encoded as vector - "find pictures that match this".</p>
+            </div>
+            <div>
+              <h5 className="text-left">Item embeddings</h5>
+              <p className="text-left">Semantic similarity - Items encoded as vectors of their properties - "find items that fit this description".</p>
+            </div>
+            <div>
+              <h5 className="text-left">User embeddings</h5>
+              <p className="text-left">User interest - Past interest encoded as vector - "prioritize items that I will like".</p>
+            </div>
+            <div>
+              <h5 className="text-left">Hybrid search</h5>
+              <p className="text-left">And now compine them all to get the individualized exact matches.</p>
+            </div>
+          </div>
+          <div className="grow"></div>
+          <LightboxButton className="page-overlay" path="styloma/embedding-space.png" alt="Visualization of embedding space" />
         </div>
       </Page>
 
-      <Page title="Agentic development sub-system">
-        <AgenticDiagram />
+      <Page title="Human (in the) loop" subtitle="The agentic development sub-system">
+        <Suspense fallback={null}>
+          <StylomaAgenticLoopPage />
+        </Suspense>
+      </Page>
+
+      <Page title="References">
+        
+        <StylomaTimeline />
+        
+        <div className="text-right">
+          <a className="btn-source" href="https://github.com/dee-gmiterko/eslint-formatter-actionable" target="_blank" rel="noreferrer">eslint-formatter-actionable ▷</a>
+          <a className="btn-source" href="https://github.com/dee-gmiterko/eslint-plugin-defensive-coding" target="_blank" rel="noreferrer">eslint-plugin-defensive-coding ▷</a>
+        </div>
       </Page>
 
       <ReferencesPage references={["github"]} />
@@ -149,22 +156,15 @@ $ Pages $
   - UX: multi-item detection in photos
 
 2. Event-driven microservices
-  - GCP architecture with 15+ services
   - services breakdown: user-facing, backend, infrastructure
-  - async communication via Pub/Sub event bus
-  - item lifecycle orchestration
+  - main diagram illustrating scale
+  - scraping complexity
 
 3. Vector embeddings for similarity
-  - three embedding types: image, item, user
-  - ML models for visual and semantic understanding
-  - pgvector for sub-200ms similarity search
+  - deeper understanding
+  - three embedding types: image, item, user / ML models for visual and semantic understanding
   - hybrid search: parallel queries + fusion
-
-$ Future additions $
-- screenshots/mockups of UI
-- architecture diagram visual
-- embedding space visualization
-- performance metrics/graphs
+  - styloma timeline on bottom border
 
 $ Conclusion $
 - Technical showcase: microservices + ML + real product

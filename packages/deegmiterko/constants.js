@@ -1,6 +1,6 @@
 
 exports.pageCounts = {
-  'styloma': 6,
+  'styloma': 7,
   'artful': 9,
   'generative-design': 14,
   'game-experiments': 12,

@@ -166,7 +166,7 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thum
         </ExampleGrid4in6>
       </Page>
 
-      <Page title="Virtual (3D)" className="position-relative">
+      <Page title="Virtual (3D)">
         <p>
           Another huge expansion to capabilities of an artist was the introduction of 3D modeling. Most distinctly it allowed for a new way of creating audiovisual media with much less work needed.
         </p>

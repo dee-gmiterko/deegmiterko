@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="509" height="490" style="background:0 0;background-color:transparent;color-scheme:light dark" viewBox="-0.5 -0.5 509 490">
+  <title>Agentic development loop</title>
+  <desc>A top-down flow diagram. Sources of tasks like observability, issues, missing data detection sit at the top and connect downward through row of queues to the main workers and validation section, consistitng of inner loops repeating those steps as needed, after that it continues witht CI/CD and loops back up to top implying new issues detected later.</desc>
+  <defs>
+    <symbol id="a" preserveAspectRatio="none" viewBox="0 0 80 20">
+      <path fill="inherit" stroke="inherit" d="M0 0h70l10 10-10 10H0l10-10Z"/>
+      <path fill="inherit" stroke="inherit" d="m20 20 10-10L20 0M35 20l10-10L35 0M50 20l10-10L50 0"/>
+    </symbol>
+  </defs>
+  <g data-cell-id="0">
+    <g data-cell-id="1">
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-44">
+        <path fill="none" d="M27 70h60v30H27z" pointer-events="all"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe flex-start;width:58px;height:1px;padding-top:85px;margin-left:29px">
+              <div style="box-sizing:border-box;font-size:0;text-align:left">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Queues</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-20">
+        <path d="M67 90v3.63" class="arrow"/>
+        <path d="m67 98.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-1">
+        <path d="M27 29.31h80v40H27z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:49px;margin-left:28px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Sentry<div>issues</div></div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-2">
+        <path d="M427 29.31h80v40h-80z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:49px;margin-left:428px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Planning &amp; backlog</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-5">
+        <path d="M227 29.31h80v40h-80z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:49px;margin-left:228px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Missing mappings</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-6">
+        <path d="M127 29.31h80v40h-80z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:49px;margin-left:128px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Ingestion issues</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-7">
+        <path d="M27 160h80v40H27z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:180px;margin-left:28px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Worker sessions</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <path d="M82 240h35q10 0 10-10v-20" class="arrow" data-cell-id="o9qODZmToSD0PbRyrUsM-37"/>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-9">
+        <circle cx="67" cy="227.5" r="7.5" class="box"/>
+        <path d="M67 235v25m0-20H52m15 0h15m-15 20-15 20m15-20 15 20" class="arrow"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-10">
+        <path fill="none" d="M27-.69h160v30H27z" pointer-events="all"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe flex-start;width:158px;height:1px;padding-top:14px;margin-left:29px">
+              <div style="box-sizing:border-box;font-size:0;text-align:left">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Implicit / observability</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-11">
+        <path fill="none" d="M427-.69h60v30h-60z" pointer-events="all"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe flex-start;width:58px;height:1px;padding-top:14px;margin-left:429px">
+              <div style="box-sizing:border-box;font-size:0;text-align:left">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Explicit</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-19">
+        <path d="M67 120v33.63" class="arrow"/>
+        <path d="m67 158.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-38">
+        <path d="M67 120v33.63" class="arrow"/>
+        <path d="m67 158.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <path d="M167 120v20" class="arrow" data-cell-id="o9qODZmToSD0PbRyrUsM-29"/>
+      <path d="M267 120v20" class="arrow" data-cell-id="o9qODZmToSD0PbRyrUsM-30"/>
+      <path d="M467 120v20" class="arrow" data-cell-id="o9qODZmToSD0PbRyrUsM-31"/>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-21">
+        <path d="M167 69.31v24.32" class="arrow"/>
+        <path d="m167 98.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-24">
+        <path d="M267 69.31v24.32" class="arrow"/>
+        <path d="m267 98.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-25">
+        <path d="M467 69.31v24.32" class="arrow"/>
+        <path d="m467 98.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <path d="M67 140h400" class="arrow" data-cell-id="o9qODZmToSD0PbRyrUsM-28"/>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-36">
+        <path d="M67 340v13.63" class="arrow"/>
+        <path d="m67 358.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-40">
+        <path d="M67 280v20zv13.63" class="arrow"/>
+        <path d="m67 298.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-42">
+        <path d="M107 380h10q10 0 10-10V190q0-10-6.82-10h-6.81" class="arrow"/>
+        <path d="m108.12 180 7-3.5-1.75 3.5 1.75 3.5Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-46">
+        <path d="M67 400v13.63" class="arrow"/>
+        <path d="m67 418.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-39">
+        <path d="M27 360h80v40H27z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:380px;margin-left:28px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Development environment</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-47">
+        <path d="M67 460v10q0 10-10 10H17q-10 0-10-10V24.28q0-10 6.82-9.99l6.81.01" class="arrow"/>
+        <path d="m25.88 14.31-7 3.49 1.75-3.5-1.74-3.5Z" class="arrowhead"/>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-45">
+        <path d="M27 420h80v40H27z" class="box"/>
+        <switch>
+          <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:440px;margin-left:28px">
+              <div style="box-sizing:border-box;font-size:0;text-align:center">
+                <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">CI/CD</div>
+              </div>
+            </div>
+          </foreignObject>
+        </switch>
+      </g>
+      <path d="m67 69.31.02 10.68" class="arrow" data-cell-id="o9qODZmToSD0PbRyrUsM-48"/>
+      <path d="M367 120v20" class="arrow" data-cell-id="o9qODZmToSD0PbRyrUsM-53"/>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-55">
+        <path d="M367 69.31v24.32" class="arrow"/>
+        <path d="m367 98.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+      <use width="80" height="20" x="427" y="100" class="box" data-cell-id="o9qODZmToSD0PbRyrUsM-85" href="#a"/>
+      <use width="80" height="20" x="327" y="100" class="box" data-cell-id="o9qODZmToSD0PbRyrUsM-86" href="#a"/>
+      <use width="80" height="20" x="227" y="100" class="box" data-cell-id="o9qODZmToSD0PbRyrUsM-91" href="#a"/>
+      <use width="80" height="20" x="127" y="100" class="box" data-cell-id="o9qODZmToSD0PbRyrUsM-96" href="#a"/>
+      <use width="80" height="20" x="27" y="100" class="box" data-cell-id="o9qODZmToSD0PbRyrUsM-101" href="#a"/>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-108">
+        <path d="M107 320h10q10 0 10-10v-10" class="arrow" data-cell-id="o9qODZmToSD0PbRyrUsM-112"/>
+        <g data-cell-id="o9qODZmToSD0PbRyrUsM-4">
+          <path d="M27 300h80v40H27z" class="box"/>
+          <switch>
+            <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:320px;margin-left:28px">
+                <div style="box-sizing:border-box;font-size:0;text-align:center">
+                  <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Validation</div>
+                </div>
+              </div>
+            </foreignObject>
+          </switch>
+        </g>
+        <g data-cell-id="o9qODZmToSD0PbRyrUsM-57" pointer-events="all">
+          <circle cx="98" cy="309" r="6" fill="#fff" stroke="#0080f0" stroke-width=".72" style="fill:light-dark(#fff,var(--ge-dark-color, #121212));stroke:#0080f0"/>
+          <circle cx="98" cy="306" r=".6" fill="#0080f0" style="fill:#0080f0"/>
+          <path fill="#0080f0" d="M97.04 307.2h1.56v5.4c0 .1.04.19.11.25.06.07.15.11.25.11h-1.92c.1 0 .19-.04.25-.11.07-.06.11-.15.11-.25v-5.04c0-.2-.16-.36-.36-.36" style="fill:#0080f0"/>
+        </g>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-109">
+        <g data-cell-id="o9qODZmToSD0PbRyrUsM-51">
+          <path d="M327 29.31h80v40h-80z" class="box"/>
+          <switch>
+            <foreignObject width="100%" height="100%" pointer-events="none" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow:visible;text-align:left">
+              <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:78px;height:1px;padding-top:49px;margin-left:328px">
+                <div style="box-sizing:border-box;font-size:0;text-align:center">
+                  <div style="display:inline-block;font-size:12px;font-family:Helvetica;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">Verification</div>
+                </div>
+              </div>
+            </foreignObject>
+          </switch>
+        </g>
+        <g data-cell-id="o9qODZmToSD0PbRyrUsM-56" pointer-events="all">
+          <circle cx="398" cy="38" r="6" fill="#fff" stroke="#0080f0" stroke-width=".72" style="fill:light-dark(#fff,var(--ge-dark-color, #121212));stroke:#0080f0"/>
+          <circle cx="398" cy="35" r=".6" fill="#0080f0" style="fill:#0080f0"/>
+          <path fill="#0080f0" d="M397.04 36.2h1.56v5.4c0 .1.04.19.11.25.06.07.15.11.25.11h-1.92c.1 0 .19-.04.25-.11.07-.06.11-.15.11-.25v-5.04c0-.1-.04-.19-.11-.25a.33.33 0 0 0-.25-.11" style="fill:#0080f0"/>
+        </g>
+      </g>
+      <g data-cell-id="o9qODZmToSD0PbRyrUsM-111">
+        <path d="M67 200v13.63" class="arrow"/>
+        <path d="m67 218.88-3.5-7 3.5 1.75 3.5-1.75Z" class="arrowhead"/>
+      </g>
+    </g>
+  </g>
+</svg>
