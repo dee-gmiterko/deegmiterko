@@ -26,7 +26,7 @@ const StylomaAgenticLoopPage = () => {
           width: 750,
           height: 600,
         }}>
-          <h4 className="mb-1">Validation</h4>
+          <h4 className="mb-1">Validation loop</h4>
           <p>
             Validation is strict by design — every change must pass the full pipeline. 
           </p>
@@ -37,7 +37,7 @@ const StylomaAgenticLoopPage = () => {
               width: '100%',
             }}
           />
-          <h4 className="mb-1">Verification</h4>
+          <h4 className="mb-1">Verification loop</h4>
           <p>Tests are written for complex logic only, not for coverage metrics.</p>
           <div
             className="styloma-agentic-pipeline-diagram svg-diagram"

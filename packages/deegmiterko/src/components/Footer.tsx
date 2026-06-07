@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { FunctionComponent } from "react";
 import { SiteMetadata } from "../types";
 
@@ -8,7 +9,7 @@ type FooterType = {
 const Footer: FunctionComponent<FooterType> = ({ siteMetadata }) => {
   return (
     <footer className="footer" id="footer">
-      © {new Date().getFullYear()} {siteMetadata.author}
+      © {moment().year()} {siteMetadata.author}
     </footer>
   );
 }

@@ -1,9 +1,11 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import React, { FunctionComponent, ReactNode, useEffect, useMemo, useRef } from "react";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquare, faContactBook } from '@fortawesome/free-solid-svg-icons';
 import { faDeviantart, faGithub, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import useBook from "../hooks/useBook";
+import slugify from "slugify";
 
 const ReferencesPage: FunctionComponent<{
   references?: Array<"github" | "linkedin" | "deviantart" | "ienze.me" | "instagram" | "contact">
@@ -12,6 +14,23 @@ const ReferencesPage: FunctionComponent<{
   references=["github", "linkedin"],
   children,
 }) => {
+const { registerPage, id: bookId } = useBook();
+  const ref = useRef<HTMLDivElement>(null);
+  const pageId = useMemo(() => slugify(
+    `${bookId} references`,
+    {
+      locale: "en",
+      strict: true,
+      replacement: "-",
+      lower: true
+    }
+  ), [bookId]);
+
+  useEffect(() => {
+    if (ref.current) {
+      registerPage(pageId, ref.current);
+    }
+  }, [ref.current, registerPage, pageId])
 
   const referenceNodes = {
     github: <OutboundLink href="https://m.me/dee.gmiterko">
@@ -41,7 +60,7 @@ const ReferencesPage: FunctionComponent<{
   }
 
   return (
-    <div className="page">
+    <div ref={ref} className="page">
       {children ? (
         <div className="container-references-additonal">
           {children}

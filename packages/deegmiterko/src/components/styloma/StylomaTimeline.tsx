@@ -1,95 +1,106 @@
-import React, { createContext, FunctionComponent, useContext } from "react";
+import moment, { Moment } from "moment";
+import React, { FunctionComponent, useMemo } from "react";
 
-const START = new Date(2025, 0); // Jan 2025
-const END   = new Date(2027, 11); // Dec 2027
-const TOTAL_MONTHS = (END.getFullYear() - START.getFullYear()) * 12 + (END.getMonth() - START.getMonth());
-const WIDTH = 1200;
+const WIDTH = 1000;
+const HEIGHT = 400;
+const BASELINE_Y = 220;
 
-const LABEL_FONT_SIZE = 26;
-const DATE_FONT_SIZE = 20;
-const LABEL_GAP = 10;
-const EVENT_H = 80;
-const RECT_TOP_Y = DATE_FONT_SIZE + LABEL_GAP + LABEL_FONT_SIZE + LABEL_GAP;
-const BASELINE_Y = RECT_TOP_Y + EVENT_H;
-const HEIGHT = BASELINE_Y + 4;
+const getX = (date: Moment, start: Moment, totalMonths: number) =>
+  (date.diff(start, "months") / totalMonths) * (WIDTH - 40) + 20;
 
-const DATE_FORMAT = new Intl.DateTimeFormat("cs", { month: "2-digit", year: "numeric" });
-
-const monthsFromStart = (date: Date) =>
-  (date.getFullYear() - START.getFullYear()) * 12 + (date.getMonth() - START.getMonth());
-
-const TimelineContext = createContext({ getX: (_month: number) => 0 });
-
-const Tick: FunctionComponent<{ date: Date; isYear?: boolean }> = ({ date, isYear }) => {
-  const { getX } = useContext(TimelineContext);
-  const x = getX(monthsFromStart(date));
-  const w = isYear ? 10 : 6;
-  const h = isYear ? 32 : 16;
-  const fill = isYear ? "#e3ffe7" : "#d9e7ff";
-  return <rect x={x - w / 2} y={BASELINE_Y - h} width={w} height={h} fill={fill} />;
+const Tick: FunctionComponent<{ date: Moment; isYear?: boolean; label?: string; start: Moment; totalMonths: number }> = ({ date, isYear, label, start, totalMonths }) => {
+  const x = getX(date, start, totalMonths);
+  const w = isYear ? 10 : 8;
+  const h = isYear ? 50 : 30;
+  return <g>
+    <rect x={x - w / 2} y={BASELINE_Y - h / 2} width={w} height={h} fill="white" />
+    {label && <text
+      x={x - 26 / 2} y={BASELINE_Y + 40}
+      textAnchor="start"
+      fontSize={isYear ? 26 : 20}
+      fontFamily="Comfortaa, Arial, sans-serif"
+      fill={"#7d6fbf"}
+      transform={`rotate(90 ${x - 26 / 2} ${BASELINE_Y + 40})`}
+    >
+      {label}
+    </text>}
+  </g>;
 };
 
-const EventMarker: FunctionComponent<{ date: Date; label: string }> = ({ date, label }) => {
-  const { getX } = useContext(TimelineContext);
-  const x = getX(monthsFromStart(date));
-  const formatted = DATE_FORMAT.format(date);
+const EventMarker: FunctionComponent<{ date: Moment; label: string; start: Moment; totalMonths: number }> = ({ date, label, start, totalMonths }) => {
+  const x = getX(date, start, totalMonths);
   return (
     <g>
-      <text x={x} y={DATE_FONT_SIZE} textAnchor="middle" fontSize={DATE_FONT_SIZE} fontFamily="Arial, sans-serif" fill="#7a8bcf">
-        {formatted}
-      </text>
-      <text x={x} y={DATE_FONT_SIZE + LABEL_GAP + LABEL_FONT_SIZE} textAnchor="middle" fontSize={LABEL_FONT_SIZE} fontFamily="Comfortaa, Arial, sans-serif" fontWeight="bold" fill="#3F2B96">
+      <rect x={x - 4} y={BASELINE_Y - 25} width={8} height={50} fill="#5a49a9" />;
+      <text
+        x={x}
+        y={BASELINE_Y - 40}
+        textAnchor="start"
+        fontSize={26}
+        fontFamily="Comfortaa, Arial, sans-serif"
+        fill="#5a49a9"
+        transform={`rotate(-45, ${x}, ${BASELINE_Y - 40})`}
+      >
         {label}
       </text>
-      <rect x={x - 5} y={RECT_TOP_Y} width={10} height={EVENT_H} fill="url(#eventGrad)" />
     </g>
   );
 };
 
-const StylomaTimeline: FunctionComponent = () => {
-  const getX = (month: number) => (month / TOTAL_MONTHS) * WIDTH;
+interface TimelineEvent {
+  date: string;
+  label: string;
+}
+
+const Timeline: FunctionComponent<{ start: string; end: string; events: TimelineEvent[] }> = ({ start, end, events }) => {
+  const startM = moment(start);
+  const endM = moment(end);
+  const totalMonths = endM.diff(startM, "months");
+
+  const eventMonths = new Set(events.map((e) => moment(e.date).format("YYYY-MM")));
+
+  const ticks: Moment[] = [];
+  const cur = startM.clone();
+  while (!cur.isAfter(endM)) {
+    ticks.push(cur.clone());
+    cur.add(1, "month");
+  }
 
   return (
-    <TimelineContext.Provider value={{ getX }}>
-      <svg width={WIDTH} height={HEIGHT} style={{ width: "100%", height: "auto", display: "block" }}>
-        <defs>
-          <linearGradient id="eventGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#e3ffe7" />
-            <stop offset="100%" stopColor="#d9e7ff" />
-          </linearGradient>
-        </defs>
+    <svg width={WIDTH} height={HEIGHT} style={{ width: "100%", height: "auto", display: "block", filter: 'drop-shadow(0 0 16px rgba(0, 0, 0, 0.15))' }}>
+      <defs>
+        <linearGradient id="eventGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="white" />
+          <stop offset="100%" stopColor="#f0f6ff" />
+        </linearGradient>
+      </defs>
 
-        <Tick date={new Date(2025, 1)} />
-        <Tick date={new Date(2025, 3)} />
-        <Tick date={new Date(2025, 5)} />
-        <Tick date={new Date(2025, 7)} />
-        <Tick date={new Date(2025, 9)} />
-        <Tick date={new Date(2025, 11)} />
-        <Tick date={new Date(2026, 1)} />
-        <Tick date={new Date(2026, 3)} />
-        <Tick date={new Date(2026, 5)} />
-        <Tick date={new Date(2026, 7)} />
-        <Tick date={new Date(2026, 9)} />
-        <Tick date={new Date(2026, 11)} />
-        <Tick date={new Date(2027, 1)} />
-        <Tick date={new Date(2027, 3)} />
-        <Tick date={new Date(2027, 5)} />
-        <Tick date={new Date(2027, 7)} />
-        <Tick date={new Date(2027, 9)} />
+      {ticks.map((t) => {
+        const isYear = t.month() === 0;
+        const key = t.format("YYYY-MM");
+        const label = isYear ? t.format("Y") : eventMonths.has(key) ? t.format("MMM") : undefined;
+        return <Tick key={key} date={t} isYear={isYear} label={label} start={startM} totalMonths={totalMonths} />;
+      })}
 
-        <Tick date={new Date(2025, 0)} isYear />
-        <Tick date={new Date(2026, 0)} isYear />
-        <Tick date={new Date(2027, 0)} isYear />
-
-        <EventMarker date={new Date(2025, 6)}  label="Design" />
-        <EventMarker date={new Date(2025, 8)}  label="Start work" />
-        <EventMarker date={new Date(2026, 0)}  label="Initial testing" />
-        <EventMarker date={new Date(2026, 3)}  label="Finalization" />
-        <EventMarker date={new Date(2026, 4)}  label="Launch" />
-        <EventMarker date={new Date(2026, 8)}  label="User goal" />
-      </svg>
-    </TimelineContext.Provider>
+      {events.map((e) => (
+        <EventMarker key={e.date} date={moment(e.date)} label={e.label} start={startM} totalMonths={totalMonths} />
+      ))}
+    </svg>
   );
 };
+
+const StylomaTimeline: FunctionComponent = () => useMemo(() => (
+  <Timeline
+    start="2025-01"
+    end="2027-01"
+    events={[
+      { date: "2025-07", label: "Design" },
+      { date: "2025-09", label: "Start work" },
+      { date: "2026-01", label: "Initial testing" },
+      { date: "2026-04", label: "Finalization" },
+      { date: "2026-06", label: "Beta Launch" },
+    ]}
+  />
+), []);
 
 export default StylomaTimeline;

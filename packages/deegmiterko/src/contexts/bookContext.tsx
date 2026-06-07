@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, FunctionComponent, ReactNode, useRef } from "react";
+import React, { createContext, FunctionComponent, ReactNode, useRef } from "react";
 import useApp from "../hooks/useApp";
 
 export type BookStore = {

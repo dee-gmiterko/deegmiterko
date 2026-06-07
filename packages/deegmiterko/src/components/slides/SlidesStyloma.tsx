@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { FunctionComponent, lazy, Suspense } from "react";
 
 import Book from "../Book";
@@ -5,7 +6,6 @@ import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
-import AgenticDiagram from "../agentic/AgenticDiagram";
 import { ThumbnailNode } from "../../pages/index";
 import StylomaTimeline from "../styloma/StylomaTimeline";
 
@@ -121,17 +121,29 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
         </Suspense>
       </Page>
 
-      <Page title="References">
-        
+      <Page title="Bibliography" id="styloma-bibliography">
         <StylomaTimeline />
-        
-        <div className="text-right">
-          <a className="btn-source" href="https://github.com/dee-gmiterko/eslint-formatter-actionable" target="_blank" rel="noreferrer">eslint-formatter-actionable ▷</a>
-          <a className="btn-source" href="https://github.com/dee-gmiterko/eslint-plugin-defensive-coding" target="_blank" rel="noreferrer">eslint-plugin-defensive-coding ▷</a>
-        </div>
+        <div className="grow" />
+        <ol className="bibliography">
+          <li>
+            Gmiterko, D., <em>“Styloma β”</em>, 1.0.0, 2026, source is not open, but you can test it yourself at <a className="btn-source" href="https://styloma.deegmiterko.com" target="_blank" rel="noreferrer">styloma.deegmiterko.com ▷</a>
+          </li>
+          <li>
+            Gmiterko, D., <em>“Eventually consistent cyclical agentic-aided workflows”</em>, Brno CZ, ask me about it, {moment().year()}
+          </li>
+          <li>
+            Gmiterko, D., <em>“Framing for actionable lint reports”</em> at GitHub - Built for developers, March 2026 <a className="btn-source" href="https://github.com/dee-gmiterko/eslint-formatter-actionable" target="_blank" rel="noreferrer">eslint-formatter-actionable ▷</a>
+          </li>
+          <li>
+            Gmiterko, D., <em>“On ensurance of coding patterns”</em> at GitHub - Where the world builds software, March 2026 <a className="btn-source" href="https://github.com/dee-gmiterko/eslint-plugin-defensive-coding" target="_blank" rel="noreferrer">eslint-plugin-defensive-coding ▷</a>
+          </li>
+          <li>
+            Gmiterko, D., <em>“Dependency subgraphs and their application in image building”</em> at GitHub - Build software better, together., Jun 2026 <a className="btn-source" href="https://github.com/dee-gmiterko/yarn-plugin-prod-lockfiles" target="_blank" rel="noreferrer">yarn-plugin-prod-lockfiles ▷</a>
+          </li>
+        </ol>
       </Page>
 
-      <ReferencesPage references={["github"]} />
+      <ReferencesPage references={["linkedin", "github"]} />
 
     </Book>
   )

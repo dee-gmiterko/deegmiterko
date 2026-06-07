@@ -17,6 +17,8 @@ const BookContent: FunctionComponent<{
   const pageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const isScrolling = useRef(false);
 
+  console.log(title, current, children.length - 1, current === children.length - 1);
+
   const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
     if (isScrolling.current) return;
 
@@ -59,6 +61,7 @@ const BookContent: FunctionComponent<{
       isScrolling.current = true;
       page.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setTimeout(() => { isScrolling.current = false; }, 500);
+      setCurrent(index);
     }
   }, []);
 

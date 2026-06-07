@@ -1,10 +1,11 @@
-import React, { FunctionComponent, ReactNode, useRef } from "react";
+import React, { FunctionComponent, ReactNode, useEffect, useMemo, useRef } from "react";
 import slugify from "slugify";
 
 import useBook from "../hooks/useBook";
 import clsx from "clsx";
 
 export type PageType = {
+  id?: string;
   title: string,
   titleNode?: ReactNode,
   subtitle?: string,
@@ -14,10 +15,10 @@ export type PageType = {
   children: ReactNode|ReactNode[],
 }
 
-const Page: FunctionComponent<PageType> = ({ title, titleNode, subtitle, level=3, className, titleClassName, children }) => {
+const Page: FunctionComponent<PageType> = ({ id, title, titleNode, subtitle, level=3, className, titleClassName, children }) => {
   const { registerPage } = useBook();
-  const ref = useRef<HTMLDivElement>();
-  const pageId = slugify(
+  const ref = useRef<HTMLDivElement>(null);
+  const pageId = useMemo(() => id ?? slugify(
     subtitle ? `${title} ${subtitle}` : `${title}`,
     {
       locale: "en",
@@ -25,10 +26,14 @@ const Page: FunctionComponent<PageType> = ({ title, titleNode, subtitle, level=3
       replacement: "-",
       lower: true
     }
-  );
-  if (ref.current) {
-    registerPage(pageId, ref.current);
-  }
+  ), [id, title, subtitle]);
+
+  useEffect(() => {
+    if (ref.current) {
+      registerPage(pageId, ref.current);
+    }
+  }, [ref.current, registerPage, pageId])
+
   const titleContent = (
     subtitle ? <>{title} <p className="subtitle">{subtitle}</p></> : title
   );

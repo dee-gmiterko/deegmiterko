@@ -104,6 +104,8 @@ const IndexPage = ({ data: { content, site, pageThumbnails } }: PageProps<IndexD
           <Conversation messages={contentMap["introduction"]} />
 
           <SlidesStyloma thumbnails={thumbnailsByBook["styloma"]} />
+
+          <Conversation messages={contentMap["styloma"]} />
           
           <SlidesArtful thumbnails={thumbnailsByBook["artful"]} />
 

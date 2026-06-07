@@ -1,9 +1,9 @@
 Hello
 You: Hi
 I assume you would want to learn some bits about me
-For starters, I've always been an artist. One way or another.
+Where does one start?
+You: I would start with latest big project?
 
-$title: Artist
+$title: Styloma
 
-You: What kind of art do you do?
-Let me tell you about it...
+Sure, let me tell you about it…

@@ -17,7 +17,7 @@
       max-width: 60%;
       display: flex;
       flex-direction: column;
-      align-items: stretch;
+      align-items: flex-start;
       gap: 2px;
 
       .message-container {
@@ -34,6 +34,8 @@
       align-items: flex-end;
 
       .sequence-messages {
+        align-items: flex-end;
+        
         .message-container {
           background-color: rgba(118,67,142,1);
           background-image: linear-gradient(170deg, rgba(224,198,93,1) 0%, rgba(118,67,142,1) 47%, rgba(56,23,74,1) 100%);

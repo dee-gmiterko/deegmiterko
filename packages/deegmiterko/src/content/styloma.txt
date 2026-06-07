@@ -1,0 +1,8 @@
+You: Huh, and how is it going?
+We will have to see…
+But for now I could tell you a bit more about myself. For starters, I've always been an artist. One way or another.
+
+$title: Artist
+
+You: What kind of art do you do?
+I just enjoy creating. And you can find some sort of artistry in many things.
