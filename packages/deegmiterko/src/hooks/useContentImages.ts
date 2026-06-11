@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { IGatsbyImageData, Layout, Placeholder } from "gatsby-plugin-image";
+import { IGatsbyImageData } from "gatsby-plugin-image";
 import { useMemo } from "react";
 
 export const useContentImages = () => {
@@ -11,7 +11,6 @@ export const useContentImages = () => {
           childImageSharp: {
             gatsbyImageData: IGatsbyImageData;
           };
-          publicURL: string;
         };
       }[];
     };
@@ -22,32 +21,42 @@ export const useContentImages = () => {
           childImageSharp: {
             gatsbyImageData: IGatsbyImageData;
           };
-          publicURL: string;
         };
       }[];
     };
   }>(graphql`
     query {
       contentImages: allFile(
-        filter: {sourceInstanceName: {eq: "contentImages"}}
+        filter: { sourceInstanceName: { eq: "contentImages" } }
       ) {
         edges {
           node {
             relativePath
             childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 1920, quality: 95, outputPixelDensities: [1.0])
+              gatsbyImageData(
+                layout: CONSTRAINED
+                placeholder: BLURRED
+                width: 1920
+                quality: 95
+                outputPixelDensities: [1.0]
+              )
             }
           }
         }
       }
       contentImagesSmall: allFile(
-        filter: {sourceInstanceName: {eq: "contentImages"}}
+        filter: { sourceInstanceName: { eq: "contentImages" } }
       ) {
         edges {
           node {
             relativePath
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, width: 600, outputPixelDensities: [0.25, 0.5, 1.0, 2.0])
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                width: 600
+                outputPixelDensities: [0.25, 0.5, 1.0, 2.0]
+              )
             }
           }
         }
@@ -56,15 +65,21 @@ export const useContentImages = () => {
   `);
 
   const imageMap = useMemo(() => {
-    
-    const imageMap: Record<string, [null | IGatsbyImageData, IGatsbyImageData]> = {};
-    for (const { node: { relativePath, childImageSharp, publicURL } } of data.contentImages.edges) {
-      if(childImageSharp) {
+    const imageMap: Record<
+      string,
+      [null | IGatsbyImageData, IGatsbyImageData]
+    > = {};
+    for (const {
+      node: { relativePath, childImageSharp },
+    } of data.contentImages.edges) {
+      if (childImageSharp) {
         imageMap[relativePath] = [null, childImageSharp.gatsbyImageData];
       }
     }
-    for (const { node: { relativePath, childImageSharp, publicURL } } of data.contentImagesSmall.edges) {
-      if(childImageSharp) {
+    for (const {
+      node: { relativePath, childImageSharp },
+    } of data.contentImagesSmall.edges) {
+      if (childImageSharp) {
         imageMap[relativePath][0] = childImageSharp.gatsbyImageData;
       }
     }
@@ -72,4 +87,4 @@ export const useContentImages = () => {
   }, [data]);
 
   return imageMap;
-}
+};

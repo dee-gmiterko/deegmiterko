@@ -3,10 +3,10 @@ import Thumbnail from "./Thumbnail";
 import { ThumbnailNode } from "../pages/index";
 
 const ThumbnailNav: FunctionComponent<{
-  count: number,
-  current: number,
-  thumbnails: ThumbnailNode[],
-  onSelect: (index: number) => void,
+  count: number;
+  current: number | undefined;
+  thumbnails: ThumbnailNode[];
+  onSelect: (index: number) => void;
 }> = ({ count, current, thumbnails, onSelect }) => {
   return (
     <nav className="thumbnail-nav" aria-label="Page navigation">

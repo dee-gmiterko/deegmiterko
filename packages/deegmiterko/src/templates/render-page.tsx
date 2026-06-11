@@ -8,14 +8,18 @@ import SlidesGenerativeDesign from "../components/slides/SlidesGenerativeDesign"
 import SlidesGameExperiments from "../components/slides/SlidesGameExperiments";
 import SlidesProfessional from "../components/slides/SlidesProfessional";
 import SlidesMe from "../components/slides/SlidesMe";
+import { ThumbnailNode } from "../pages";
 
-const BOOK_COMPONENTS: Record<string, React.FC<{thumbnails: unknown[]}>> = {
-  'styloma': SlidesStyloma,
-  'artful': SlidesArtful,
-  'generative-design': SlidesGenerativeDesign,
-  'game-experiments': SlidesGameExperiments,
-  'professional': SlidesProfessional,
-  'me': SlidesMe,
+const BOOK_COMPONENTS: Record<
+  string,
+  React.FC<{ thumbnails: ThumbnailNode[] }>
+> = {
+  styloma: SlidesStyloma,
+  artful: SlidesArtful,
+  "generative-design": SlidesGenerativeDesign,
+  "game-experiments": SlidesGameExperiments,
+  professional: SlidesProfessional,
+  me: SlidesMe,
 };
 
 type RenderPageProps = {

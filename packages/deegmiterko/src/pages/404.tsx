@@ -4,17 +4,21 @@ import { StaticImage } from "gatsby-plugin-image";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import Seo from "../components/Seo";
+import { SiteData } from "../types";
 
 import "../style/not-found.scss";
 
-const NotFoundPage = ({ data: { site } }) => (
+const NotFoundPage = ({ data: { site } }: { data: { site: SiteData } }) => (
   <>
     <main className="not-found">
       <div className="profile">
-        <StaticImage layout="constrained" src="../images/banner.jpg" alt={"Not found by "+site.siteMetadata.author} />
+        <StaticImage
+          layout="constrained"
+          src="../images/banner.jpg"
+          alt={"Not found by " + site.siteMetadata.author}
+        />
       </div>
       <div className="basic-info">
-
         <h1>404</h1>
 
         <span className="tagline">Not found. You know what this means...</span>
@@ -33,7 +37,7 @@ const NotFoundPage = ({ data: { site } }) => (
 
 export default NotFoundPage;
 
-export const Head = ({ data: {site} }) => (
+export const Head = ({ data: { site } }: { data: { site: SiteData } }) => (
   <Seo siteMetadata={site.siteMetadata} />
 );
 

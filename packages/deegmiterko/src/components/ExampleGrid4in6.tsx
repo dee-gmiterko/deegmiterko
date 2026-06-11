@@ -8,9 +8,7 @@ const ExampleGrid4in6: FunctionComponent<{
   images: [ImageEntry, ImageEntry, ImageEntry, ImageEntry];
 }> = ({ children, images }) => (
   <div className="example-bar example-grid-4in6">
-    <div className="example-grid-4in6-content">
-      {children}
-    </div>
+    <div className="example-grid-4in6-content">{children}</div>
     <LightboxButton path={images[3].path} alt={images[3].alt} />
     <LightboxButton path={images[0].path} alt={images[0].alt} />
     <LightboxButton path={images[1].path} alt={images[1].alt} />

@@ -9,17 +9,22 @@ import LightboxButton from "../LightboxButton";
 import { ThumbnailNode } from "../../pages/index";
 import StylomaTimeline from "../styloma/StylomaTimeline";
 
-const StylomaArchitectureDiagram = lazy(() => import("../styloma/StylomaArchitectureDiagram.tsx"));
-const StylomaAgenticLoopPage = lazy(() => import("../styloma/StylomaAgenticLoopPage.tsx"));
+const StylomaArchitectureDiagram = lazy(
+  () => import("../styloma/StylomaArchitectureDiagram"),
+);
+const StylomaAgenticLoopPage = lazy(
+  () => import("../styloma/StylomaAgenticLoopPage"),
+);
 
-const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thumbnails }) => {
-
+const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
+  thumbnails,
+}) => {
   return (
-    <Book id="styloma" title="Styloma" thumbnails={thumbnails}>
-
+    <Book bookId="styloma" thumbnails={thumbnails}>
       <TitlePage title="Styloma" subtitle="AI fashion search" lecture={7}>
         <p>
-          What if you could search for clothes by showing what you mean, not by trivial filtering.
+          What if you could search for clothes by showing what you mean, not by
+          trivial filtering.
         </p>
         <p className="subtitle">Lead solo developer</p>
       </TitlePage>
@@ -28,11 +33,15 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
         <div className="col-12">
           <div>
             <p>
-              You want a dress just like that one; you visit Zara, filter by category and size. Then H&M, same filters. Then ASOS. Each site separately&hellip;
+              You want a dress just like that one; you visit Zara, filter by
+              category and size. Then H&M, same filters. Then ASOS. Each site
+              separately&hellip;
             </p>
             <h4>Visual semantic search</h4>
             <p>
-              I built a dedicated search for exploring many stores at once - allowing you to find what you'd never discover by browsing page by page.
+              I built a dedicated search for exploring many stores at once -
+              allowing you to find what you'd never discover by browsing page by
+              page.
             </p>
           </div>
         </div>
@@ -40,26 +49,43 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
           <div className="col-3">
             <div>
               <h4 className="text-left">Image search</h4>
-              <p className="text-left">Upload photo, iteratively explore similar items, until you find exactly what you're looking for!</p>
+              <p className="text-left">
+                Upload photo, iteratively explore similar items, until you find
+                exactly what you're looking for!
+              </p>
             </div>
             <div>
               <h4 className="text-left">Text search</h4>
-              <p className="text-left">With natural language semantic understanding, you can give even more details.</p>
+              <p className="text-left">
+                With natural language semantic understanding, you can give even
+                more details.
+              </p>
             </div>
             <div>
               <h4 className="text-left">URL search</h4>
-              <p className="text-left">Paste product link → find it elsewhere, maybe even cheaper?</p>
+              <p className="text-left">
+                Paste product link → find it elsewhere, maybe even cheaper?
+              </p>
             </div>
           </div>
-          <div className="col-3" style={{marginBottom: '-360px'}}>
+          <div className="col-3" style={{ marginBottom: "-360px" }}>
             <div>
-              <LightboxButton path="styloma/homepage.png" alt="Homepage with a central search bar and recommendations underneath" />
+              <LightboxButton
+                path="styloma/homepage.png"
+                alt="Homepage with a central search bar and recommendations underneath"
+              />
             </div>
             <div>
-              <LightboxButton path="styloma/search-results.png" alt="Search results view with grid of items matching the query" />
+              <LightboxButton
+                path="styloma/search-results.png"
+                alt="Search results view with grid of items matching the query"
+              />
             </div>
             <div>
-              <LightboxButton path="styloma/url-search.png" alt="Illustration of URL being copied into search and seeing alternate retatilers" />
+              <LightboxButton
+                path="styloma/url-search.png"
+                alt="Illustration of URL being copied into search and seeing alternate retatilers"
+              />
             </div>
           </div>
         </div>
@@ -69,7 +95,10 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
       <Page title="Event-driven microservices">
         <div>
           <p>
-            I architected this as 15+ microservices on Google Cloud Platform. Services coordinate through Pub/Sub events - when a new item gets ingested, it triggers embedding generation, duplicate detection, and search indexing automatically.
+            I architected this as 15+ microservices on Google Cloud Platform.
+            Services coordinate through Pub/Sub events - when a new item gets
+            ingested, it triggers embedding generation, duplicate detection, and
+            search indexing automatically.
           </p>
           <Suspense fallback={null}>
             <StylomaArchitectureDiagram />
@@ -78,14 +107,21 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
         <div>
           <h4>Data ingestion challenges</h4>
           <p>
-            Retailers can expose different data formats - some provide APIs, feeds, others require scraping. I constructed a set of configurable parsers handling each source's specific access method and limitations.
+            Retailers can expose different data formats - some provide APIs,
+            feeds, others require scraping. I constructed a set of configurable
+            parsers handling each source's specific access method and
+            limitations.
           </p>
         </div>
       </Page>
 
       <Page title="Vector embeddings for similarity">
         <p>
-          A picture is worth a thousand words? I think so, but a pixel match is not enough. We need to go further to understand for example the difference between a wrap dress and a shift dress, not just "blue dress.". Since beginning I knew that embeddings need to capture semantic meaning, not keywords.
+          A picture is worth a thousand words? I think so, but a pixel match is
+          not enough. We need to go further to understand for example the
+          difference between a wrap dress and a shift dress, not just "blue
+          dress.". Since beginning I knew that embeddings need to capture
+          semantic meaning, not keywords.
         </p>
         <p></p>
         <div className="example">
@@ -95,27 +131,46 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
           <div className="col-4">
             <div>
               <h5 className="text-left">Image embeddings</h5>
-              <p className="text-left">Visual similarity - Individual photos encoded as vector - "find pictures that match this".</p>
+              <p className="text-left">
+                Visual similarity - Individual photos encoded as vector - "find
+                pictures that match this".
+              </p>
             </div>
             <div>
               <h5 className="text-left">Item embeddings</h5>
-              <p className="text-left">Semantic similarity - Items encoded as vectors of their properties - "find items that fit this description".</p>
+              <p className="text-left">
+                Semantic similarity - Items encoded as vectors of their
+                properties - "find items that fit this description".
+              </p>
             </div>
             <div>
               <h5 className="text-left">User embeddings</h5>
-              <p className="text-left">User interest - Past interest encoded as vector - "prioritize items that I will like".</p>
+              <p className="text-left">
+                User interest - Past interest encoded as vector - "prioritize
+                items that I will like".
+              </p>
             </div>
             <div>
               <h5 className="text-left">Hybrid search</h5>
-              <p className="text-left">And now compine them all to get the individualized exact matches.</p>
+              <p className="text-left">
+                And now compine them all to get the individualized exact
+                matches.
+              </p>
             </div>
           </div>
           <div className="grow"></div>
-          <LightboxButton className="page-overlay" path="styloma/embedding-space.png" alt="Visualization of embedding space" />
+          <LightboxButton
+            className="page-overlay"
+            path="styloma/embedding-space.png"
+            alt="Visualization of embedding space"
+          />
         </div>
       </Page>
 
-      <Page title="Human (in the) loop" subtitle="The agentic development sub-system">
+      <Page
+        title="Human (in the) loop"
+        subtitle="The agentic development sub-system"
+      >
         <Suspense fallback={null}>
           <StylomaAgenticLoopPage />
         </Suspense>
@@ -126,28 +181,68 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({ thu
         <div className="grow" />
         <ol className="bibliography">
           <li>
-            Gmiterko, D., <em>“Styloma β”</em>, 1.0.0, 2026, source is not open, but you can test it yourself at <a className="btn-source" href="https://styloma.deegmiterko.com" target="_blank" rel="noreferrer">styloma.deegmiterko.com ▷</a>
+            Gmiterko, D., <em>“Styloma β”</em>, 1.0.0, 2026, source is not open,
+            but you can test it yourself at{" "}
+            <a
+              className="btn-source"
+              href="https://styloma.deegmiterko.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              styloma.deegmiterko.com ▷
+            </a>
           </li>
           <li>
-            Gmiterko, D., <em>“Eventually consistent cyclical agentic-aided workflows”</em>, Brno CZ, ask me about it, {moment().year()}
+            Gmiterko, D.,{" "}
+            <em>“Eventually consistent cyclical agentic-aided workflows”</em>,
+            Brno CZ, ask me about it, {moment().year()}
           </li>
           <li>
-            Gmiterko, D., <em>“Framing for actionable lint reports”</em> at GitHub - Built for developers, March 2026 <a className="btn-source" href="https://github.com/dee-gmiterko/eslint-formatter-actionable" target="_blank" rel="noreferrer">eslint-formatter-actionable ▷</a>
+            Gmiterko, D., <em>“Framing for actionable lint reports”</em> at
+            GitHub - Built for developers, March 2026{" "}
+            <a
+              className="btn-source"
+              href="https://github.com/dee-gmiterko/eslint-formatter-actionable"
+              target="_blank"
+              rel="noreferrer"
+            >
+              eslint-formatter-actionable ▷
+            </a>
           </li>
           <li>
-            Gmiterko, D., <em>“On ensurance of coding patterns”</em> at GitHub - Where the world builds software, March 2026 <a className="btn-source" href="https://github.com/dee-gmiterko/eslint-plugin-defensive-coding" target="_blank" rel="noreferrer">eslint-plugin-defensive-coding ▷</a>
+            Gmiterko, D., <em>“On ensurance of coding patterns”</em> at GitHub -
+            Where the world builds software, March 2026{" "}
+            <a
+              className="btn-source"
+              href="https://github.com/dee-gmiterko/eslint-plugin-defensive-coding"
+              target="_blank"
+              rel="noreferrer"
+            >
+              eslint-plugin-defensive-coding ▷
+            </a>
           </li>
           <li>
-            Gmiterko, D., <em>“Dependency subgraphs and their application in image building”</em> at GitHub - Build software better, together., Jun 2026 <a className="btn-source" href="https://github.com/dee-gmiterko/yarn-plugin-prod-lockfiles" target="_blank" rel="noreferrer">yarn-plugin-prod-lockfiles ▷</a>
+            Gmiterko, D.,{" "}
+            <em>
+              “Dependency subgraphs and their application in image building”
+            </em>{" "}
+            at GitHub - Build software better, together., Jun 2026{" "}
+            <a
+              className="btn-source"
+              href="https://github.com/dee-gmiterko/yarn-plugin-prod-lockfiles"
+              target="_blank"
+              rel="noreferrer"
+            >
+              yarn-plugin-prod-lockfiles ▷
+            </a>
           </li>
         </ol>
       </Page>
 
       <ReferencesPage references={["linkedin", "github"]} />
-
     </Book>
-  )
-}
+  );
+};
 
 export default SlidesStyloma;
 

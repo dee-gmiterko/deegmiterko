@@ -5,4 +5,4 @@ export const useContentImage = (path: string) => {
   const image = imageMap[path];
   if (!image) throw new Error(`Image not found: ${path}`);
   return image;
-}
+};

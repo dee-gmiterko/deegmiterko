@@ -16,25 +16,26 @@ const tagColors = [
 ];
 
 const TagList: FunctionComponent<{
-  tags: Array<string>,
-  className?: string,
-}> = ({
-  tags, className
-}) => {
-  
+  tags: Array<string>;
+  className?: string;
+}> = ({ tags, className }) => {
   const tagColor = (tag: string) => {
     return tagColors[stringToUniqueIndex(tag, tagColors.length)];
-  }
+  };
 
   return (
     <div className={clsx("tag-list", className)}>
-      {tags.map(tag => (
-        <span key={tag} className="tag" style={{backgroundColor: tagColor(tag)}}>
+      {tags.map((tag) => (
+        <span
+          key={tag}
+          className="tag"
+          style={{ backgroundColor: tagColor(tag) }}
+        >
           {tag}
         </span>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default TagList;

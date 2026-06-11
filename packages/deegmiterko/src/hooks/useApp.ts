@@ -7,6 +7,6 @@ const useApp = () => {
     throw new Error("useApp must be used within a AppProvider");
   }
   return app;
-}
+};
 
 export default useApp;

@@ -1,22 +1,39 @@
-import React, { createContext, FunctionComponent, ReactNode, useState, useLayoutEffect, useRef, useEffect } from "react";
-import { BookStore } from "./bookContext";
+import React, {
+  createContext,
+  FunctionComponent,
+  ReactNode,
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+} from "react";
 import { IGatsbyImageData } from "gatsby-plugin-image";
+import { Anchor } from "../types";
+
+const ANCHOR_DEBOUNCE = 300;
 
 export type AppType = {
-  bookPageSize: number,
-  bookPageScale: number,
-  registerBook: (id: string, book: BookStore) => void,
-  books: Record<string, BookStore>,
-  setLightboxImage: (image: IGatsbyImageData) => void,
-  lightboxImage: IGatsbyImageData|undefined,
-  lightboxOpen: boolean,
-}
+  bookPageSize: number;
+  bookPageScale: number;
+  anchor: Anchor | undefined;
+  anchorVisible: (anchor: Anchor) => void;
+  setLightboxImage: (image: IGatsbyImageData | undefined) => void;
+  lightboxImage: IGatsbyImageData | undefined;
+  lightboxOpen: boolean;
+};
 
-const AppContext = createContext<AppType|undefined>(undefined);
+const AppContext = createContext<AppType | undefined>(undefined);
 
-export const AppProvider: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
-  const [size, setSize] = useState<[number, number]>([1200, 1200]);
-  const books = useRef<Record<string, BookStore>>({});
+export const AppProvider: FunctionComponent<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const [size, setSize] = useState<[number, number]>(() =>
+    typeof window !== "undefined"
+      ? [window.innerWidth, window.innerHeight]
+      : [1200, 1200],
+  );
+  const anchorDebounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const [anchor, setAnchor] = useState<Anchor>();
   const [lightboxImage, setLightboxImage] = useState<IGatsbyImageData>();
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -29,9 +46,29 @@ export const AppProvider: FunctionComponent<{ children: ReactNode }> = ({ childr
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  const registerBook = (id: string, book: BookStore) => {
-    books.current[id] = book;
-  }
+  const anchorVisible = useCallback((anchor: Anchor) => {
+    console.log(">>", anchor)
+    if (anchorDebounceRef.current) {
+      clearTimeout(anchorDebounceRef.current);
+    }
+    anchorDebounceRef.current = setTimeout(() => {
+      console.log("picked", anchor)
+      setAnchor(anchor);
+      history.pushState(
+        {},
+        `Dee Gmiterko - ${anchor.title}`,
+        `#${anchor.hash}`,
+      );
+    }, ANCHOR_DEBOUNCE);
+  }, []);
+
+  const setLightboxImageHandle = useCallback(
+    (image: IGatsbyImageData | undefined) => {
+      if (image) setLightboxImage(image);
+      setLightboxOpen(!!image);
+    },
+    [],
+  );
 
   const [width, height] = size;
   const bookPageSize = Math.min(width, height) - 32;
@@ -42,12 +79,9 @@ export const AppProvider: FunctionComponent<{ children: ReactNode }> = ({ childr
       value={{
         bookPageSize,
         bookPageScale,
-        registerBook,
-        books: books.current,
-        setLightboxImage: (image) => {
-          if(image) setLightboxImage(image);
-          setLightboxOpen(!!image);
-        },
+        anchor,
+        anchorVisible,
+        setLightboxImage: setLightboxImageHandle,
         lightboxImage,
         lightboxOpen,
       }}

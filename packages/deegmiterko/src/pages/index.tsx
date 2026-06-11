@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { PageProps, graphql } from "gatsby";
-import { useLocation } from "@reach/router";
 
 import Seo from "../components/Seo";
 import Banner from "../components/Banner";
@@ -16,48 +15,56 @@ import SlidesGenerativeDesign from "../components/slides/SlidesGenerativeDesign"
 import SlidesGameExperiments from "../components/slides/SlidesGameExperiments";
 import SlidesProfessional from "../components/slides/SlidesProfessional";
 import SlidesMe from "../components/slides/SlidesMe";
-import { SiteData } from "../types";
+import { ChatData, ChatMessage, SiteData } from "../types";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import SlidesStyloma from "../components/slides/SlidesStyloma";
 
 export type ThumbnailNode = {
-  name: string,
+  name: string;
   childImageSharp: {
-    gatsbyImageData: IGatsbyImageData,
-  },
-}
+    gatsbyImageData: IGatsbyImageData;
+  };
+};
 
 type IndexData = {
-  site: SiteData,
+  site: SiteData;
   content: {
     edges: {
       node: {
-        name: string,
-        childChatParsed: any,
-      },
-    }[],
-  },
+        name: string;
+        childChatParsed: ChatData;
+      };
+    }[];
+  };
   pageThumbnails: {
-    nodes: ThumbnailNode[],
-  },
-}
+    nodes: ThumbnailNode[];
+  };
+};
 
-const IndexPage = ({ data: { content, site, pageThumbnails } }: PageProps<IndexData>) => {
-  const location = useLocation();
-  const { books, bookPageSize, bookPageScale } = useApp();
+const IndexPage = ({
+  data: { content, site, pageThumbnails },
+}: PageProps<IndexData>) => {
+  const { bookPageSize, bookPageScale } = useApp();
 
   const contentMap = React.useMemo(() => {
-    const map: Record<string, any> = {};
-    content.edges.forEach(({node: {name, childChatParsed: {conversations}}}) => {
-      map[name] = conversations[0].messages;
-    });
+    const map: Record<string, ChatMessage[]> = {};
+    content.edges.forEach(
+      ({
+        node: {
+          name,
+          childChatParsed: { conversations },
+        },
+      }) => {
+        map[name] = conversations[0].messages;
+      },
+    );
     return map;
   }, [content]);
 
   // Group thumbnails by book id (memoized)
   const thumbnailsByBook = React.useMemo(() => {
     const byBook: Record<string, ThumbnailNode[]> = {};
-    pageThumbnails.nodes.forEach(node => {
+    pageThumbnails.nodes.forEach((node) => {
       const match = node.name.match(/^(.+)-(\d+)$/);
       if (match) {
         const bookId = match[1];
@@ -68,36 +75,27 @@ const IndexPage = ({ data: { content, site, pageThumbnails } }: PageProps<IndexD
       }
     });
     // Sort each book's thumbnails by index
-    Object.keys(byBook).forEach(bookId => {
+    Object.keys(byBook).forEach((bookId) => {
       byBook[bookId].sort((a, b) => {
-        const indexA = parseInt(a.name.match(/-(\d+)$/)?.[1] || '0');
-        const indexB = parseInt(b.name.match(/-(\d+)$/)?.[1] || '0');
+        const indexA = parseInt(a.name.match(/-(\d+)$/)?.[1] || "0");
+        const indexB = parseInt(b.name.match(/-(\d+)$/)?.[1] || "0");
         return indexA - indexB;
       });
     });
     return byBook;
   }, [pageThumbnails]);
 
-  useEffect(() => {
-    if(location.hash) {
-      setTimeout(() => {
-        const pageId = location.hash.substring(1);
-        for (const book of Object.values(books)) {
-          const pageIndex = book.pages.findIndex(({ pageId: p }) => p == pageId);
-          if(pageIndex >= 0) {
-            book.openToPage(pageIndex);
-            break;
-          }
-        }
-      }, 25);
-    }
-  }, [location.hash]);
-
   return (
     <>
       <HeaderAnnouncement siteMetadata={site.siteMetadata} />
-      
-      <div className="page-about" style={{"--book-page-size": `${bookPageSize}px`, "--book-page-scale": `${bookPageScale}`}}>
+
+      <div
+        className="page-about"
+        style={{
+          "--book-page-size": `${bookPageSize}px`,
+          "--book-page-scale": `${bookPageScale}`,
+        }}
+      >
         <Banner siteMetadata={site.siteMetadata} />
 
         <main id="about">
@@ -106,16 +104,20 @@ const IndexPage = ({ data: { content, site, pageThumbnails } }: PageProps<IndexD
           <SlidesStyloma thumbnails={thumbnailsByBook["styloma"]} />
 
           <Conversation messages={contentMap["styloma"]} />
-          
+
           <SlidesArtful thumbnails={thumbnailsByBook["artful"]} />
 
           <Conversation messages={contentMap["artful"]} />
 
-          <SlidesGenerativeDesign thumbnails={thumbnailsByBook["generative-design"]} />
+          <SlidesGenerativeDesign
+            thumbnails={thumbnailsByBook["generative-design"]}
+          />
 
           <Conversation messages={contentMap["generative-design"]} />
 
-          <SlidesGameExperiments thumbnails={thumbnailsByBook["game-experiments"]} />
+          <SlidesGameExperiments
+            thumbnails={thumbnailsByBook["game-experiments"]}
+          />
 
           <Conversation messages={contentMap["game-experiments"]} />
 
@@ -128,19 +130,19 @@ const IndexPage = ({ data: { content, site, pageThumbnails } }: PageProps<IndexD
           <Conversation messages={contentMap["me"]} />
         </main>
 
-        <Contact siteMetadata={site.siteMetadata} />
+        <Contact />
 
         <Footer siteMetadata={site.siteMetadata} />
       </div>
 
       <LightboxImage />
     </>
-  )
+  );
 };
 
 export default IndexPage;
 
-export const Head = ({ data: {site} }) => (
+export const Head = ({ data: { site } }: { data: { site: SiteData } }) => (
   <Seo siteMetadata={site.siteMetadata} />
 );
 
@@ -160,9 +162,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    content: allFile(
-      filter: {sourceInstanceName: {eq: "content"}}
-    ) {
+    content: allFile(filter: { sourceInstanceName: { eq: "content" } }) {
       edges {
         node {
           name
@@ -181,7 +181,7 @@ export const pageQuery = graphql`
       }
     }
     pageThumbnails: allFile(
-      filter: {sourceInstanceName: {eq: "pageThumbnails"}}
+      filter: { sourceInstanceName: { eq: "pageThumbnails" } }
     ) {
       nodes {
         name

@@ -1,14 +1,19 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
-import ImageDepthMap from 'react-depth-map';
+import ImageDepthMap from "react-depth-map";
 
+import { SiteMetadata } from "../types";
 import imgBanner from "../images/banner.jpg";
 import depthBanner from "../images/banner-depth.jpg";
 
-const Banner = ({ siteMetadata }) => {
+interface Props {
+  siteMetadata: SiteMetadata;
+}
+
+const Banner = ({ siteMetadata }: Props) => {
   return (
     <header className="banner">
       <div className="profile">
@@ -26,10 +31,11 @@ const Banner = ({ siteMetadata }) => {
         */}
       </div>
       <div className="basic-info">
-
-        <h1 alt={siteMetadata.title} aria-label={siteMetadata.title}>
+        <h1 aria-label={siteMetadata.title}>
           <span className="name-variations">
-            <span className="main">D<span className="deff">ee</span></span>
+            <span className="main">
+              D<span className="deff">ee</span>
+            </span>
             <span className="alternate">Dominik</span>
           </span>
           <span> Gmiterko</span>
@@ -49,24 +55,17 @@ const Banner = ({ siteMetadata }) => {
 
           <div className="quick-socials">
             <OutboundLink href="https://instagram.com/dee.gmiterko">
-              <FontAwesomeIcon icon={faInstagram}>
-                Instagram
-              </FontAwesomeIcon>
+              <FontAwesomeIcon icon={faInstagram} aria-label="Instagram" />
             </OutboundLink>
             <OutboundLink href="https://github.com/dee-gmiterko">
-              <FontAwesomeIcon icon={faGithub}>
-                Github
-              </FontAwesomeIcon>
+              <FontAwesomeIcon icon={faGithub} aria-label="Github" />
             </OutboundLink>
-            <AnchorLink to={`/tree`}>
-              More
-            </AnchorLink>
+            <AnchorLink to={`/tree`}>More</AnchorLink>
           </div>
         </div>
-
       </div>
     </header>
   );
-}
+};
 
 export default Banner;

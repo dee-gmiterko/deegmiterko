@@ -4,7 +4,7 @@ import { SiteMetadata } from "../types";
 
 type FooterType = {
   siteMetadata: SiteMetadata;
-}
+};
 
 const Footer: FunctionComponent<FooterType> = ({ siteMetadata }) => {
   return (
@@ -12,6 +12,6 @@ const Footer: FunctionComponent<FooterType> = ({ siteMetadata }) => {
       © {moment().year()} {siteMetadata.author}
     </footer>
   );
-}
+};
 
 export default Footer;
