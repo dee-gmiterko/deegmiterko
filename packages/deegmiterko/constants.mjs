@@ -1,5 +1,5 @@
 
-exports.pageCounts = {
+export const pageCounts = {
   'styloma': 7,
   'artful': 9,
   'generative-design': 14,

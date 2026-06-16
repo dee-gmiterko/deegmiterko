@@ -27,7 +27,10 @@ export const useContentImages = () => {
   }>(graphql`
     query {
       contentImages: allFile(
-        filter: { sourceInstanceName: { eq: "contentImages" } }
+        filter: {
+          sourceInstanceName: { eq: "contentImages" }
+          extension: { in: ["jpg", "jpeg", "png", "gif", "webp", "avif"] }
+        }
       ) {
         edges {
           node {
@@ -45,7 +48,10 @@ export const useContentImages = () => {
         }
       }
       contentImagesSmall: allFile(
-        filter: { sourceInstanceName: { eq: "contentImages" } }
+        filter: {
+          sourceInstanceName: { eq: "contentImages" }
+          extension: { in: ["jpg", "jpeg", "png", "gif", "webp", "avif"] }
+        }
       ) {
         edges {
           node {
@@ -54,7 +60,6 @@ export const useContentImages = () => {
               gatsbyImageData(
                 layout: FULL_WIDTH
                 placeholder: BLURRED
-                width: 600
                 outputPixelDensities: [0.25, 0.5, 1.0, 2.0]
               )
             }

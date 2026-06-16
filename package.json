@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/dee-gmiterko/deegmiterko/issues"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.1.0",
+  "resolutions": {
+    "eslint": "^9.7.0"
+  }
 }

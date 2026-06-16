@@ -47,12 +47,10 @@ export const AppProvider: FunctionComponent<{ children: ReactNode }> = ({
   }, []);
 
   const anchorVisible = useCallback((anchor: Anchor) => {
-    console.log(">>", anchor)
     if (anchorDebounceRef.current) {
       clearTimeout(anchorDebounceRef.current);
     }
     anchorDebounceRef.current = setTimeout(() => {
-      console.log("picked", anchor)
       setAnchor(anchor);
       history.pushState(
         {},

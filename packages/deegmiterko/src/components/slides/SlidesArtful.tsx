@@ -165,7 +165,7 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
                     layout="fixed"
                     alt="DevinatArt"
                     backgroundColor="transparent"
-                    placeholder="tracedSVG"
+
                   />
                 </a>
               </div>

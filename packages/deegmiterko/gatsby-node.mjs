@@ -1,13 +1,7 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+import path from 'path';
+import { pageCounts } from './constants.mjs';
 
-const path = require('path');
-const { pageCounts } = require('./constants.js');
-
-exports.createPages = async ({ actions }) => {
+export const createPages = async ({ actions }) => {
   const { createPage } = actions;
 
   Object.entries(pageCounts).forEach(([bookId, pageCount]) => {

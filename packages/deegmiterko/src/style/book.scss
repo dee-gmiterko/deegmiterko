@@ -1,6 +1,6 @@
 :root {
   --book-page-size: max(min(calc(100vh - 1rem), calc(100vw - 1rem)), 800px);
-  --book-page-scale: calc(var(--book-page-size) / 1200px);
+  --book-page-scale: calc(var(--book-page-size) / 1200);
 }
 
 body {

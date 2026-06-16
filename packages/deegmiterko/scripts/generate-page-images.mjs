@@ -1,10 +1,10 @@
-const puppeteer = require('puppeteer');
-const fs = require('fs');
-const path = require('path');
-const sharp = require('sharp');
-const { pageCounts } = require('../constants.js');
+import puppeteer from 'puppeteer';
+import fs from 'fs';
+import path from 'path';
+import sharp from 'sharp';
+import { pageCounts } from '../constants.mjs';
 
-const OUTPUT_DIR = path.join(__dirname, '../src/images/page-thumbnails');
+const OUTPUT_DIR = path.join(import.meta.dirname, '../src/images/page-thumbnails');
 
 async function generateImages() {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -16,7 +16,7 @@ async function generateImages() {
   for (const [bookId, pageCount] of Object.entries(pageCounts)) {
     for (let i = 0; i < pageCount; i++) {
       const outputPath = path.join(OUTPUT_DIR, `${bookId}-${i}.png`);
-        
+
       const url = `http://localhost:8000/render/${bookId}/${i}`;
       console.log(`Rendering ${bookId}/${i}...`);
 

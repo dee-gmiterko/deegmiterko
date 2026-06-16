@@ -1,11 +1,11 @@
-const dotenv = require("dotenv");
-const path = require("path");
+import dotenv from "dotenv";
+import path from "path";
 
 if (process.env.ENVIRONMENT !== "production") {
   dotenv.config();
 }
 
-module.exports = {
+const config = {
   siteMetadata: {
     title: `Dee Gmiterko – Artist, Coder, Me`,
     description: `Exploring the world and creating stuff. I'm just a fey who loves to code, create art, and share my experiences with the world.`,
@@ -24,24 +24,23 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `contentImages`,
-        path: path.join(__dirname, `src`, `images/content`),
+        path: path.join(import.meta.dirname, `src`, `images/content`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pageThumbnails`,
-        path: path.join(__dirname, `src`, `images/page-thumbnails`),
+        path: path.join(import.meta.dirname, `src`, `images/page-thumbnails`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: path.join(__dirname, `src`, `content`),
+        path: path.join(import.meta.dirname, `src`, `content`),
       },
     },
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-sharp`,
@@ -142,3 +141,5 @@ module.exports = {
     }
   ],
 }
+
+export default config;

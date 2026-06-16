@@ -1,5 +1,4 @@
 import React, { FunctionComponent } from "react";
-import Helmet from "react-helmet";
 
 import siteImage from "../images/og-banner.jpg";
 import { SiteMetadata } from "../types";
@@ -14,38 +13,17 @@ const Seo: FunctionComponent<{
   const keywords = siteMetadata.keywords;
 
   return (
-    <Helmet
-      title={title ? `${title} | ${siteName}` : siteName}
-      meta={[
-        {
-          name: `description`,
-          content: siteDescription,
-        },
-        {
-          property: `og:title`,
-          content: siteName,
-        },
-        {
-          property: `og:description`,
-          content: siteDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:image`,
-          content: siteImage,
-        },
-        {
-          name: `keywords`,
-          content: keywords.join(`, `),
-        },
-      ]}
-    >
+    <>
       <html lang="en" />
       <body className={canGoDark ? "can-go-dark" : undefined} />
-    </Helmet>
+      <title>{title ? `${title} | ${siteName}` : siteName}</title>
+      <meta name="description" content={siteDescription} />
+      <meta property="og:title" content={siteName} />
+      <meta property="og:description" content={siteDescription} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={siteImage} />
+      <meta name="keywords" content={keywords.join(`, `)} />
+    </>
   );
 };
 
