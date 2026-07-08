@@ -11,6 +11,9 @@
 \usepackage{tikz}
 \usepackage{fontawesome5}
 
+\input{glyphtounicode}
+\pdfgentounicode=1 
+
 % moderncv themes
 \moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{my}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
@@ -22,7 +25,7 @@
 %\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
 
 % adjust the page margins
-\usepackage[scale=0.75]{geometry}
+\usepackage[scale=0.8]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 \newcommand{\iconHref}{\raise.2ex\hbox{{\tiny\faLink}}\hspace{0.2em}}
@@ -61,7 +64,7 @@
 
 
 \section{Experience}
-\cventry{2024--2025}{Web Full-stack}{Anthology}{Brno}{}{Developing new features for education accessibility platform \href{https://www.blackboard.com/products/teaching-and-learning/learning-effectiveness/anthology-ally}{\iconHref{}Ally}}
+\cventry{2024--2025}{Web Full-stack}{Anthology}{Brno}{}{Developing new features for education accessibility platform \href{https://www.blackboard.com/solutions/ally}{\iconHref{}Ally}}
 \cventry{2022--2024}{Product developer}{Freelance}{}{}{Directly assisting clients with tailored full-stack solutions "from analysis to analytics"}
 \cventry{2019--2022}{Data Engineer}{Kiwi.com}{Brno}{}{Building and maintaining data pipelines, contributing to the formation of a data warehouse, and assisting with analysis and visualization, while ensuring data quality}
 \cventry{2017--2019}{Web Frontend}{InQool a.s.}{Brno}{}{Creating custom web applications for e-shops. Notably, I've worked on \href{https://www.brnoid.cz/}{\iconHref{}Brno iD}}
@@ -80,14 +83,16 @@
 \cvitem{}{A newly built system allowing users to process and validate meteorological data while enhancing the analytical capabilities.}
 \cvitem{Url}{\href{https://is.muni.cz/th/vaev3/tool-supporting-analysis-of-meteorology-data.pdf}{\iconHref{}Full text}}
 
-\clearpage
-
 \section{Bachelors thesis}
 \cvitem{Title}{\emph{Techniques for measuring similarity of educational items}}
 \cvitem{Supervisor}{doc. Mgr. Radek Pelánek, Ph.D.}
 \cvitem{}{Using machine learning to measure the similarity of questions in tutoring systems utilizing only the correctness of answers from users.}
 \cvitem{Url}{\href{https://is.muni.cz/th/l5dzj/gmiterko-similarity.pdf}{\iconHref{}Full text}, excerpt: \href{http://ienze.me/tmsei\_thesis/}{\iconHref{}ienze.me/tmsei\_thesis}}
 
+\clearpage
+
+\section{About}
+\cvitem{}{Even outside of work, I like to fill my time with a variety of projects, hobbies, and things to learn. I enjoy urbexing and working in nature, hanging out in unusual places, spending my time outside and around other people. Every couple weeks I play boardgames with my friends and hang out.}
 
 % banner
 \begin{center}
@@ -99,48 +104,74 @@
 }
 \end{center}
 
-
 \section{Skills}
 \begin{cvcolumns}
   \cvcolumn{User-facing}{\begin{itemize}
-    \item Javascript, Typescript,
+    \item JavaScript, TypeScript,
     \item React, WebGL, Unity,
     \item CSS and preprocessors,
-    \item UI/UX design.
+    \item CI/CD pipelines.
   \end{itemize}}
   \cvcolumn{Business logic}{\begin{itemize}
-    \item Python, Java,
-    \item SQL databases,
-    \item Document stores,
-    \item C++, Testing.
+    \item Python, Java, S3,
+    \item PostgreSQL, MongoDB,
+    \item AI, Machine learning,
+    \item C++, Testing, Kafka.
   \end{itemize}}
   \cvcolumn{Operations}{\begin{itemize}
-    \item Airflow, Jupyter, DBT,
-    \item AI, Machine learning,
-    \item Google Cloud, Docker,
-    \item Linux, Kubernetes.
+    \item Linux, Kubernetes,
+    \item Grafana, Terraform,
+    \item GCP, AWS, Docker,
+    \item Airflow, Jupyter.
   \end{itemize}}
 \end{cvcolumns}
 \cvitemwithcomment{\textit{Languages}}{English \textit{(Fluent)}, Slovak \textit{(Native)}, Czech}{}
 
-% \section{Languages}
-% \cvitemwithcomment{English}{Fluent}{}
-% \cvitemwithcomment{Slovak}{Native}{}
-
-
-
-% \section{Interests}
-% \cvitem{Organizing}{Organizing of competitions, primarily online logic team competition InterLoS}
-% \cvitem{Travel}{I enjoy discovering new hidden places}
-% \cvitem{Drawing}{\includegraphics[height=10pt]{1f58d}}
-
-
 \section{Last notable project}
-\cventry{2026}{Styloma}{Fashion search engine and clothing discovery}{\href{https://styloma.deegmiterko.com}{\iconHref{}styloma.deegmiterko.com}}{}{}{}
-\cvitem{}{\textit{A clothing aggregator providing lookup by reverse image search as well as deeper interpretation of textual descriptions. Consisting of }}
+\cventry{2025-2026}{Styloma}{Fashion search engine and clothing discovery}{}{}{}{}
+\cvitem{}{A clothing aggregator providing lookup by reverse image search as well as deeper interpretation of textual descriptions. Consisting of}
 \cvlistdoubleitem{Retailer data ingestion,}{Scheduling of scraping,}
-\cvlistdoubleitem{Image and semantic embedding,}{Consolidation of offers by different retailers,}
+\cvlistdoubleitem{Image and semantic embedding,}{Consolidation of competing offers,}
 \cvlistdoubleitem{Data pipelines,}{AI model training.}
+
+% \vspace{0.25cm}
+% \cvitem{Arcitecture}{Being built as a monorepo of microservices, communicating over Kafka event bus allows it to be long-term maintainable and evolving.}
+
+% \vspace{0.25cm}
+% \cvitem{Agentic}{
+%   Custom local development server supporting agentic development, review, validation and verification, and system operations supprtted by:
+%   \begin{itemize}
+%     \item Multi agent support: Claude Code, Cline, OpenCode,\ldots
+%     \item MCP integration allowing agent access to system state, while ensurring,
+%     \item Static analysis of code validating extensive custom rule set,
+%     \item Followed by unit, integration and end to end testing as part of the envirornment,
+%     \item As well as ops like inetegration of retailers, data quality evaluatitons\ldots
+%   \end{itemize}
+% }
+
+% \vspace{0.25cm}
+% \cvitem{Scraping}{
+%   Custom tooling that can be composed together to match the best approach for particular retailer, choosing:
+%   \begin{itemize}
+%     \item Access: Fetch, REST, Pupeteer, GraphQl, External scrapers,\ldots
+%     \item Parsing: HTML, JSON, XML, Dedicated known platforms like Shopify,\ldots
+%     \item Mapping of retailer taxonomies to our shared ones,
+%     \item Data quality rules tracking.
+%   \end{itemize}
+% }
+
+% \vspace{0.25cm}
+% \cvitem{Dev-Ops}{
+%   Reliability is ensured by:
+%   \begin{itemize}
+%     \item NixOs for declarative reproducible server instances self-hosting GitHub runners, artifact registries and Kubernetes cluster,
+%     \item Workflows for verification image building and applying of Helm charts,
+%     \item Observability with Prometheus metrics, Sentry issues, and Loki logging.
+%   \end{itemize}
+% }
+
+\vspace{0.125cm}
+\cvitem{Url}{\href{https://deegmiterko.com/\#styloma-ai-fashion-search}{\iconHref{}More info about project}, beta launch: \href{https://styloma.deegmiterko.com/}{\iconHref{}styloma.deegmiterko.com}}
 
 % \section{References}
 % \begin{cvcolumns}
@@ -168,7 +199,7 @@
 % IMAGE \/\/\/
 
 %\begin{tikzpicture}[remember picture,overlay,shift={(current page.north east)}]
-%\node[anchor=north east,xshift=4pt,yshift=-650pt]{\includegraphics[width=\paperwidth]{img/cv_bg}};
+%\node[anchor=north east,xshift=4pt,yshift=-700pt]{\includegraphics[width=\paperwidth]{img/cv_bg}};
 %\end{tikzpicture}
 
 \clearpage
