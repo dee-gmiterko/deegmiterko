@@ -1,4 +1,4 @@
-VARIANTS := plain frontend agentic frontend-agentic dev-ops scraping ecommerce platform-improve game-design-numerical
+VARIANTS := plain frontend agentic frontend-agentic dev-ops scraping ecommerce platform-improve game-design-numerical data-analytics quality-assurance data-engineer data-engineer-agentic backend
 OUT := 2026
 NAME := Dominik Gmiterko
 
