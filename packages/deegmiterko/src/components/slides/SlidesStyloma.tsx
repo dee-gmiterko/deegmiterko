@@ -176,6 +176,46 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         </Suspense>
       </Page>
 
+      <Page title="Reviewing at scale">
+        <p>
+          Agents produce changes faster than anyone can read them. And review
+          is the one step of the loop that can't be delegated, so it has to be
+          done properly, not skimmed. A pull request of a few thousand lines in
+          a web diff, with no way to jump to a definition, is exactly where
+          that goes wrong. So I review in the real repository instead.
+        </p>
+        <div className="grow"></div>
+        <div className="example">
+          <div className="example-title">
+            <h4>Gepard (2026)</h4>
+            <a
+              className="btn-source"
+              href="https://github.com/dee-gmiterko/gepard"
+              target="_blank"
+              rel="noreferrer"
+            >
+              &lt;/&gt; Browse source code
+            </a>
+          </div>
+          <p>
+            A desktop app for reviewing large pull requests in a full local
+            clone. The whole repository is searchable, language servers give
+            definitions and references, and the review scope is a target - a
+            pull request, one of its commits, or a path. Files are walked from
+            the keyboard and marked viewed as you go; comments are drafted
+            locally and pushed to GitHub as a single review in one sync. Open
+            source.
+          </p>
+          <p className="text-center">
+            <LightboxButton
+              path="gepard/screenshot.png"
+              alt="Gepard reviewing a pull request: file tree with viewed marks, diff view, floating viewed and sync controls, file details panel"
+              buttonClassName="w-80 screenshot-border"
+            />
+          </p>
+        </div>
+      </Page>
+
       <Page title="Bibliography" id="styloma-bibliography">
         <StylomaTimeline />
         <div className="grow" />

@@ -1,6 +1,6 @@
 
 export const pageCounts = {
-  'styloma': 7,
+  'styloma': 8,
   'artful': 9,
   'generative-design': 14,
   'game-experiments': 12,

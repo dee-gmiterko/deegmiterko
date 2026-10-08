@@ -9,8 +9,6 @@
     "develop": "gatsby develop",
     "typecheck": "tsc --noEmit",
     "typecheck:test": "tsc -p tsconfig.test.json --noEmit",
-    "lint": "eslint src --ext .ts,.tsx --cache",
-    "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json}\"",
     "format:fix": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json}\"",
     "start": "npm run develop",
@@ -26,11 +24,6 @@
     "alea": "^1.0.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.4.2",
-    "eslint": "^10.4.1",
-    "eslint-plugin-formatjs": "^6.4.15",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
     "gatsby": "^5.16.1",
     "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-facebook-multi-pixels": "^1.1.2",
@@ -68,7 +61,6 @@
     "prettier": "^3.8.4",
     "puppeteer": "^24.43.0",
     "sharp": "^0.34.5",
-    "typescript-eslint": "^8.61.0",
     "webpack": "^5.106.2"
   },
   "keywords": [
