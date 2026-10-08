@@ -210,7 +210,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <LightboxButton
               path="gepard/screenshot.png"
               alt="Gepard reviewing a pull request: file tree with viewed marks, diff view, floating viewed and sync controls, file details panel"
-              buttonClassName="w-80 screenshot-border"
+              buttonClassName="w-80"
             />
           </p>
         </div>
