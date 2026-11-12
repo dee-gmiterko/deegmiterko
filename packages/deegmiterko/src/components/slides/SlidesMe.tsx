@@ -113,10 +113,10 @@ const SlidesMe: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
       </Page>
 
       <Page
-        title="Givigng life it's fullest"
+        title="Giving life its fullest"
         titleNode={
           <div className="order-4">
-            <h3>Givigng life it's fullest</h3>
+            <h3>Giving life its fullest</h3>
             <ul>
               <li>Cooking</li>
               <li>Urbex places</li>

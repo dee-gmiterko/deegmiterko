@@ -14,7 +14,7 @@ const SlidesProfessional: FunctionComponent<{
     <Book bookId="professional" thumbnails={thumbnails}>
       <TitlePage title="Professional" subtitle="AKA “a real job”" lecture={5}>
         <p>
-          Working with others may provide it's own challenges, but it's
+          Working with others may provide its own challenges, but it's
           essential to scale the things you can do well beyond what you could do
           alone.
         </p>
@@ -28,7 +28,7 @@ const SlidesProfessional: FunctionComponent<{
         </p>
         <p>
           Their development is commonly split into two parts, frontend (what
-          users sees in their browser) and backend (what happens on the server).
+          users see in their browser) and backend (what happens on the server).
           I've worked on both.
         </p>
         <div className="example-bar">
@@ -49,7 +49,7 @@ const SlidesProfessional: FunctionComponent<{
               "Nette",
               "E-commerce",
               "HTML",
-              "E-mail camapigns",
+              "E-mail campaigns",
             ]}
           />
           <p>
@@ -58,7 +58,7 @@ const SlidesProfessional: FunctionComponent<{
           </p>
         </div>
         <p>
-          Later during my studies at MUNI I've joined InQool in a part time
+          Later during my studies at MUNI I joined InQool in a part-time
           capacity:
         </p>
         <div className="example-bar">
@@ -75,7 +75,7 @@ const SlidesProfessional: FunctionComponent<{
             tags={[
               "Frontend",
               "Web",
-              "Javascript",
+              "JavaScript",
               "CSS",
               "PrestaShop",
               "E-commerce",
@@ -83,10 +83,10 @@ const SlidesProfessional: FunctionComponent<{
             ]}
           />
           <p>
-            Builing custom web applications for eshops. Some notable projects
+            Building custom web applications for eshops. Some notable projects
             I've worked on include <a href="https://www.brnoid.cz/">BrnoID</a>
             and <a href="https://kreativator.cz/">Kreativator</a>. ReactJS
-            applicaiton for customizing prints on garments.
+            application for customizing prints on garments.
           </p>
         </div>
       </Page>
@@ -94,7 +94,7 @@ const SlidesProfessional: FunctionComponent<{
       <Page title="Data engineering">
         <p>
           It's one thing to work on a closed order like an eshop that is more or
-          less built and delivered once. But it's a whole different story to has
+          less built and delivered once. But it's a whole different story to have
           a little bit of sway on a constantly evolving product while it's being
           used by thousands of people.
         </p>
@@ -138,7 +138,7 @@ const SlidesProfessional: FunctionComponent<{
             The quintessential tool for managing data workflows.
           </p>
           <p>
-            As a link between server platform underneat and the data processing
+            As a link between server platform underneath and the data processing
             scripts on top, it's a great tool for managing data workflows. At
             this time I've been using it a lot in order to:
           </p>
@@ -156,7 +156,7 @@ const SlidesProfessional: FunctionComponent<{
           single company, I've had the opportunity to work on a variety of
           projects. But it also means I had to wear many hats each day. I have
           done everything from gathering requirements, designing, developing,
-          testing, deploying, and maintaining. Doing it it all is not always
+          testing, deploying, and maintaining. Doing it all is not always
           easy, but it definitely teaches you your limits. ( For me it's{" "}
           <span className="d-inline-block">
             <TagList tags={["Accounting", "Marketing & Sales"]} />
@@ -186,7 +186,7 @@ const SlidesProfessional: FunctionComponent<{
             ]}
           />
           <p>
-            I started my freelancing by developing small blockchain based
+            I started my freelancing by developing small blockchain-based
             products, later getting into bigger game projects.
           </p>
           <ul className="two-columns">
@@ -207,7 +207,7 @@ const SlidesProfessional: FunctionComponent<{
             tags={[
               "Static websites",
               "Application",
-              "Typescript",
+              "TypeScript",
               "Video streaming",
               "Adaptive learning",
               "User analytics",
@@ -261,7 +261,7 @@ const SlidesProfessional: FunctionComponent<{
               <li>
                 <p className="mb-1">♣️ Public websites</p>
                 <ul className="two-columns">
-                  <li>Static ecommerece website</li>
+                  <li>Static ecommerce website</li>
                   <li>To bring new people in</li>
                 </ul>
               </li>
@@ -352,7 +352,7 @@ const SlidesProfessional: FunctionComponent<{
             ]}
           />
           <p>
-            Teached me architectures, principles and methods of designing
+            Taught me architectures, principles and methods of designing
             integrated systems and data processing
           </p>
         </div>
@@ -362,7 +362,7 @@ const SlidesProfessional: FunctionComponent<{
             Techniques for measuring similarity of educational items
           </h5>
           <p>
-            Focuses on measuring of item similarity of questions from an
+            Focuses on measuring of item similarity of questions from
             adaptive tutoring systems utilizing correctness of answers from
             students.
           </p>
@@ -429,7 +429,7 @@ const SlidesProfessional: FunctionComponent<{
             Tool Supporting Analysis of Meteorology Data
           </h5>
           <p>
-            A newly built system allowin users to process and validate
+            A newly built system allowing users to process and validate
             meteorological data while enhancing the analytical capabilities on
             the resulting dataset.
           </p>

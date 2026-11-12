@@ -17,7 +17,7 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
     <Book bookId="artful" thumbnails={thumbnails}>
       <TitlePage
         title="Art,"
-        subtitle="it's media"
+        subtitle="its media"
         titleClassName="bigger"
         lecture={2}
       >
@@ -34,8 +34,8 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <h4>Snake necklace (2011)</h4>
           </div>
           <p>
-            One of the very first wearable pieces I made - an 8 cm long snake
-            like necklace I made from a soft metal I found.
+            One of the very first wearable pieces I made - an 8 cm long snake-like
+            necklace I made from a soft metal I found.
           </p>
           <LightboxButton path="snake_necklace.jpg" alt="A snake necklace" />
         </div>
@@ -45,8 +45,8 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <h4>Vest (2024)</h4>
           </div>
           <p>
-            A contemporary victorian vest. The concept design was inspired by
-            the victorian era but with a modern twist and techniques.
+            A contemporary Victorian vest. The concept design was inspired by
+            the Victorian era but with a modern twist and techniques.
           </p>
           <div className="col-4">
             <div>
@@ -81,7 +81,7 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
       <Page title="Traditional">
         <p>
           When asked about the topic most people would think of good old paper
-          or a canvas. It seems like a unseparrable part of art. Over the time I
+          or a canvas. It seems like an inseparable part of art. Over the time I
           have used many physical techniques. But covering colored paper by
           layering impressions of hard pastels still stands up to me.
         </p>
@@ -163,7 +163,7 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
                   <StaticImage
                     src="../../images/content/hard-pastel/deviantart.png"
                     layout="fixed"
-                    alt="DevinatArt"
+                    alt="DeviantArt"
                     backgroundColor="transparent"
 
                   />
@@ -235,9 +235,9 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         >
           <h4>NAS server</h4>
           <p>
-            With a spare old laptop and abundance of unconventional adapters
-            avaliable i found it too inspiring to pass on an oppotunity to
-            convert it into a self sufficient NAS server. After couple days of
+            With a spare old laptop and an abundance of unconventional adapters
+            available I found it too inspiring to pass on an opportunity to
+            convert it into a self-sufficient NAS server. After a couple of days of
             measuring, drawing, printing, (lots of waiting), and putting it
             together it was ready to be loaded with 32TB of drives (24TB of
             usable space).

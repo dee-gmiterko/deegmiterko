@@ -20,7 +20,7 @@ const SlidesGameExperiments: FunctionComponent<{
       <TitlePage title="Games and Experiments" lecture={4}>
         <p>
           Games were always pushing the boundaries of what is possible. All in
-          the persuit of telling a story, or creating an unforgetable
+          the pursuit of telling a story, or creating an unforgettable
           experience.
         </p>
       </TitlePage>
@@ -31,7 +31,7 @@ const SlidesGameExperiments: FunctionComponent<{
           <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">
             Conway's Game of Life
           </a>{" "}
-          is a famous 0-player game turning few simple rules into a living,
+          is a famous zero-player game turning a few simple rules into a living,
           breathing world.
         </p>
         <p></p>
@@ -48,14 +48,14 @@ const SlidesGameExperiments: FunctionComponent<{
           </div>
           <p>
             Based on The Game of Life, I've created a simple visual-hash
-            function that turns any string or file into it's unique
-            representation. It can either output an image respresenting the data
-            or a compress it into string.
+            function that turns any string or file into its unique
+            representation. It can either output an image representing the data
+            or compress it into a string.
           </p>
           <p>
             <em className="smaller">
               Disclaimer: I don't recommend using it tho, as I haven't validated
-              that it's uniformity or it's fitness for any secure use.
+              that its uniformity or its fitness for any secure use.
             </em>
           </p>
           <p>
@@ -69,13 +69,13 @@ const SlidesGameExperiments: FunctionComponent<{
 
       <Page title="Engine or not to engine?" level={2} titleClassName="mb-2">
         <p>
-          The age old question that seems to be brough out every time a new
+          The age old question that seems to be brought up every time a new
           person enters the game development community.
         </p>
         <div className="grow"></div>
         <div className="example">
           <div className="example-title">
-            <h4>Open GL foreset (2017)</h4>
+            <h4>OpenGL forest (2017)</h4>
             <a
               className="btn-source"
               href="https://github.com/dee-gmiterko/opengl-forest"
@@ -84,8 +84,8 @@ const SlidesGameExperiments: FunctionComponent<{
             </a>
           </div>
           <p>
-            A low level implementation of a 3D scene using Open GL you can walk
-            around in. It implements baisc model loading, lighting, reflections,
+            A low level implementation of a 3D scene using OpenGL you can walk
+            around in. It implements basic model loading, lighting, reflections,
             and animations.
           </p>
           <p>
@@ -100,7 +100,7 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Web constrains">
+      <Page title="Web constraints">
         <p>
           You may find yourself in a situation where you have to work with
           limited capabilities. A great example of this is WebGL - a web-based
@@ -120,7 +120,7 @@ const SlidesGameExperiments: FunctionComponent<{
           <p>
             A simple game that I've created using{" "}
             <a href="https://pixijs.com/">PixiJS</a> library on top of WebGL,
-            featuring an endless runner where you are in contorl of switching
+            featuring an endless runner where you are in control of switching
             train tracks to avoid obstacles.
           </p>
           <p>
@@ -142,7 +142,7 @@ const SlidesGameExperiments: FunctionComponent<{
 
       <Page title="Modding">
         <p>
-          One of the best known games that allow you to heavily modify it's
+          One of the best known games that allow you to heavily modify its
           content is Minecraft. Which I of course extensively used to create my
           own mods, plugins, and servers at the time.
         </p>
@@ -152,18 +152,18 @@ const SlidesGameExperiments: FunctionComponent<{
             <h4>Bukkit plugins (2010 – 2013)</h4>
           </div>
           <p>
-            I've made many plugins for Minecraft servers in that time. Includin
-            few public ones that gained decent popularity. But as that was over
+            I've made many plugins for Minecraft servers in that time. Including
+            a few public ones that gained decent popularity. But as that was over
             a decade ago, they are no longer maintained and fell into obscurity.
             For example:
           </p>
           <ul>
             <li>Adding "radiation" and protection</li>
-            <li>"Residences" that can be bough, sold, and rented</li>
+            <li>"Residences" that can be bought, sold, and rented</li>
             <li>Building "scarecrows" scaring away mobs</li>
           </ul>
         </div>
-        <h4>Client side mods and resoruce packs</h4>
+        <h4>Client side mods and resource packs</h4>
         <div className="example-bar-w-image">
           <div className="example-title">
             <h4>Modding (2012 – 2013)</h4>
@@ -184,7 +184,7 @@ const SlidesGameExperiments: FunctionComponent<{
         <p>
           On the other end of the spectrum, you have game engines that are
           purpose built and can significantly speed up your development. Unity
-          is a an example of a game engine that allows you to quickly create 3D
+          is an example of a game engine that allows you to quickly create 3D
           and 2D games.
         </p>
         <div className="grow" />
@@ -196,9 +196,9 @@ const SlidesGameExperiments: FunctionComponent<{
             </a>
           </div>
           <p>
-            During my freelancing period I've worked on a blockchain based card
+            During my freelancing period I worked on a blockchain based card
             collecting game. My area of focus was integration of distributed
-            systems, creating WebGl port, websocket based networking, and
+            systems, creating WebGL port, websocket based networking, and
             backend. But I've also fixed several visual issues and replaced card
             asset loading with a more efficient method.
           </p>
@@ -227,7 +227,7 @@ const SlidesGameExperiments: FunctionComponent<{
           </div>
           <p>
             A very common practice is to pack as much as possible into a limited
-            space, trying to hide it's borders in naturally looking
+            space, trying to hide its borders in natural-looking
             surroundings.
           </p>
           <p className="text-center">
@@ -243,7 +243,7 @@ const SlidesGameExperiments: FunctionComponent<{
       <Page title="Asset pipeline">
         <p>
           Without any assets to look at, your game world would be a very boring
-          place. But creating them is extremely time consuming process. So there
+          place. But creating them is an extremely time-consuming process. So there
           always was this drive to automate it as much as possible.
         </p>
         <div className="grow" />
@@ -254,7 +254,7 @@ const SlidesGameExperiments: FunctionComponent<{
           <p>
             This tool takes two inputs: a color mask and a height map. Then
             proceeds to build a 3D model which is used to render a base image.
-            As the next step it uses a machine learning to enhance the texture
+            As the next step it uses machine learning to enhance the texture
             guessing some additional details.
           </p>
           <p>
@@ -269,7 +269,7 @@ const SlidesGameExperiments: FunctionComponent<{
       <Page title="Supporting tech" level={2}>
         <h3>Networking</h3>
         <p>
-          In games it's not just about sending data in between players, but also
+          In games it's not just about sending data between players, but also
           about making sure it's done in a timely manner and actions are
           authorized properly.
         </p>
@@ -285,8 +285,8 @@ const SlidesGameExperiments: FunctionComponent<{
             </a>
           </div>
           <p>
-            However, when it comes to silly little games even a simple client
-            authoritative solution will do. So I tried to do as little as
+            However, when it comes to silly little games even a simple
+            client-authoritative solution will do. So I tried to do as little as
             possible to make a working multiplayer real-time browser game. I
             used a{" "}
             <a
@@ -306,8 +306,8 @@ const SlidesGameExperiments: FunctionComponent<{
 
       <Page title="Emulation">
         <p>
-          Another area where game development reached level of complexity
-          preceeding or not at all present in other fields is emulation and
+          Another area where game development reached a level of complexity
+          preceding or not at all present in other fields is emulation and
           platform porting.
         </p>
         <div className="example">
@@ -323,11 +323,11 @@ const SlidesGameExperiments: FunctionComponent<{
             </a>
           </div>
           <p>
-            I made a web port of this popular puzzle game, making it agian a bit
-            more accessible for the current age. Transpiling it's source code
+            I made a web port of this popular puzzle game, making it again a bit
+            more accessible for the current age. Transpiling its source code
             using a tool called <a href="https://emscripten.org/">Emscripten</a>{" "}
             and fixing issues that arose in the process. Most notably replacing
-            some of libraries with versions that are compatible with running in
+            some libraries with versions that are compatible with running in
             browser.
           </p>
           <p className="text-center">

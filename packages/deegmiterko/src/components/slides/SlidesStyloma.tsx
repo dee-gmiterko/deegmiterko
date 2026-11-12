@@ -50,7 +50,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <div>
               <h4 className="text-left">Image search</h4>
               <p className="text-left">
-                Upload photo, iteratively explore similar items, until you find
+                Upload a photo, iteratively explore similar items, until you find
                 exactly what you're looking for!
               </p>
             </div>
@@ -84,7 +84,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <div>
               <LightboxButton
                 path="styloma/url-search.png"
-                alt="Illustration of URL being copied into search and seeing alternate retatilers"
+                alt="Illustration of URL being copied into search and seeing alternate retailers"
               />
             </div>
           </div>
@@ -120,7 +120,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
           A picture is worth a thousand words? I think so, but a pixel match is
           not enough. We need to go further to understand for example the
           difference between a wrap dress and a shift dress, not just "blue
-          dress.". Since beginning I knew that embeddings need to capture
+          dress". Since the beginning I knew that embeddings need to capture
           semantic meaning, not keywords.
         </p>
         <p></p>
@@ -132,7 +132,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <div>
               <h5 className="text-left">Image embeddings</h5>
               <p className="text-left">
-                Visual similarity - Individual photos encoded as vector - "find
+                Visual similarity - Individual photos encoded as a vector - "find
                 pictures that match this".
               </p>
             </div>
@@ -146,14 +146,14 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <div>
               <h5 className="text-left">User embeddings</h5>
               <p className="text-left">
-                User interest - Past interest encoded as vector - "prioritize
+                User interest - Past interest encoded as a vector - "prioritize
                 items that I will like".
               </p>
             </div>
             <div>
               <h5 className="text-left">Hybrid search</h5>
               <p className="text-left">
-                And now compine them all to get the individualized exact
+                And now combine them all to get the individualized exact
                 matches.
               </p>
             </div>
@@ -266,7 +266,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <em>
               “Dependency subgraphs and their application in image building”
             </em>{" "}
-            at GitHub - Build software better, together., Jun 2026{" "}
+            at GitHub - Build software better, together, Jun 2026{" "}
             <a
               className="btn-source"
               href="https://github.com/dee-gmiterko/yarn-plugin-prod-lockfiles"
