@@ -345,6 +345,41 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
+      <Page title="Necro Dungeon">
+        <p>
+          A dungeon-building game made with Godot and C#. You build rooms and
+          traps, and assemble monsters from body parts, while adventurers run
+          through the dungeon with their own AI.
+        </p>
+        <p>
+          Its isometric look needed lighting that works in isometric space, so
+          I built an addon for it.
+        </p>
+        <div className="grow" />
+        <div className="example-bar">
+          <div className="example-title">
+            <h4>IsoLit (2026)</h4>
+            <a
+              className="btn-source"
+              href="https://github.com/dee-gmiterko/isolit"
+            >
+              &lt;/&gt; Browse source code
+            </a>
+          </div>
+          <p>
+            Isometric 2D lighting for Godot 4 with no light limit. Lights and
+            lit surfaces live in isometric world space and are projected onto
+            the 2D canvas.
+          </p>
+          <p>
+            <LightboxButton
+              path="necro-dungeon.png"
+              alt="Necro Dungeon screenshot"
+            />
+          </p>
+        </div>
+      </Page>
+
       <Page title="Pushing the limits" level={2}>
         <p>
           No matter whether it comes to packing the most into limited space on
