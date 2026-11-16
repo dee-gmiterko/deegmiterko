@@ -20,7 +20,23 @@ const SlidesProfessional: FunctionComponent<{
         </p>
       </TitlePage>
 
-      <Page title="Website development">
+      <Page
+        title="Website development"
+        skills={[
+          "Web",
+          "Backend",
+          "PHP",
+          "Nette",
+          "E-commerce",
+          "HTML",
+          "E-mail campaigns",
+          "Frontend",
+          "JavaScript",
+          "CSS",
+          "PrestaShop",
+          "React",
+        ]}
+      >
         <p>
           Websites are the most common way to present information on the
           internet. And I have experience with building many different kinds of
@@ -41,17 +57,6 @@ const SlidesProfessional: FunctionComponent<{
               (2015 – 2016)
             </h4>
           </div>
-          <TagList
-            tags={[
-              "Web",
-              "Backend",
-              "PHP",
-              "Nette",
-              "E-commerce",
-              "HTML",
-              "E-mail campaigns",
-            ]}
-          />
           <p>
             Development of custom e-commerce solutions as a part of a small
             team. I've worked on a variety of eshops.
@@ -71,17 +76,6 @@ const SlidesProfessional: FunctionComponent<{
               (2017 – 2019)
             </h4>
           </div>
-          <TagList
-            tags={[
-              "Frontend",
-              "Web",
-              "JavaScript",
-              "CSS",
-              "PrestaShop",
-              "E-commerce",
-              "React",
-            ]}
-          />
           <p>
             Building custom web applications for eshops. Some notable projects
             I've worked on include <a href="https://www.brnoid.cz/">BrnoID</a>
@@ -91,7 +85,21 @@ const SlidesProfessional: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Data engineering">
+      <Page
+        title="Data engineering"
+        skills={[
+          "Data processing",
+          "Python",
+          "Pipeline building",
+          "Airflow",
+          "PubSub",
+          "PostgreSQL",
+          "DataOps",
+          "BigQuery",
+          "Data Quality",
+          "Internal product",
+        ]}
+      >
         <p>
           It's one thing to work on a closed order like an eshop that is more or
           less built and delivered once. But it's a whole different story to have
@@ -109,20 +117,6 @@ const SlidesProfessional: FunctionComponent<{
               (2019 – 2022)
             </h4>
           </div>
-          <TagList
-            tags={[
-              "Data processing",
-              "Python",
-              "Pipeline building",
-              "Airflow",
-              "PubSub",
-              "PostgreSQL",
-              "DataOps",
-              "BigQuery",
-              "Data Quality",
-              "Internal product",
-            ]}
-          />
           <p>
             I was mostly responsible for creating and maintaining data
             pipelines, building data warehouse, assisting with analysis and
@@ -150,7 +144,31 @@ const SlidesProfessional: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Freelance development">
+      <Page
+        title="Freelance development"
+        skills={[
+          "Frontend",
+          "Backend",
+          "Project management",
+          "Game dev",
+          "Blockchain",
+          "UI design",
+          "Services integration",
+          "Ops",
+          "Unity",
+          "Static websites",
+          "Application",
+          "TypeScript",
+          "Video streaming",
+          "Adaptive learning",
+          "User analytics",
+          "Firebase",
+          "Google Cloud Platform",
+          "CDN",
+          "Templating",
+          "Processes automation",
+        ]}
+      >
         <p>
           Working in a freelance capacity, not being bound by constraints of a
           single company, I've had the opportunity to work on a variety of
@@ -172,19 +190,6 @@ const SlidesProfessional: FunctionComponent<{
               (2022 – 2023)
             </h4>
           </div>
-          <TagList
-            tags={[
-              "Frontend",
-              "Backend",
-              "Project management",
-              "Game dev",
-              "Blockchain",
-              "UI design",
-              "Services integration",
-              "Ops",
-              "Unity",
-            ]}
-          />
           <p>
             I started my freelancing by developing small blockchain-based
             products, later getting into bigger game projects.
@@ -203,23 +208,6 @@ const SlidesProfessional: FunctionComponent<{
               (2023 – 2024)
             </h4>
           </div>
-          <TagList
-            tags={[
-              "Static websites",
-              "Application",
-              "TypeScript",
-              "Video streaming",
-              "Adaptive learning",
-              "User analytics",
-              "Firebase",
-              "Google Cloud Platform",
-              "CDN",
-              "UI design",
-              "Ops",
-              "Templating",
-              "Processes automation",
-            ]}
-          />
           <div className="col-8-4">
             <p className="mb-0">
               Afterwards I moved onto more traditional projects. Working on
@@ -241,6 +229,24 @@ const SlidesProfessional: FunctionComponent<{
       <Page
         title="Freelance development"
         subtitle="Na medicínu"
+        skills={[
+          "E-commerce",
+          "Video streaming",
+          "Adaptive learning",
+          "React",
+          "Gatsby",
+          "Firebase",
+          "Pub/Sub",
+          "TypeScript",
+          "Express",
+          "Netlify",
+          "Electron",
+          "Sentry",
+          "GraphQL",
+          "Jest",
+          "Cloud Run",
+          "BigQuery",
+        ]}
         titleClassName="mb-0"
       >
         <p>
@@ -326,6 +332,17 @@ const SlidesProfessional: FunctionComponent<{
       <Page
         title="Education"
         subtitle="Masaryk University - Bc."
+        skills={[
+          "Applications",
+          "Python",
+          "Database management",
+          "Java",
+          "C++",
+          "Algorithms",
+          "Computational theory",
+          "Data science",
+          "Computer graphics",
+        ]}
         titleClassName="mb-0"
       >
         <div className="grow" />
@@ -338,19 +355,6 @@ const SlidesProfessional: FunctionComponent<{
               (2015 – 2018)
             </h4>
           </div>
-          <TagList
-            tags={[
-              "Applications",
-              "Python",
-              "Database management",
-              "Java",
-              "C++",
-              "Algorithms",
-              "Computational theory",
-              "Data science",
-              "Computer graphics",
-            ]}
-          />
           <p>
             Taught me architectures, principles and methods of designing
             integrated systems and data processing
@@ -390,6 +394,19 @@ const SlidesProfessional: FunctionComponent<{
       <Page
         title="Education"
         subtitle="Masaryk University - Mgr."
+        skills={[
+          "Machine learning",
+          "Cloud development",
+          "AI",
+          "Data analysis",
+          "Statistics",
+          "Big data",
+          "Data processing",
+          "Data science",
+          "Neural networks",
+          "Visualization",
+          "Constraint programming",
+        ]}
         titleClassName="mb-0"
       >
         <div className="grow" />
@@ -402,21 +419,6 @@ const SlidesProfessional: FunctionComponent<{
               (2018 – 2020)
             </h4>
           </div>
-          <TagList
-            tags={[
-              "Machine learning",
-              "Cloud development",
-              "AI",
-              "Data analysis",
-              "Statistics",
-              "Big data",
-              "Data processing",
-              "Data science",
-              "Neural networks",
-              "Visualization",
-              "Constraint programming",
-            ]}
-          />
           <p>
             Focused on design and development of intelligent systems and
             analysis of big data, using machine learning and artificial

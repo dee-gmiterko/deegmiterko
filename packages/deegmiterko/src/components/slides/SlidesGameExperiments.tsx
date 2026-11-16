@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, lazy, Suspense } from "react";
 
 import Book from "../Book";
 import Page from "../Page";
@@ -11,6 +11,13 @@ import imgTrainwreck from "../../images/content/trainwreck.png";
 import vidTrainwreck from "../../images/content/trainwreck.webm";
 import LightboxButton from "../LightboxButton";
 import { ThumbnailNode } from "../../pages/index";
+
+const NecroDungeonNpcDiagram = lazy(
+  () => import("../necro-dungeon/NecroDungeonNpcDiagram"),
+);
+
+const RegrowIdleDiagram = lazy(() => import("../regrow/RegrowIdleDiagram"));
+const RnscTurnDiagram = lazy(() => import("../rnsc/RnscTurnDiagram"));
 
 const SlidesGameExperiments: FunctionComponent<{
   thumbnails: ThumbnailNode[];
@@ -25,7 +32,7 @@ const SlidesGameExperiments: FunctionComponent<{
         </p>
       </TitlePage>
 
-      <Page title="Game of Life">
+      <Page title="Game of Life" skills={["Cellular automata", "Hashing", "Python"]}>
         <p>
           Let's start with one of the simplest games there is.{" "}
           <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">
@@ -67,7 +74,157 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Engine or not to engine?" level={2} titleClassName="mb-2">
+      <Page
+        title="Necro Dungeon"
+        skills={[
+          "Game dev",
+          "2D lighting",
+          "Godot",
+          "C#",
+          "GDScript",
+          "Shaders",
+          "Blender",
+          "Python",
+          "gdUnit4",
+        ]}
+      >
+        <p>
+          A dungeon-building game produced with Godot and C#. Take a charge in
+          building rooms, setting traps, and assemble monsters from body parts,
+          defending from adventurers…
+        </p>
+        <p>
+          Its isometric look needed a custom lighting system blending 2D sprites
+          with 3D like Phong reflection model.
+        </p>
+        <div className="grow" />
+        <div className="example">
+          <div className="example-title">
+            <h4>IsoLit (2026)</h4>
+            <a
+              className="btn-source"
+              href="https://github.com/dee-gmiterko/isolit"
+            >
+              &lt;/&gt; Browse source code
+            </a>
+          </div>
+          <p>
+            Isometric 2D lighting for Godot where lit surfaces live in isometric
+            world space projected onto the 2D sprites. It also supports wall
+            obstruction map for shadows.
+          </p>
+          <p>
+            <LightboxButton
+              path="necro-dungeon.png"
+              alt="Necro Dungeon screenshot"
+            />
+          </p>
+        </div>
+      </Page>
+
+      <Page
+        title="NPCs"
+        subtitle="Non-player characters"
+        skills={[
+          "NPC behavior",
+          "Finite state machines",
+          "A* pathfinding",
+          "Task assignment",
+          "C#",
+        ]}
+      >
+        <p>
+          A game world feels empty without characters that act on their own.
+          Adventurers in Necro Dungeon explore, fight, flee and loot without
+          anyone steering them.
+        </p>
+        <p>
+          Each party shares one picture of the dungeon, built only from what it
+          has seen. From that picture it chooses a goal, turns the goal into
+          tasks, and hands the tasks to the members best placed to do them.
+        </p>
+        <div className="grow" />
+        <div className="example">
+          <div className="example-title">
+            <h4>Adventurig party and monsters behaviors</h4>
+          </div>
+          <div className="col-7-5">
+            <div>
+              <Suspense fallback={null}>
+                <NecroDungeonNpcDiagram />
+              </Suspense>
+            </div>
+            <div>
+              <p>
+                The design had to solve a few problems at once. A party should
+                act like a group instead of a crowd. Its decisions should rely
+                only on what it has actually seen, so surprises stay possible.
+                No two members should end up doing the same job. And the cost
+                per frame should stay small, however large the dungeon grows.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Page>
+
+      <Page
+        title="Idle progress"
+        skills={[
+          "Idle game design",
+          "Simulation",
+          "Game economy",
+          "C++",
+          "Godot",
+          "TypeScript",
+          "PostgreSQL",
+          "Docker",
+          "Node.js",
+          "Express",
+          "CMake",
+          "Catch2",
+          "FlatBuffers",
+          "libsodium",
+        ]}
+      >
+        <p>
+          A game world keeps moving when nobody is watching: engines drive,
+          stock runs out. Most games fake it with a background loop or a flat
+          "you were away" bonus.
+        </p>
+        <p>
+          Project Regrow is an idle game about vehicles running on resources you
+          wire up. It works out what happened while you were away from only what
+          you decided and how long it has been.
+        </p>
+        <div className="grow" />
+        <div className="example">
+          <div className="example-title">
+            <h4>Project Regrow (2026)</h4>
+          </div>
+          <div className="col-7-5">
+            <div>
+              <Suspense fallback={null}>
+                <RegrowIdleDiagram />
+              </Suspense>
+            </div>
+            <div>
+              <p>
+                The design had to solve a few problems at once. Every player and
+                every device should reach the same result. Nothing should need
+                to run while a player is away. And resources are scarce enough
+                that every connection you wire matters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Page>
+
+      <Page
+        title="Engine or not to engine?"
+        level={2}
+        skills={["3D graphics", "C++", "OpenGL", "GLSL", "GLEW", "freeglut"]}
+        titleClassName="mb-2"
+      >
         <p>
           The age old question that seems to be brought up every time a new
           person enters the game development community.
@@ -100,7 +257,10 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Web constraints">
+      <Page
+        title="Web constraints"
+        skills={["WebGL", "PixiJS", "React", "Redux", "Vite"]}
+      >
         <p>
           You may find yourself in a situation where you have to work with
           limited capabilities. A great example of this is WebGL - a web-based
@@ -140,7 +300,10 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Modding">
+      <Page
+        title="Modding"
+        skills={["Modding", "Java", "Bukkit", "Minecraft Forge"]}
+      >
         <p>
           One of the best known games that allow you to heavily modify its
           content is Minecraft. Which I of course extensively used to create my
@@ -180,7 +343,23 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Game engine">
+      <Page
+        title="Game engine"
+        skills={[
+          "Game dev",
+          "Blockchain",
+          "Unity",
+          "WebGL",
+          "Solidity",
+          "TypeScript",
+          "Firebase",
+          "Hardhat",
+          "ethers",
+          "OpenZeppelin",
+          "Gatsby",
+          "React",
+        ]}
+      >
         <p>
           On the other end of the spectrum, you have game engines that are
           purpose built and can significantly speed up your development. Unity
@@ -212,7 +391,11 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Building an experience" level={2}>
+      <Page
+        title="Building an experience"
+        level={2}
+        skills={["Level design", "Minecraft"]}
+      >
         <h3>Level design</h3>
         <p>
           Hand in hand with game development goes level design. It's what
@@ -240,7 +423,10 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Asset pipeline">
+      <Page
+        title="Asset pipeline"
+        skills={["Asset pipeline", "Blender", "Neural style transfer", "Height maps"]}
+      >
         <p>
           Without any assets to look at, your game world would be a very boring
           place. But creating them is an extremely time-consuming process. So there
@@ -266,7 +452,21 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Supporting tech" level={2}>
+      <Page
+        title="Supporting tech"
+        level={2}
+        skills={[
+          "Networking",
+          "Multiplayer",
+          "Steamworks",
+          "C++",
+          "Godot",
+          "CMake",
+          "Docker",
+          "Catch2",
+          "Python",
+        ]}
+      >
         <h3>Networking</h3>
         <p>
           In games it's not just about sending data between players, but also
@@ -276,35 +476,31 @@ const SlidesGameExperiments: FunctionComponent<{
         <div className="grow" />
         <div className="example">
           <div className="example-title">
-            <h4>"Collaborative JSON" networking (2017)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/samos"
-            >
-              &lt;/&gt; Browse source code
-            </a>
+            <h4>Turn-based multiplayer (2026)</h4>
           </div>
-          <p>
-            However, when it comes to silly little games even a simple
-            client-authoritative solution will do. So I tried to do as little as
-            possible to make a working multiplayer real-time browser game. I
-            used a{" "}
-            <a
-              className="subheading"
-              href="https://www.npmjs.com/package/diffsync"
-            >
-              "collaborative JSON editor"
-            </a>{" "}
-            library to synchronize game state between players (and server bots).
-          </p>
-          <LightboxButton
-            path="json-networking.png"
-            alt="Shared JSON networking"
-          />
+          <div className="col-7-5">
+            <div>
+              <Suspense fallback={null}>
+                <RnscTurnDiagram />
+              </Suspense>
+            </div>
+            <div>
+              <p>
+                A turn-based game for up to four players. Only the opening seed
+                and each accepted move cross the network, and every client runs
+                the same rules to reach the same state. Local, LAN and Steam
+                play share one code path, and a dropped player rejoins by
+                replaying the moves.
+              </p>
+            </div>
+          </div>
         </div>
       </Page>
 
-      <Page title="Emulation">
+      <Page
+        title="Emulation"
+        skills={["Platform porting", "Emscripten", "C++", "SDL", "Lua"]}
+      >
         <p>
           Another area where game development reached a level of complexity
           preceding or not at all present in other fields is emulation and
@@ -341,41 +537,6 @@ const SlidesGameExperiments: FunctionComponent<{
             <a className="btn-source" href="https://ienze.me/fillets-online">
               Play now
             </a>
-          </p>
-        </div>
-      </Page>
-
-      <Page title="Necro Dungeon">
-        <p>
-          A dungeon-building game made with Godot and C#. You build rooms and
-          traps, and assemble monsters from body parts, while adventurers run
-          through the dungeon with their own AI.
-        </p>
-        <p>
-          Its isometric look needed lighting that works in isometric space, so
-          I built an addon for it.
-        </p>
-        <div className="grow" />
-        <div className="example-bar">
-          <div className="example-title">
-            <h4>IsoLit (2026)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/isolit"
-            >
-              &lt;/&gt; Browse source code
-            </a>
-          </div>
-          <p>
-            Isometric 2D lighting for Godot 4 with no light limit. Lights and
-            lit surfaces live in isometric world space and are projected onto
-            the 2D canvas.
-          </p>
-          <p>
-            <LightboxButton
-              path="necro-dungeon.png"
-              alt="Necro Dungeon screenshot"
-            />
           </p>
         </div>
       </Page>

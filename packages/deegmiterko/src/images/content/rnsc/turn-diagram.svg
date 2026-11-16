@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="100" viewBox="0 0 600 100">
+  <title>One turn across the network</title>
+  <desc>A player makes a move, the host orders it, every client replays it, and the clients verify they agree.</desc>
+  <g font-family="Comfortaa, Arial, sans-serif" fill="currentColor">
+    <rect x="0" y="25" width="120" height="50" rx="6" class="box"/>
+    <rect x="160" y="25" width="120" height="50" rx="6" class="box"/>
+    <rect x="320" y="25" width="120" height="50" rx="6" class="box"/>
+    <rect x="480" y="25" width="120" height="50" rx="6" class="box"/>
+
+    <path d="M120 50H150" class="arrow"/>
+    <path d="M280 50H310" class="arrow"/>
+    <path d="M440 50H470" class="arrow"/>
+    <path d="M150 44L160 50L150 56Z" class="arrowhead"/>
+    <path d="M310 44L320 50L310 56Z" class="arrowhead"/>
+    <path d="M470 44L480 50L470 56Z" class="arrowhead"/>
+
+    <g font-size="20" text-anchor="middle">
+      <text x="60" y="57">Move</text>
+      <text x="220" y="57">Order</text>
+      <text x="380" y="57">Replay</text>
+      <text x="540" y="57">Verify</text>
+    </g>
+  </g>
+</svg>

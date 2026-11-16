@@ -38,6 +38,7 @@ const Book: FunctionComponent<{
       className={clsx("book", current === children.length - 1 && "last-page")}
       ref={scrollContainerRef}
     >
+      <div className="book-spacer" />
       <ThumbnailNav
         count={children.length}
         current={current}
@@ -56,6 +57,7 @@ const Book: FunctionComponent<{
           </PageProvider>
         ))}
       </div>
+      <div className="book-spacer" />
     </div>
   );
 };
