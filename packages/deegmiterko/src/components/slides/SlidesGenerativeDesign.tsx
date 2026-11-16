@@ -32,7 +32,11 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </p>
       </TitlePage>
 
-      <Page title="Purposes of Generative Design" level={2}>
+      <Page
+        title="Purposes of Generative Design"
+        level={2}
+        skills={["Generative art", "Visualization", "Simulation"]}
+      >
         <div className="grow"></div>
         <h3>Just art</h3>
         <p>
@@ -48,7 +52,10 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="To visualize">
+      <Page
+        title="To visualize"
+        skills={["Data visualization", "Simulation"]}
+      >
         <p>
           However, generative art can be utilized also for other means. For
           example to visually represent the significance of data to the viewer.
@@ -78,7 +85,11 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Media used by Generative Design" level={2}>
+      <Page
+        title="Media used by Generative Design"
+        level={2}
+        skills={["Processing", "Animation"]}
+      >
         <h3>Image and video</h3>
         <p>
           The most commonly used media in generative design are without a doubt
@@ -111,7 +122,10 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="3D objects">
+      <Page
+        title="3D objects"
+        skills={["3D modeling", "Procedural generation", "Blender"]}
+      >
         <p>
           Rendering tools became very powerful over the years. And in
           combination with generative design they can produce visually appealing
@@ -138,7 +152,10 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Games and virtual worlds">
+      <Page
+        title="Games and virtual worlds"
+        skills={["Procedural generation", "Perlin noise", "Python"]}
+      >
         <p>
           The most well known example of this approach is Minecraft. I can
           provide you with a procedurally generated world for your game. Or it
@@ -176,7 +193,11 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Generative Design concepts" level={2}>
+      <Page
+        title="Generative Design concepts"
+        level={2}
+        skills={["Parameterization", "Processing", "Java", "Maven"]}
+      >
         <h3>Parameterization</h3>
         <p>
           I think that the most important concept of generative design is
@@ -230,7 +251,16 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Repeatability">
+      <Page
+        title="Repeatability"
+        skills={[
+          "Reproducibility",
+          "Seeded randomness",
+          "Hashing",
+          "React",
+          "d3",
+        ]}
+      >
         <p>
           I think the second most important concept of procedural design is
           repeatability. The idea of this content is really straightforward: Given a
@@ -272,7 +302,10 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Randomness">
+      <Page
+        title="Randomness"
+        skills={["Processing", "Randomness"]}
+      >
         <p>
           The most important concept of generative art may be randomness. It can
           be used to alter input parameters of the generative process to produce
@@ -308,7 +341,18 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Transformation">
+      <Page
+        title="Transformation"
+        skills={[
+          "Machine learning",
+          "Image processing",
+          "Python",
+          "t-SNE",
+          "NumPy",
+          "scikit-learn",
+          "Matplotlib",
+        ]}
+      >
         <p>
           Another approach to procedural art is not to fully generate the media
           by yourself but instead take some existing content as an input and
@@ -346,7 +390,10 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Visualization">
+      <Page
+        title="Visualization"
+        skills={["Data visualization", "Vega-Lite", "Pandas"]}
+      >
         <p>
           A specific case of transformations are data visualizations. We can
           treat real world data as an input into a procedural design script. But
@@ -380,7 +427,10 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Simulation">
+      <Page
+        title="Simulation"
+        skills={["Simulation", "Agent-based modeling", "NetLogo"]}
+      >
         <p>
           And the last concept used in generative design I can think of is
           simulation. This can include physics simulation, flow of fluids, or
@@ -417,7 +467,11 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page title="Concept mixing" level={2}>
+      <Page
+        title="Concept mixing"
+        level={2}
+        skills={["Generative art", "Procedural generation"]}
+      >
         <p>
           Only once you add all these concepts together you can start to see the
           full potential of generative design. It can be used to create art,

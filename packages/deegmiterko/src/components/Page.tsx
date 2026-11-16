@@ -3,6 +3,7 @@ import slugify from "slugify";
 
 import clsx from "clsx";
 import useAnchor from "../hooks/useAnchor";
+import SkillsList from "./SkillsList";
 
 export type PageType = {
   id?: string;
@@ -10,6 +11,7 @@ export type PageType = {
   titleNode?: ReactNode;
   subtitle?: string;
   level?: 1 | 2 | 3 | 4;
+  skills?: string[];
   className?: string;
   titleClassName?: string;
   children: ReactNode | ReactNode[];
@@ -21,6 +23,7 @@ const Page: FunctionComponent<PageType> = ({
   titleNode,
   subtitle,
   level = 3,
+  skills,
   className,
   titleClassName,
   children,
@@ -50,27 +53,30 @@ const Page: FunctionComponent<PageType> = ({
   );
 
   return (
-    <div ref={ref} className={clsx("page", className)}>
-      {titleNode ??
-        (level == 1 ? (
-          <h2 className={clsx(titleClassName)} id={pageId}>
-            {titleContent}
-          </h2>
-        ) : level == 2 ? (
-          <h3 className={clsx("bigger", titleClassName)} id={pageId}>
-            {titleContent}
-          </h3>
-        ) : level == 3 ? (
-          <h3 className={clsx(titleClassName)} id={pageId}>
-            {titleContent}
-          </h3>
-        ) : level == 4 ? (
-          <h4 className={clsx(titleClassName)} id={pageId}>
-            {titleContent}
-          </h4>
-        ) : null)}
-      {children}
-    </div>
+    <>
+      <div ref={ref} className={clsx("page", className)}>
+        {titleNode ??
+          (level == 1 ? (
+            <h2 className={clsx(titleClassName)} id={pageId}>
+              {titleContent}
+            </h2>
+          ) : level == 2 ? (
+            <h3 className={clsx("bigger", titleClassName)} id={pageId}>
+              {titleContent}
+            </h3>
+          ) : level == 3 ? (
+            <h3 className={clsx(titleClassName)} id={pageId}>
+              {titleContent}
+            </h3>
+          ) : level == 4 ? (
+            <h4 className={clsx(titleClassName)} id={pageId}>
+              {titleContent}
+            </h4>
+          ) : null)}
+        {children}
+      </div>
+      {skills && skills.length > 0 && <SkillsList skills={skills} />}
+    </>
   );
 };
 

@@ -29,7 +29,18 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <p className="subtitle">Lead solo developer</p>
       </TitlePage>
 
-      <Page title="Search fashion, visually">
+      <Page
+        title="Search fashion, visually"
+        skills={[
+          "Visual search",
+          "Semantic search",
+          "Object detection",
+          "React",
+          "TypeScript",
+          "Vite",
+          "MUI",
+        ]}
+      >
         <div className="col-12">
           <div>
             <p>
@@ -92,7 +103,30 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <div className="grow"></div>
       </Page>
 
-      <Page title="Event-driven microservices">
+      <Page
+        title="Event-driven microservices"
+        skills={[
+          "Microservices",
+          "Event-driven architecture",
+          "Web scraping",
+          "Kafka",
+          "Kubernetes",
+          "Terraform",
+          "Google Cloud Platform",
+          "Puppeteer",
+          "PostgreSQL",
+          "Redis",
+          "ClickHouse",
+          "Helm",
+          "Prometheus",
+          "Grafana",
+          "Sentry",
+          "Express",
+          "TypeORM",
+          "Zod",
+          "Rust",
+        ]}
+      >
         <div>
           <p>
             I architected this as 15+ microservices on Google Cloud Platform.
@@ -115,7 +149,17 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         </div>
       </Page>
 
-      <Page title="Vector embeddings for similarity">
+      <Page
+        title="Vector embeddings for similarity"
+        skills={[
+          "Vector embeddings",
+          "Hybrid search",
+          "PyTorch",
+          "Python",
+          "ONNX",
+          "Ollama",
+        ]}
+      >
         <p>
           A picture is worth a thousand words? I think so, but a pixel match is
           not enough. We need to go further to understand for example the
@@ -170,13 +214,34 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
       <Page
         title="Human (in the) loop"
         subtitle="The agentic development sub-system"
+        skills={[
+          "Agentic development",
+          "CI/CD",
+          "Docker",
+          "GitHub Actions",
+          "Vitest",
+          "Playwright",
+        ]}
       >
         <Suspense fallback={null}>
           <StylomaAgenticLoopPage />
         </Suspense>
       </Page>
 
-      <Page title="Reviewing at scale">
+      <Page
+        title="Reviewing at scale"
+        skills={[
+          "Code review",
+          "LSP",
+          "Electron",
+          "React",
+          "CodeMirror",
+          "TypeScript",
+          "Vitest",
+          "Zustand",
+          "TanStack Query",
+        ]}
+      >
         <p>
           Agents produce changes faster than anyone can read them. And review
           is the one step of the loop that can't be delegated, so it has to be

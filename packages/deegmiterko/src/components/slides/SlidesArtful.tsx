@@ -24,7 +24,10 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <p>You don't ask why art is made, do you?</p>
       </TitlePage>
 
-      <Page title="Physical">
+      <Page
+        title="Physical"
+        skills={["Jewelry", "Sewing", "Pattern drafting"]}
+      >
         <p>
           The physicality of art is the most fundamental way to express oneself.
           It's the first way to express and it's the most intimate.
@@ -78,7 +81,7 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         </div>
       </Page>
 
-      <Page title="Traditional">
+      <Page title="Traditional" skills={["Hard pastels", "Drawing"]}>
         <p>
           When asked about the topic most people would think of good old paper
           or a canvas. It seems like an inseparable part of art. Over the time I
@@ -174,7 +177,10 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         ]}
       </MasonryPage>
 
-      <Page title="Digital">
+      <Page
+        title="Digital"
+        skills={["Digital drawing", "Graphic tablet", "Computer graphics"]}
+      >
         <p>
           Another step in the evolution of art started with the digital era. As
           it brings new possibilities for creation and most importantly
@@ -207,7 +213,10 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <p></p>
       </Page>
 
-      <Page title="Technical drawing">
+      <Page
+        title="Technical drawing"
+        skills={["CAD", "3D printing", "Technical drawing"]}
+      >
         <p>
           Technical drawing can be considered a precise form of art that
           communicates structure and construction, right? It surely feels like
@@ -245,7 +254,10 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         </ExampleGrid4in6>
       </Page>
 
-      <Page title="Virtual (3D)">
+      <Page
+        title="Virtual (3D)"
+        skills={["Blender", "3D modeling", "Rigging", "VRM"]}
+      >
         <p>
           Another huge expansion to capabilities of an artist was the
           introduction of 3D modeling. Most distinctly it allowed for a new way
@@ -275,7 +287,10 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         />
       </Page>
 
-      <Page title="Visual space">
+      <Page
+        title="Visual space"
+        skills={["Machine learning", "Neural networks"]}
+      >
         <p>
           Now, imagine that you are not constructing a single piece of art but a
           whole space containing many possible images. All part of a single

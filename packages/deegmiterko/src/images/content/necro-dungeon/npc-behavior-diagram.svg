@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="360" viewBox="0 0 660 360">
+  <title>Adventurer party behavior in the dungeon</title>
+  <desc>A party in a small dungeon sees part of it, remembers what it saw, chooses a goal, plans tasks, assigns them to members, and acts, which changes the dungeon.</desc>
+  <g font-family="Comfortaa, Arial, sans-serif" fill="currentColor">
+    <text x="145" y="52" text-anchor="middle" font-size="20" font-weight="bold">Dungeon</text>
+
+    <rect x="20" y="70" width="250" height="250" fill="white" stroke="currentColor" style="stroke-width:2"/>
+    <g fill="#d9d3f2">
+      <rect x="20" y="70" width="250" height="50"/>
+      <rect x="20" y="270" width="250" height="50"/>
+      <rect x="20" y="120" width="50" height="150"/>
+      <rect x="220" y="120" width="50" height="150"/>
+      <rect x="120" y="170" width="50" height="50"/>
+    </g>
+    <path d="M70 120H170V170H120V270H70Z" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-dasharray="6 4" style="stroke-width:1.5"/>
+
+    <circle cx="85" cy="140" r="9" fill="currentColor"/>
+    <circle cx="105" cy="140" r="9" fill="currentColor"/>
+    <circle cx="95" cy="158" r="9" fill="currentColor"/>
+    <path d="M195 183L206 205H184Z" fill="white" stroke="currentColor" stroke-dasharray="3 3" style="stroke-width:1.5"/>
+    <path d="M145 233L157 245L145 257L133 245Z" fill="#e0a800" stroke="currentColor" style="stroke-width:1.5"/>
+    <circle cx="195" cy="245" r="12" fill="#d0447a"/>
+
+    <g style="stroke:currentColor;stroke-width:2;fill:none">
+      <path d="M270 145H300V41H322"/>
+      <path d="M330 331H300V295H278"/>
+      <g style="stroke-width:2">
+        <path d="M485 62V72"/>
+        <path d="M485 120V130"/>
+        <path d="M485 178V188"/>
+        <path d="M485 236V246"/>
+        <path d="M485 294V304"/>
+      </g>
+    </g>
+    <g>
+      <path d="M322 35L334 41L322 47Z"/>
+      <path d="M278 289L266 295L278 301Z"/>
+      <path d="M479 70L485 80L491 70Z"/>
+      <path d="M479 128L485 138L491 128Z"/>
+      <path d="M479 186L485 196L491 186Z"/>
+      <path d="M479 244L485 254L491 244Z"/>
+      <path d="M479 302L485 312L491 302Z"/>
+    </g>
+
+    <g fill="white" stroke="currentColor" style="stroke-width:2">
+      <rect x="330" y="20" width="310" height="42" rx="6"/>
+      <rect x="330" y="78" width="310" height="42" rx="6"/>
+      <rect x="330" y="136" width="310" height="42" rx="6"/>
+      <rect x="330" y="194" width="310" height="42" rx="6"/>
+      <rect x="330" y="252" width="310" height="42" rx="6"/>
+      <rect x="330" y="310" width="310" height="42" rx="6"/>
+    </g>
+    <g font-size="20" text-anchor="middle">
+      <text x="485" y="48">1 · See</text>
+      <text x="485" y="106">2 · Remember</text>
+      <text x="485" y="164">3 · Choose a goal</text>
+      <text x="485" y="222">4 · Plan tasks</text>
+      <text x="485" y="280">5 · Assign</text>
+      <text x="485" y="338">6 · Act</text>
+    </g>
+  </g>
+</svg>
