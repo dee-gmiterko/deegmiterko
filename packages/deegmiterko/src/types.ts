@@ -40,11 +40,12 @@ export type ChatMessage = {
   website?: ChatWebsite;
 };
 
-export type ChatData = {
-  conversations: {
-    messages: ChatMessage[],
-  }[]
-}
+export type ThumbnailNode = {
+  name: string;
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData;
+  };
+};
 
 export type ContentImages = Record<string, IGatsbyImageData>;
 

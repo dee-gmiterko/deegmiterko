@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
@@ -14,18 +14,32 @@ interface Props {
 }
 
 const Banner = ({ siteMetadata }: Props) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 600px)");
+    const update = () => setIsMobile(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
   return (
     <header className="banner">
       <div className="profile">
-        <ImageDepthMap
-          originalImg={imgBanner}
-          depthImg={depthBanner}
-          verticalThreshold={20}
-          horizontalThreshold={20}
-          reverseMotion={true}
-          respondTo="scrollOnY"
-          useGravity={true}
-        />
+        {isMobile ? (
+          <img src={imgBanner} alt={siteMetadata.author} />
+        ) : (
+          <ImageDepthMap
+            originalImg={imgBanner}
+            depthImg={depthBanner}
+            verticalThreshold={20}
+            horizontalThreshold={20}
+            reverseMotion={true}
+            respondTo="scrollOnY"
+            useGravity={true}
+          />
+        )}
         {/*
         <StaticImage src="../../images/banner.jpg" alt={siteMetadata.author} layout="constrained" />
         */}

@@ -22,16 +22,24 @@ export type AppType = {
   lightboxOpen: boolean;
 };
 
+const viewportSize = (): [number, number] => {
+  if (typeof window === "undefined") {
+    return [1200, 1200];
+  }
+  const headerHeight = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      "--site-header-height",
+    ),
+  );
+  return [window.innerWidth, window.innerHeight - headerHeight];
+};
+
 const AppContext = createContext<AppType | undefined>(undefined);
 
 export const AppProvider: FunctionComponent<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [size, setSize] = useState<[number, number]>(() =>
-    typeof window !== "undefined"
-      ? [window.innerWidth, window.innerHeight]
-      : [1200, 1200],
-  );
+  const [size, setSize] = useState<[number, number]>(viewportSize);
   const anchorDebounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [anchor, setAnchor] = useState<Anchor>();
   const [lightboxImage, setLightboxImage] = useState<IGatsbyImageData>();
@@ -39,7 +47,7 @@ export const AppProvider: FunctionComponent<{ children: ReactNode }> = ({
 
   useEffect(() => {
     function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
+      setSize(viewportSize());
     }
     window.addEventListener("resize", updateSize);
     updateSize();

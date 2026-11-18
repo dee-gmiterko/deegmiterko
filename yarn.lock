@@ -1866,16 +1866,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@deegmiterko/gatsby-transformer-chat-parse@workspace:packages/gatsby-transformer-chat-parse":
-  version: 0.0.0-use.local
-  resolution: "@deegmiterko/gatsby-transformer-chat-parse@workspace:packages/gatsby-transformer-chat-parse"
-  dependencies:
-    lodash: "npm:^4.18.1"
-    moment: "npm:^2.30.1"
-    ohm-js: "npm:^17.5.0"
-  languageName: unknown
-  linkType: soft
-
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.4.0
   resolution: "@eslint-community/eslint-utils@npm:4.4.0"
@@ -11516,13 +11506,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.18.1":
-  version: 4.18.1
-  resolution: "lodash@npm:4.18.1"
-  checksum: 10c0/757228fc68805c59789e82185135cf85f05d0b2d3d54631d680ca79ec21944ec8314d4533639a14b8bcfbd97a517e78960933041a5af17ecb693ec6eecb99a27
-  languageName: node
-  linkType: hard
-
 "longest-streak@npm:^2.0.0":
   version: 2.0.4
   resolution: "longest-streak@npm:2.0.4"
@@ -12314,15 +12297,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msgpackr@npm:^1.5.4":
-  version: 1.10.2
-  resolution: "msgpackr@npm:1.10.2"
+"msgpackr@npm:1.12.1":
+  version: 1.12.1
+  resolution: "msgpackr@npm:1.12.1"
   dependencies:
     msgpackr-extract: "npm:^3.0.2"
   dependenciesMeta:
     msgpackr-extract:
       optional: true
-  checksum: 10c0/eb0a47b3d32a3be92f7a5b1182a67e5d9bfd5668d1aed63d3df03480a06798311eea339319b442ffafe83de19d9f3c9c6ac4d9081af0c9f896599d766a53db20
+  checksum: 10c0/145a6477ff46ad3154b999ad9f1d80070f50b01f5a12975aad683455fa8968f3e12503d8397a8828bc15fd297da9694fc7b8ae9f21d3df64f559caa10a3a4731
   languageName: node
   linkType: hard
 
@@ -12783,13 +12766,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ohm-js@npm:^17.5.0":
-  version: 17.5.0
-  resolution: "ohm-js@npm:17.5.0"
-  checksum: 10c0/5bee87a84084a68f636f575ae9a6460642a2584671751e717083f00efea900c402e5583056a0559eaec070cc28874a9ae9f69aa42020974822285bd1bdb60833
-  languageName: node
-  linkType: hard
-
 "on-finished@npm:2.4.1, on-finished@npm:^2.4.1":
   version: 2.4.1
   resolution: "on-finished@npm:2.4.1"
@@ -12884,10 +12860,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ordered-binary@npm:^1.2.4":
-  version: 1.5.1
-  resolution: "ordered-binary@npm:1.5.1"
-  checksum: 10c0/fb4c74e07436d0bf33d3b537c18dccafb39a60750a64d8b8fbd55f0b0f8eb7dad710f663b9c2edd1d59e9a27e13b638099da901ecf1cc95cd40173f42cf70f9e
+"ordered-binary@npm:1.6.3":
+  version: 1.6.3
+  resolution: "ordered-binary@npm:1.6.3"
+  checksum: 10c0/f1fafcac1f6983bcdfd4743f46f1d77015df6c1aa80f7753d96b50079ed7244d56853e1b4c6ace202cba001e9a5f931bb6c3533ed4d1b7854d3ca2fba2b2810a
   languageName: node
   linkType: hard
 

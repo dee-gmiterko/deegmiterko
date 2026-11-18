@@ -34,13 +34,6 @@ const config = {
         path: path.join(import.meta.dirname, `src`, `images/page-thumbnails`),
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `content`,
-        path: path.join(import.meta.dirname, `src`, `content`),
-      },
-    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-sharp`,
@@ -58,21 +51,6 @@ const config = {
       },
     },
     `gatsby-transformer-sharp`,
-    {
-      resolve: `@deegmiterko/gatsby-transformer-chat-parse`,
-      options: {
-        users: [
-          {
-            name: 'Me',
-            color: '#863648',
-          },
-          {
-            name: 'You',
-            color: '#a6a6a8',
-          },
-        ]
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

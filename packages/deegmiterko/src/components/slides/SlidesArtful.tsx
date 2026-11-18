@@ -8,7 +8,7 @@ import Page from "../Page";
 import LightboxButton from "../LightboxButton";
 import MasonryPage from "../MasonryPage";
 import ExampleGrid4in6 from "../ExampleGrid4in6";
-import { ThumbnailNode } from "../../pages/index";
+import { ThumbnailNode } from "../../types";
 
 const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
   thumbnails,
@@ -215,7 +215,7 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
 
       <Page
         title="Technical drawing"
-        skills={["CAD", "3D printing", "Technical drawing"]}
+        skills={["CAD", "Onshape", "3D printing", "Technical drawing"]}
       >
         <p>
           Technical drawing can be considered a precise form of art that
@@ -289,7 +289,7 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
 
       <Page
         title="Visual space"
-        skills={["Machine learning", "Neural networks"]}
+        skills={["Machine learning", "Neural networks", "Stable Diffusion"]}
       >
         <p>
           Now, imagine that you are not constructing a single piece of art but a

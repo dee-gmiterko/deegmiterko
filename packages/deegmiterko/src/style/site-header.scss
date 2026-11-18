@@ -1,0 +1,224 @@
+:root {
+  --site-header-height: 72px;
+}
+
+html {
+  scroll-padding-top: var(--site-header-height);
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  height: var(--site-header-height);
+  box-sizing: border-box;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 2px 2px 24px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+
+  .brand,
+  .contact-link {
+    flex: 1 1 0;
+  }
+
+  .brand {
+    white-space: nowrap;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.25rem;
+  }
+
+  .contact-link {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu {
+    display: contents;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  nav {
+    flex: 0 0 auto;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  }
+
+  .current-marker {
+    display: none;
+  }
+
+  .nav-link {
+    position: relative;
+    display: block;
+    padding: 0.6rem 0;
+    white-space: nowrap;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0.2rem;
+      left: 0;
+      height: 2px;
+      background-color: rgba(118, 67, 142, 1);
+      background-image: linear-gradient(170deg, rgba(224, 198, 93, 1) 0%, rgba(118, 67, 142, 1) 47%, rgba(56, 23, 74, 1) 100%);
+      background-attachment: fixed;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    &:hover::after {
+      opacity: 0.4;
+    }
+
+    &.current::after {
+      opacity: 1;
+    }
+  }
+}
+
+.page-book {
+  padding-top: var(--site-header-height);
+  padding-bottom: 2rem;
+
+  .book {
+    height: calc(100vh - var(--site-header-height));
+
+    .thumbnail-nav {
+      height: calc(100vh - var(--site-header-height));
+      box-sizing: border-box;
+    }
+  }
+}
+
+.next-page {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+
+  a {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s;
+
+    .link-content {
+      padding: 1rem 2rem;
+      text-align: center;
+      background-image: linear-gradient(170deg, rgba(224, 198, 93, 1) 0%, rgba(118, 67, 142, 1) 47%, rgba(56, 23, 74, 1) 100%);
+      background-attachment: fixed;
+      color: white;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  :root {
+    --site-header-height: 56px;
+  }
+
+  .site-header {
+    padding: 0 1rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+
+    .menu-toggle {
+      display: block;
+      padding: 0.5rem;
+      border: none;
+      background: transparent;
+      color: rgb(56, 23, 74);
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .menu {
+      position: fixed;
+      top: var(--site-header-height);
+      right: 0;
+      bottom: 0;
+      width: min(80vw, 320px);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 1.5rem 1.5rem 0.75rem;
+      background-color: #fff;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../images/banner.jpg");
+      background-repeat: no-repeat;
+      background-position: right top;
+      background-size: auto 120%;
+      box-shadow: -2px 2px 24px rgba(0, 0, 0, 0.1);
+      transform: translateX(100%);
+      visibility: hidden;
+      transition: transform 0.3s ease, visibility 0s 0.3s;
+
+      &.open {
+        transform: none;
+        visibility: visible;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .nav-link {
+      padding: 0.75rem 0 0.75rem 1.5rem;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .current-marker {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .contact-link {
+      flex: 0 0 auto;
+      margin-top: 2rem;
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .page-book .book {
+    height: unset;
+  }
+}
+
+@media print {
+  .site-header,
+  .next-page {
+    display: none;
+  }
+
+  .page-book {
+    padding-top: 0;
+  }
+}

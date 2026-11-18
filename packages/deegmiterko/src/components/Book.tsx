@@ -7,7 +7,7 @@ import React, {
 import clsx from "clsx";
 
 import ThumbnailNav from "./ThumbnailNav";
-import { ThumbnailNode } from "../pages/index";
+import { ThumbnailNode } from "../types";
 import useApp from "../hooks/useApp";
 import { PageProvider } from "../contexts/pageContext";
 
@@ -30,6 +30,18 @@ const Book: FunctionComponent<{
     [pageRefs],
   );
 
+  const alignToViewport = useCallback(() => {
+    const book = scrollContainerRef.current;
+    if (!book) return;
+    const header = parseFloat(
+      getComputedStyle(document.documentElement).scrollPaddingTop,
+    );
+    const { top, bottom } = book.getBoundingClientRect();
+    if (top < header - 1 || bottom > window.innerHeight + 1) {
+      book.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
+
   const current =
     anchor && anchor.bookId == bookId ? anchor.pageIndex : undefined;
 
@@ -37,6 +49,7 @@ const Book: FunctionComponent<{
     <div
       className={clsx("book", current === children.length - 1 && "last-page")}
       ref={scrollContainerRef}
+      onScroll={alignToViewport}
     >
       <div className="book-spacer" />
       <ThumbnailNav

@@ -1,6 +1,9 @@
-Based on starter template https://github.com/Rohitguptab/rg-portfolio.git, heavily modified.
+# deegmiterko.com
 
-To start development environment:
+Portfolio site.
+
+## Develop
+
 ```
-gatsby develop
+yarn start
 ```

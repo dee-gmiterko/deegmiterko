@@ -209,7 +209,7 @@
           </switch>
         </g>
         <g data-cell-id="o9qODZmToSD0PbRyrUsM-57" pointer-events="all">
-          <circle cx="98" cy="309" r="6" fill="#fff" stroke="#0080f0" stroke-width=".72" style="fill:light-dark(#fff,var(--ge-dark-color, #121212));stroke:#0080f0"/>
+          <circle cx="98" cy="309" r="6" fill="#fff" stroke="#0080f0" stroke-width=".72" style="fill:#fff;stroke:#0080f0"/>
           <circle cx="98" cy="306" r=".6" fill="#0080f0" style="fill:#0080f0"/>
           <path fill="#0080f0" d="M97.04 307.2h1.56v5.4c0 .1.04.19.11.25.06.07.15.11.25.11h-1.92c.1 0 .19-.04.25-.11.07-.06.11-.15.11-.25v-5.04c0-.2-.16-.36-.36-.36" style="fill:#0080f0"/>
         </g>
@@ -228,7 +228,7 @@
           </switch>
         </g>
         <g data-cell-id="o9qODZmToSD0PbRyrUsM-56" pointer-events="all">
-          <circle cx="398" cy="38" r="6" fill="#fff" stroke="#0080f0" stroke-width=".72" style="fill:light-dark(#fff,var(--ge-dark-color, #121212));stroke:#0080f0"/>
+          <circle cx="398" cy="38" r="6" fill="#fff" stroke="#0080f0" stroke-width=".72" style="fill:#fff;stroke:#0080f0"/>
           <circle cx="398" cy="35" r=".6" fill="#0080f0" style="fill:#0080f0"/>
           <path fill="#0080f0" d="M397.04 36.2h1.56v5.4c0 .1.04.19.11.25.06.07.15.11.25.11h-1.92c.1 0 .19-.04.25-.11.07-.06.11-.15.11-.25v-5.04c0-.1-.04-.19-.11-.25a.33.33 0 0 0-.25-.11" style="fill:#0080f0"/>
         </g>
