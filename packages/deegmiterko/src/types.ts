@@ -1,5 +1,14 @@
 import { IGatsbyImageData } from "gatsby-plugin-image";
 
+export enum Slide {
+  Styloma = "styloma",
+  Artful = "artful",
+  GenerativeDesign = "generative-design",
+  GameExperiments = "game-experiments",
+  Professional = "professional",
+  Me = "me",
+}
+
 export type SiteMetadata = {
   author: string;
   description: string;

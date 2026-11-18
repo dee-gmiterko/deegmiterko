@@ -10,7 +10,7 @@ import vidOpenGlForest from "../../images/content/opengl-forest.webm";
 import imgTrainwreck from "../../images/content/trainwreck.png";
 import vidTrainwreck from "../../images/content/trainwreck.webm";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../types";
+import { Slide, ThumbnailNode } from "../../types";
 
 const NecroDungeonNpcDiagram = lazy(
   () => import("../necro-dungeon/NecroDungeonNpcDiagram"),
@@ -23,7 +23,7 @@ const SlidesGameExperiments: FunctionComponent<{
   thumbnails: ThumbnailNode[];
 }> = ({ thumbnails }) => {
   return (
-    <Book bookId="game-experiments" thumbnails={thumbnails}>
+    <Book bookId={Slide.GameExperiments} thumbnails={thumbnails}>
       <TitlePage title="Games and Experiments" lecture={4}>
         <p>
           Games were always pushing the boundaries of what is possible. All in

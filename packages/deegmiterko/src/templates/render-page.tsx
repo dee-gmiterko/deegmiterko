@@ -3,10 +3,11 @@ import React from "react";
 import { AppProvider } from "../contexts/appContext";
 
 import { BOOK_COMPONENTS } from "../components/slides";
+import { Slide } from "../types";
 
 type RenderPageProps = {
   pageContext: {
-    bookId: string;
+    bookId: Slide;
     pageIndex: number;
   };
 };

@@ -18,13 +18,13 @@ import vidParametrizationC from "../../images/content/parametrization-c.mp4";
 import imgSimulation from "../../images/content/simulation.png";
 import vidSimulation from "../../images/content/simulation.mp4";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../types";
+import { Slide, ThumbnailNode } from "../../types";
 
 const SlidesGenerativeDesign: FunctionComponent<{
   thumbnails: ThumbnailNode[];
 }> = ({ thumbnails }) => {
   return (
-    <Book bookId="generative-design" thumbnails={thumbnails}>
+    <Book bookId={Slide.GenerativeDesign} thumbnails={thumbnails}>
       <TitlePage title="Generative Design" lecture={3}>
         <p>
           The process of creating media with the help of scripts and purpose

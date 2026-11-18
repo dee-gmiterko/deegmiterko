@@ -4,13 +4,13 @@ import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../types";
+import { Slide, ThumbnailNode } from "../../types";
 
 const SlidesMe: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
   thumbnails,
 }) => {
   return (
-    <Book bookId="me" thumbnails={thumbnails}>
+    <Book bookId={Slide.Me} thumbnails={thumbnails}>
       <TitlePage
         title="Me"
         subtitle="Coder | Artist | Me"

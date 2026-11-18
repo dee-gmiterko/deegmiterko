@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 
-import { ThumbnailNode } from "../../types";
+import { Slide, ThumbnailNode } from "../../types";
 import SlidesStyloma from "./SlidesStyloma";
 import SlidesArtful from "./SlidesArtful";
 import SlidesGenerativeDesign from "./SlidesGenerativeDesign";
@@ -9,13 +9,13 @@ import SlidesProfessional from "./SlidesProfessional";
 import SlidesMe from "./SlidesMe";
 
 export const BOOK_COMPONENTS: Record<
-  string,
+  Slide,
   FunctionComponent<{ thumbnails: ThumbnailNode[] }>
 > = {
-  styloma: SlidesStyloma,
-  artful: SlidesArtful,
-  "generative-design": SlidesGenerativeDesign,
-  "game-experiments": SlidesGameExperiments,
-  professional: SlidesProfessional,
-  me: SlidesMe,
+  [Slide.Styloma]: SlidesStyloma,
+  [Slide.Artful]: SlidesArtful,
+  [Slide.GenerativeDesign]: SlidesGenerativeDesign,
+  [Slide.GameExperiments]: SlidesGameExperiments,
+  [Slide.Professional]: SlidesProfessional,
+  [Slide.Me]: SlidesMe,
 };
