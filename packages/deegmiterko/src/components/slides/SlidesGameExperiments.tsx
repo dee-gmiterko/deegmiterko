@@ -10,7 +10,7 @@ import vidOpenGlForest from "../../images/content/opengl-forest.webm";
 import imgTrainwreck from "../../images/content/trainwreck.png";
 import vidTrainwreck from "../../images/content/trainwreck.webm";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../pages/index";
+import { ThumbnailNode } from "../../types";
 
 const NecroDungeonNpcDiagram = lazy(
   () => import("../necro-dungeon/NecroDungeonNpcDiagram"),
@@ -78,14 +78,13 @@ const SlidesGameExperiments: FunctionComponent<{
         title="Necro Dungeon"
         skills={[
           "Game dev",
-          "2D lighting",
           "Godot",
+          "Phong lighting",
           "C#",
           "GDScript",
           "Shaders",
           "Blender",
           "Python",
-          "gdUnit4",
         ]}
       >
         <p>
@@ -128,8 +127,10 @@ const SlidesGameExperiments: FunctionComponent<{
         skills={[
           "NPC behavior",
           "Finite state machines",
+          "Group cooperation",
           "A* pathfinding",
-          "Task assignment",
+          "Perception modeling",
+          "Unit tests",
           "C#",
         ]}
       >

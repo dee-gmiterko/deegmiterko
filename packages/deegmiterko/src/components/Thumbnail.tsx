@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import clsx from "clsx";
-import { ThumbnailNode } from "../pages/index";
+import { ThumbnailNode } from "../types";
 
 const Thumbnail: FunctionComponent<{
   index: number;

@@ -5,7 +5,7 @@ import TagList from "../TagList";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../pages/index";
+import { ThumbnailNode } from "../../types";
 
 const SlidesProfessional: FunctionComponent<{
   thumbnails: ThumbnailNode[];

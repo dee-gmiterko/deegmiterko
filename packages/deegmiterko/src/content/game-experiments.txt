@@ -1,9 +1,0 @@
-Me: Only once we find that something works, we can start to build on top of it.
-You: <I think that's actually very clever.>
-Me: And use it in a way that is commercially viable.
-You: <Sadly>
-
-$title: Professional experience
-
-Which is where my professional experience comes in.
-You: Yes. What have you worked on before?

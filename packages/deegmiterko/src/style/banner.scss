@@ -12,6 +12,11 @@
     overflow-y: visible;
     z-index: -1;
     max-width: 700px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
 
   .basic-info {

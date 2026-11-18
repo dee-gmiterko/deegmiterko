@@ -2,25 +2,7 @@ import React from "react";
 
 import { AppProvider } from "../contexts/appContext";
 
-import SlidesStyloma from "../components/slides/SlidesStyloma";
-import SlidesArtful from "../components/slides/SlidesArtful";
-import SlidesGenerativeDesign from "../components/slides/SlidesGenerativeDesign";
-import SlidesGameExperiments from "../components/slides/SlidesGameExperiments";
-import SlidesProfessional from "../components/slides/SlidesProfessional";
-import SlidesMe from "../components/slides/SlidesMe";
-import { ThumbnailNode } from "../pages";
-
-const BOOK_COMPONENTS: Record<
-  string,
-  React.FC<{ thumbnails: ThumbnailNode[] }>
-> = {
-  styloma: SlidesStyloma,
-  artful: SlidesArtful,
-  "generative-design": SlidesGenerativeDesign,
-  "game-experiments": SlidesGameExperiments,
-  professional: SlidesProfessional,
-  me: SlidesMe,
-};
+import { BOOK_COMPONENTS } from "../components/slides";
 
 type RenderPageProps = {
   pageContext: {

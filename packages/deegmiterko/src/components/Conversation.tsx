@@ -12,8 +12,8 @@ interface Props {
 const Conversation = ({ messages, contentImages }: Props) => {
   const { bookPageSize } = useApp();
 
-  if (!messages) {
-    return;
+  if (!messages?.length) {
+    return null;
   }
 
   let i = 0;

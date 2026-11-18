@@ -1,9 +1,0 @@
-Hello
-You: Hi
-I assume you would want to learn some bits about me
-Where does one start?
-You: I would start with latest big project?
-
-$title: Styloma
-
-Sure, let me tell you about it…

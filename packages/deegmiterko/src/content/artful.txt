@@ -1,9 +1,0 @@
-You: Have you noticed how the media changes, but the intent persists?
-Yes, every new age may have added new tools to the mix, but the core message remains the same.
-You: <Unity over ideas keeps poppin up, huh?>
-
-$title: Tie-in of art and tech
-
-Me: Actually, there is one expression method in particular I would like to discuss
-You: What is it?
-Me: It's usually refered to as a "Generative design"

@@ -18,7 +18,7 @@ import vidParametrizationC from "../../images/content/parametrization-c.mp4";
 import imgSimulation from "../../images/content/simulation.png";
 import vidSimulation from "../../images/content/simulation.mp4";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../pages/index";
+import { ThumbnailNode } from "../../types";
 
 const SlidesGenerativeDesign: FunctionComponent<{
   thumbnails: ThumbnailNode[];
@@ -35,7 +35,6 @@ const SlidesGenerativeDesign: FunctionComponent<{
       <Page
         title="Purposes of Generative Design"
         level={2}
-        skills={["Generative art", "Visualization", "Simulation"]}
       >
         <div className="grow"></div>
         <h3>Just art</h3>
@@ -54,7 +53,6 @@ const SlidesGenerativeDesign: FunctionComponent<{
 
       <Page
         title="To visualize"
-        skills={["Data visualization", "Simulation"]}
       >
         <p>
           However, generative art can be utilized also for other means. For
@@ -88,7 +86,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
       <Page
         title="Media used by Generative Design"
         level={2}
-        skills={["Processing", "Animation"]}
+        skills={["Generative art", "Processing", "Animation"]}
       >
         <h3>Image and video</h3>
         <p>
@@ -124,7 +122,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
 
       <Page
         title="3D objects"
-        skills={["3D modeling", "Procedural generation", "Blender"]}
+        skills={["3D modeling", "Procedural generation", "Blender", "Data visualization"]}
       >
         <p>
           Rendering tools became very powerful over the years. And in
@@ -154,7 +152,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
 
       <Page
         title="Games and virtual worlds"
-        skills={["Procedural generation", "Perlin noise", "Python"]}
+        skills={["Procedural generation", "Perlin noise", "Python", "Map API"]}
       >
         <p>
           The most well known example of this approach is Minecraft. I can
@@ -392,7 +390,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
 
       <Page
         title="Visualization"
-        skills={["Data visualization", "Vega-Lite", "Pandas"]}
+        skills={["Data visualization", "Vega", "Pandas"]}
       >
         <p>
           A specific case of transformations are data visualizations. We can
@@ -470,7 +468,6 @@ const SlidesGenerativeDesign: FunctionComponent<{
       <Page
         title="Concept mixing"
         level={2}
-        skills={["Generative art", "Procedural generation"]}
       >
         <p>
           Only once you add all these concepts together you can start to see the

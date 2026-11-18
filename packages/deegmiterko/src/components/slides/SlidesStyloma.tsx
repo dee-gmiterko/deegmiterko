@@ -6,7 +6,7 @@ import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../pages/index";
+import { ThumbnailNode } from "../../types";
 import StylomaTimeline from "../styloma/StylomaTimeline";
 
 const StylomaArchitectureDiagram = lazy(
@@ -112,7 +112,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
           "Kafka",
           "Kubernetes",
           "Terraform",
-          "Google Cloud Platform",
+          "NixOS",
           "Puppeteer",
           "PostgreSQL",
           "Redis",
@@ -123,14 +123,12 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
           "Sentry",
           "Express",
           "TypeORM",
-          "Zod",
-          "Rust",
         ]}
       >
         <div>
           <p>
-            I architected this as 15+ microservices on Google Cloud Platform.
-            Services coordinate through Pub/Sub events - when a new item gets
+            I architected this as 15+ microservices on self hosted server.
+            Services coordinate through Kafka events - when a new item gets
             ingested, it triggers embedding generation, duplicate detection, and
             search indexing automatically.
           </p>
@@ -152,12 +150,13 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
       <Page
         title="Vector embeddings for similarity"
         skills={[
+          "Machine learning",
           "Vector embeddings",
-          "Hybrid search",
           "PyTorch",
           "Python",
           "ONNX",
           "Ollama",
+          "RunPod",
         ]}
       >
         <p>
@@ -231,15 +230,16 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
       <Page
         title="Reviewing at scale"
         skills={[
+          "GitHub API",
           "Code review",
-          "LSP",
           "Electron",
+          "TypeScript",
           "React",
           "CodeMirror",
-          "TypeScript",
-          "Vitest",
+          "LSP",
           "Zustand",
-          "TanStack Query",
+          "TanStack",
+          "Vitest",
         ]}
       >
         <p>

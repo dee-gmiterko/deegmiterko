@@ -4,7 +4,7 @@ import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../pages/index";
+import { ThumbnailNode } from "../../types";
 
 const SlidesMe: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
   thumbnails,
