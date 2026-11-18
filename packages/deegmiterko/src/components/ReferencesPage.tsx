@@ -38,7 +38,7 @@ const ReferencesPage: FunctionComponent<{
   });
 
   const referenceNodes = {
-    github: (
+    "github": (
       <OutboundLink href="https://m.me/dee.gmiterko">
         <dt>
           <FontAwesomeIcon icon={faGithub} /> Github
@@ -46,7 +46,7 @@ const ReferencesPage: FunctionComponent<{
         <dd>m.me/dee.gmiterko</dd>
       </OutboundLink>
     ),
-    linkedin: (
+    "linkedin": (
       <OutboundLink href="https://instagram.com/dee.gmiterko">
         <dt>
           <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
@@ -54,7 +54,7 @@ const ReferencesPage: FunctionComponent<{
         <dd>@dee.gmiterko</dd>
       </OutboundLink>
     ),
-    deviantart: (
+    "deviantart": (
       <OutboundLink href="https://www.deviantart.com/dee-gmiterko">
         <dt>
           <FontAwesomeIcon icon={faDeviantart} /> DeviantArt
@@ -70,7 +70,7 @@ const ReferencesPage: FunctionComponent<{
         <dd>ienze.me</dd>
       </OutboundLink>
     ),
-    instagram: (
+    "instagram": (
       <OutboundLink href="https://instagram.com/dee.gmiterko">
         <dt>
           <FontAwesomeIcon icon={faInstagram} /> Instagram
@@ -78,7 +78,7 @@ const ReferencesPage: FunctionComponent<{
         <dd>@dee.gmiterko</dd>
       </OutboundLink>
     ),
-    contact: (
+    "contact": (
       <AnchorLink to="/#contact">
         <dt>
           <FontAwesomeIcon icon={faContactBook} /> Contact

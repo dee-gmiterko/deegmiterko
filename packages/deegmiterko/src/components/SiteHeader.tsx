@@ -10,9 +10,10 @@ import {
 import clsx from "clsx";
 
 import { books, bookPath } from "../content/books";
+import { Slide } from "../types";
 
 const SiteHeader: FunctionComponent<{
-  current?: string;
+  current?: Slide;
 }> = ({ current }) => {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);

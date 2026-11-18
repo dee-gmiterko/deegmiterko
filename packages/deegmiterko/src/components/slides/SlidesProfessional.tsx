@@ -5,13 +5,13 @@ import TagList from "../TagList";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../types";
+import { Slide, ThumbnailNode } from "../../types";
 
 const SlidesProfessional: FunctionComponent<{
   thumbnails: ThumbnailNode[];
 }> = ({ thumbnails }) => {
   return (
-    <Book bookId="professional" thumbnails={thumbnails}>
+    <Book bookId={Slide.Professional} thumbnails={thumbnails}>
       <TitlePage title="Professional" subtitle="AKA “a real job”" lecture={5}>
         <p>
           Working with others may provide its own challenges, but it's

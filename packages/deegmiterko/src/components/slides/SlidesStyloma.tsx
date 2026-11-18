@@ -6,7 +6,7 @@ import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
-import { ThumbnailNode } from "../../types";
+import { Slide, ThumbnailNode } from "../../types";
 import StylomaTimeline from "../styloma/StylomaTimeline";
 
 const StylomaArchitectureDiagram = lazy(
@@ -20,7 +20,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
   thumbnails,
 }) => {
   return (
-    <Book bookId="styloma" thumbnails={thumbnails}>
+    <Book bookId={Slide.Styloma} thumbnails={thumbnails}>
       <TitlePage title="Styloma" subtitle="AI fashion search" lecture={7}>
         <p>
           What if you could search for clothes by showing what you mean, not by

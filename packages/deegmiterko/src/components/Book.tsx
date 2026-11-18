@@ -7,12 +7,12 @@ import React, {
 import clsx from "clsx";
 
 import ThumbnailNav from "./ThumbnailNav";
-import { ThumbnailNode } from "../types";
+import { Slide, ThumbnailNode } from "../types";
 import useApp from "../hooks/useApp";
 import { PageProvider } from "../contexts/pageContext";
 
 const Book: FunctionComponent<{
-  bookId: string;
+  bookId: Slide;
   children: Array<ReactNode>;
   thumbnails: ThumbnailNode[];
 }> = ({ bookId, children, thumbnails }) => {

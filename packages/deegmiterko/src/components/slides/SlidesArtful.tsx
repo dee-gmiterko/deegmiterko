@@ -8,13 +8,13 @@ import Page from "../Page";
 import LightboxButton from "../LightboxButton";
 import MasonryPage from "../MasonryPage";
 import ExampleGrid4in6 from "../ExampleGrid4in6";
-import { ThumbnailNode } from "../../types";
+import { Slide, ThumbnailNode } from "../../types";
 
 const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
   thumbnails,
 }) => {
   return (
-    <Book bookId="artful" thumbnails={thumbnails}>
+    <Book bookId={Slide.Artful} thumbnails={thumbnails}>
       <TitlePage
         title="Art,"
         subtitle="its media"

@@ -10,7 +10,7 @@ import LightboxImage from "../components/LightboxImage";
 import { BOOK_COMPONENTS } from "../components/slides";
 import { books, bookPath } from "../content/books";
 import useApp from "../hooks/useApp";
-import { SiteData, ThumbnailNode } from "../types";
+import { SiteData, Slide, ThumbnailNode } from "../types";
 
 type BookPageData = {
   site: SiteData;
@@ -20,7 +20,7 @@ type BookPageData = {
 };
 
 type BookPageContext = {
-  bookId: string;
+  bookId: Slide;
   thumbnailRegex: string;
 };
 

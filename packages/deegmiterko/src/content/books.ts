@@ -1,7 +1,7 @@
-import { ChatMessage } from "../types";
+import { ChatMessage, Slide } from "../types";
 
 export type BookContent = {
-  id: string;
+  id: Slide;
   title: string;
   pre: ChatMessage[];
   after: ChatMessage[];
@@ -20,7 +20,7 @@ export const introduction: ChatMessage[] = [
 
 export const books: BookContent[] = [
   {
-    id: "styloma",
+    id: Slide.Styloma,
     title: "Styloma",
     pre: [
       { title: "Styloma" },
@@ -37,7 +37,7 @@ export const books: BookContent[] = [
     ],
   },
   {
-    id: "artful",
+    id: Slide.Artful,
     title: "Art",
     pre: [
       { title: "Artist" },
@@ -63,7 +63,7 @@ export const books: BookContent[] = [
     ],
   },
   {
-    id: "generative-design",
+    id: Slide.GenerativeDesign,
     title: "Generative design",
     pre: [
       { title: "Tie-in of art and tech" },
@@ -98,7 +98,7 @@ export const books: BookContent[] = [
     ],
   },
   {
-    id: "game-experiments",
+    id: Slide.GameExperiments,
     title: "Games",
     pre: [
       { title: "Experiments and games" },
@@ -125,7 +125,7 @@ export const books: BookContent[] = [
     ],
   },
   {
-    id: "professional",
+    id: Slide.Professional,
     title: "Professional",
     pre: [
       { title: "Professional experience" },
@@ -150,7 +150,7 @@ export const books: BookContent[] = [
     ],
   },
   {
-    id: "me",
+    id: Slide.Me,
     title: "Me",
     pre: [
       { title: "Dee Gmiterko" },
