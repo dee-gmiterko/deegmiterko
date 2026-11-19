@@ -2,26 +2,35 @@ import React from "react";
 import { PageProps, graphql } from "gatsby";
 
 import Seo from "../components/Seo";
-import SiteHeader from "../components/SiteHeader";
+import Header from "../components/Header";
 import Banner from "../components/Banner";
 import Conversation from "../components/Conversation";
 import NextPage from "../components/NextPage";
+import GithubActivityOverview from "../components/GithubActivityOverview";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import HeaderAnnouncement from "../components/HeaderAnnouncement";
-import { books, bookPath, introduction } from "../content/books";
-import { SiteData } from "../types";
+import { ChatMessage, SiteData, Slide } from "../types";
 
 type IndexData = {
   site: SiteData;
 };
 
-const IndexPage = ({ data: { site } }: PageProps<IndexData>) => {
-  const first = books[0];
+const introduction: ChatMessage[] = [
+  { author: "Me", message: "Hello" },
+  { author: "You", message: "Hi" },
+  {
+    author: "Me",
+    message: "I assume you would want to learn some bits about me",
+  },
+  { author: "Me", message: "Where does one start?" },
+  { author: "You", message: "I would start with the latest big project?" },
+];
 
+const IndexPage = ({ data: { site } }: PageProps<IndexData>) => {
   return (
     <>
-      <SiteHeader />
+      <Header />
 
       <HeaderAnnouncement siteMetadata={site.siteMetadata} />
 
@@ -31,10 +40,14 @@ const IndexPage = ({ data: { site } }: PageProps<IndexData>) => {
         <main id="about">
           <Conversation messages={introduction} />
 
-          <NextPage to={bookPath(first.id)}>{first.title}</NextPage>
+          <NextPage to={`/${Slide.Styloma}/`}>Styloma</NextPage>
+
+          <GithubActivityOverview />
         </main>
 
         <Contact />
+
+        <div className="page-spacer" />
 
         <Footer siteMetadata={site.siteMetadata} />
       </div>

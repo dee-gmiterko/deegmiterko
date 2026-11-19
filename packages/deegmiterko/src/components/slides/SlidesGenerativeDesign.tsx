@@ -32,10 +32,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </p>
       </TitlePage>
 
-      <Page
-        title="Purposes of Generative Design"
-        level={2}
-      >
+      <Page title="Purposes of Generative Design" level={2}>
         <div className="grow"></div>
         <h3>Just art</h3>
         <p>
@@ -51,15 +48,13 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page
-        title="To visualize"
-      >
+      <Page title="To visualize">
         <p>
           However, generative art can be utilized also for other means. For
-          example to visually represent the significance of data to the viewer.
-          As visual content is processed much faster and easier than text or a
-          spreadsheet full of data it’s advantageous to let a computer generate
-          visual representations for them.
+          example to visually represent the significance of data to the
+          viewer. As visual content is processed much faster and easier than
+          text or a spreadsheet full of data it’s advantageous to let a
+          computer generate visual representations for them.
         </p>
         <div className="example-bar">
           <LightboxButton
@@ -90,8 +85,8 @@ const SlidesGenerativeDesign: FunctionComponent<{
       >
         <h3>Image and video</h3>
         <p>
-          The most commonly used media in generative design are without a doubt
-          images and video.
+          The most commonly used media in generative design are without a
+          doubt images and video.
         </p>
         <div className="grow"></div>
         <div className="example">
@@ -122,12 +117,17 @@ const SlidesGenerativeDesign: FunctionComponent<{
 
       <Page
         title="3D objects"
-        skills={["3D modeling", "Procedural generation", "Blender", "Data visualization"]}
+        skills={[
+          "3D modeling",
+          "Procedural generation",
+          "Blender",
+          "Data visualization",
+        ]}
       >
         <p>
           Rendering tools became very powerful over the years. And in
-          combination with generative design they can produce visually appealing
-          and complex scenes.
+          combination with generative design they can produce visually
+          appealing and complex scenes.
         </p>
         <div className="grow"></div>
         <div className="example">
@@ -152,7 +152,12 @@ const SlidesGenerativeDesign: FunctionComponent<{
 
       <Page
         title="Games and virtual worlds"
-        skills={["Procedural generation", "Perlin noise", "Python", "Map API"]}
+        skills={[
+          "Procedural generation",
+          "Perlin noise",
+          "Python",
+          "Map API",
+        ]}
       >
         <p>
           The most well known example of this approach is Minecraft. I can
@@ -172,10 +177,10 @@ const SlidesGenerativeDesign: FunctionComponent<{
             </a>
           </div>
           <p>
-            The next example is in an old procedurally generated world of mine.
-            It's built using a recursion of galaxies, planets, their terrains,
-            and trees. User interface allows you to view the world on any zoom
-            level and it's infinite in both x and y directions.
+            The next example is in an old procedurally generated world of
+            mine. It's built using a recursion of galaxies, planets, their
+            terrains, and trees. User interface allows you to view the world
+            on any zoom level and it's infinite in both x and y directions.
           </p>
           <p>
             <LightboxButton
@@ -194,15 +199,16 @@ const SlidesGenerativeDesign: FunctionComponent<{
       <Page
         title="Generative Design concepts"
         level={2}
-        skills={["Parameterization", "Processing", "Java", "Maven"]}
+        skills={["exp4j", "Processing", "Java", "Maven"]}
       >
         <h3>Parameterization</h3>
         <p>
           I think that the most important concept of generative design is
-          parameterization. A script can use input parameters (for example width
-          of the image, number of fish) and using them calculate location,
-          shape, color, and movement of objects on the screen. You should be
-          then able to tweak parameters to produce many different art pieces.
+          parameterization. A script can use input parameters (for example
+          width of the image, number of fish) and using them calculate
+          location, shape, color, and movement of objects on the screen. You
+          should be then able to tweak parameters to produce many different
+          art pieces.
         </p>
         <div className="grow"></div>
         <div className="example">
@@ -217,9 +223,9 @@ const SlidesGenerativeDesign: FunctionComponent<{
           </div>
           <p>
             If you watch this example closely you can notice that it's only
-            using a single math function. sin(x). But when it's applied to basic
-            properties of objects like position, rotation, and color it can
-            still produce complex-looking results.
+            using a single math function. sin(x). But when it's applied to
+            basic properties of objects like position, rotation, and color it
+            can still produce complex-looking results.
           </p>
           <div className="show-video-print-image">
             <div className="parameterization-videos">
@@ -253,19 +259,19 @@ const SlidesGenerativeDesign: FunctionComponent<{
         title="Repeatability"
         skills={[
           "Reproducibility",
-          "Seeded randomness",
-          "Hashing",
+          "Sass",
           "React",
+          "Create React App",
           "d3",
         ]}
       >
         <p>
           I think the second most important concept of procedural design is
-          repeatability. The idea of this content is really straightforward: Given a
-          script (source code) and inputs users can always generate the same
-          artwork. So this means you do not have to store generated media as it
-          can be always reproduced. Or you can still choose to produce new
-          artworks by altering its code or inputs.
+          repeatability. The idea of this content is really straightforward:
+          Given a script (source code) and inputs users can always generate
+          the same artwork. So this means you do not have to store generated
+          media as it can be always reproduced. Or you can still choose to
+          produce new artworks by altering its code or inputs.
         </p>
         <div className="grow"></div>
         <div className="example">
@@ -300,14 +306,11 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page
-        title="Randomness"
-        skills={["Processing", "Randomness"]}
-      >
+      <Page title="Randomness" skills={["Processing", "Randomness"]}>
         <p>
-          The most important concept of generative art may be randomness. It can
-          be used to alter input parameters of the generative process to produce
-          a varied collection of artworks or assets.
+          The most important concept of generative art may be randomness. It
+          can be used to alter input parameters of the generative process to
+          produce a varied collection of artworks or assets.
         </p>
         <p>
           You can use this concept to produce many unique but visually similar
@@ -352,12 +355,12 @@ const SlidesGenerativeDesign: FunctionComponent<{
         ]}
       >
         <p>
-          Another approach to procedural art is not to fully generate the media
-          by yourself but instead take some existing content as an input and
-          only transform it in a way. You can take things like images, videos,
-          text, numbers, datasets and use a deterministic script to produce new
-          content. For example by doing geometric transformations, color
-          modifications, abstraction, or simplification.
+          Another approach to procedural art is not to fully generate the
+          media by yourself but instead take some existing content as an input
+          and only transform it in a way. You can take things like images,
+          videos, text, numbers, datasets and use a deterministic script to
+          produce new content. For example by doing geometric transformations,
+          color modifications, abstraction, or simplification.
         </p>
         <div className="example">
           <div className="example-title">
@@ -372,9 +375,9 @@ const SlidesGenerativeDesign: FunctionComponent<{
           <p>
             To demonstrate this concept I chose a project that turns a series
             of photos (for example a gallery or video) into an abstract image
-            containing a color palette that best represents the original images.
-            This example uses statistical methods and other math magic to
-            extract the relevant information.
+            containing a color palette that best represents the original
+            images. This example uses statistical methods and other math magic
+            to extract the relevant information.
           </p>
           <div className="show-video-print-image">
             <video
@@ -394,8 +397,8 @@ const SlidesGenerativeDesign: FunctionComponent<{
       >
         <p>
           A specific case of transformations are data visualizations. We can
-          treat real world data as an input into a procedural design script. But
-          in this case its purpose isn't an artistic expression, but a
+          treat real world data as an input into a procedural design script.
+          But in this case its purpose isn't an artistic expression, but a
           representation of information.
         </p>
         <div className="example">
@@ -440,13 +443,15 @@ const SlidesGenerativeDesign: FunctionComponent<{
           </div>
           <p>
             I have prepared this simulation using very few simple rules which
-            jointly produce a complex behavior. In this case we have three basic
-            rules:
+            jointly produce a complex behavior. In this case we have three
+            basic rules:
           </p>
           <ul>
             <li>sheep alter their heading to match other sheep nearby</li>
             <li>sheep run away from a dog</li>
-            <li>dog tries to preserve a fixed distance from the closest sheep</li>
+            <li>
+              dog tries to preserve a fixed distance from the closest sheep
+            </li>
           </ul>
           <p>
             And their interaction forces sheep to create a herd every single
@@ -465,33 +470,30 @@ const SlidesGenerativeDesign: FunctionComponent<{
         </div>
       </Page>
 
-      <Page
-        title="Concept mixing"
-        level={2}
-      >
+      <Page title="Concept mixing" level={2}>
         <p>
-          Only once you add all these concepts together you can start to see the
-          full potential of generative design. It can be used to create art,
-          visualize data, simulate complex systems, or even generate new content
-          based on existing one. The most powerful use cases are still in game
-          development. But I can imagine understanding individual concepts can
-          help you create visuals of any kind.
+          Only once you add all these concepts together you can start to see
+          the full potential of generative design. It can be used to create
+          art, visualize data, simulate complex systems, or even generate new
+          content based on existing one. The most powerful use cases are still
+          in game development. But I can imagine understanding individual
+          concepts can help you create visuals of any kind.
         </p>
         {/*
-        <div className="example-bar">
-          <div className="example-title">
-            <h4>Puzzles (<em title="To be defined"> TBD </em>)</h4>
-            <span className="btn-source disabled">&lt;/&gt; Browse source code</span>
-          </div>
-          <p>
-            <Scramble text="A very secret description of an ongoing project that you read very successfully." />
-          </p>
-          <p className="text-center">
-            <LightboxButton path="puzzles.jpg" alt="Generative design concept mixing" buttonClassName="w-50 opacity-50" />
-          </p>
+      <div className="example-bar">
+        <div className="example-title">
+          <h4>Puzzles (<em title="To be defined"> TBD </em>)</h4>
+          <span className="btn-source disabled">&lt;/&gt; Browse source code</span>
         </div>
-        <p className="text-center">...</p>
-        */}
+        <p>
+          <Scramble text="A very secret description of an ongoing project that you read very successfully." />
+        </p>
+        <p className="text-center">
+          <LightboxButton path="puzzles.jpg" alt="Generative design concept mixing" buttonClassName="w-50 opacity-50" />
+        </p>
+      </div>
+      <p className="text-center">...</p>
+      */}
         <div className="grow" />
       </Page>
 

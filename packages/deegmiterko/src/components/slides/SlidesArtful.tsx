@@ -29,16 +29,16 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         skills={["Jewelry", "Sewing", "Pattern drafting"]}
       >
         <p>
-          The physicality of art is the most fundamental way to express oneself.
-          It's the first way to express and it's the most intimate.
+          The physicality of art is the most fundamental way to express
+          oneself. It's the first way to express and it's the most intimate.
         </p>
         <div className="example-bar-w-image">
           <div className="example-title">
             <h4>Snake necklace (2011)</h4>
           </div>
           <p>
-            One of the very first wearable pieces I made - an 8 cm long snake-like
-            necklace I made from a soft metal I found.
+            One of the very first wearable pieces I made - an 8 cm long
+            snake-like necklace I made from a soft metal I found.
           </p>
           <LightboxButton path="snake_necklace.jpg" alt="A snake necklace" />
         </div>
@@ -68,7 +68,10 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             </div>
             <div>
               <h5>Sewing</h5>
-              <LightboxButton path="vest/vest_sewing.jpg" alt="Vest, sewing" />
+              <LightboxButton
+                path="vest/vest_sewing.jpg"
+                alt="Vest, sewing"
+              />
             </div>
             <div>
               <h5>Final product</h5>
@@ -81,11 +84,14 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         </div>
       </Page>
 
-      <Page title="Traditional" skills={["Hard pastels", "Drawing"]}>
+      <Page
+        title="Traditional"
+        skills={["Hard pastels", "Drawing", "Composition", "Color theory"]}
+      >
         <p>
           When asked about the topic most people would think of good old paper
-          or a canvas. It seems like an inseparable part of art. Over the time I
-          have used many physical techniques. But covering colored paper by
+          or a canvas. It seems like an inseparable part of art. Over the time
+          I have used many physical techniques. But covering colored paper by
           layering impressions of hard pastels still stands up to me.
         </p>
         <div className="grow" />
@@ -168,7 +174,6 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
                     layout="fixed"
                     alt="DeviantArt"
                     backgroundColor="transparent"
-
                   />
                 </a>
               </div>
@@ -179,13 +184,18 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
 
       <Page
         title="Digital"
-        skills={["Digital drawing", "Graphic tablet", "Computer graphics"]}
+        skills={[
+          "Digital drawing",
+          "Graphic tablet",
+          "Wacom",
+          "Computer graphics",
+        ]}
       >
         <p>
-          Another step in the evolution of art started with the digital era. As
-          it brings new possibilities for creation and most importantly
-          delivery. The name itself very often also refers to an input method -
-          a stylus and a tablet. Which is by far the best way to work with
+          Another step in the evolution of art started with the digital era.
+          As it brings new possibilities for creation and most importantly
+          delivery. The name itself very often also refers to an input method
+          - a stylus and a tablet. Which is by far the best way to work with
           digital art.
         </p>
         <p className="text-center">
@@ -203,10 +213,10 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
           </div>
           <div>
             <p>
-              I use computer graphics and digital drawing mostly for utilitarian
-              purposes. For example creating assets for websites, games,
-              diagrams for explanations and presentations. As my communication
-              style is very visual I find it a very useful tool.
+              I use computer graphics and digital drawing mostly for
+              utilitarian purposes. For example creating assets for websites,
+              games, diagrams for explanations and presentations. As my
+              communication style is very visual I find it a very useful tool.
             </p>
           </div>
         </div>
@@ -244,12 +254,12 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         >
           <h4>NAS server</h4>
           <p>
-            With a spare old laptop and an abundance of unconventional adapters
-            available I found it too inspiring to pass on an opportunity to
-            convert it into a self-sufficient NAS server. After a couple of days of
-            measuring, drawing, printing, (lots of waiting), and putting it
-            together it was ready to be loaded with 32TB of drives (24TB of
-            usable space).
+            With a spare old laptop and an abundance of unconventional
+            adapters available I found it too inspiring to pass on an
+            opportunity to convert it into a self-sufficient NAS server. After
+            a couple of days of measuring, drawing, printing, (lots of
+            waiting), and putting it together it was ready to be loaded with
+            32TB of drives (24TB of usable space).
           </p>
         </ExampleGrid4in6>
       </Page>
@@ -260,17 +270,17 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
       >
         <p>
           Another huge expansion to capabilities of an artist was the
-          introduction of 3D modeling. Most distinctly it allowed for a new way
-          of creating audiovisual media with much less work needed.
+          introduction of 3D modeling. Most distinctly it allowed for a new
+          way of creating audiovisual media with much less work needed.
         </p>
         <div className="example">
           <div className="example-title">
             <h4>VTuber model (2026)</h4>
           </div>
           <p>
-            My 3D modelling skills are not that extensive, but I have made a few
-            functional pieces in Blender. For example this modelled, textured,
-            rigged VRM exported model.
+            My 3D modelling skills are not that extensive, but I have made a
+            few functional pieces in Blender. For example this modelled,
+            textured, rigged VRM exported model.
           </p>
           <h5>Version 1.0, wave and slight smile in live tracked renderer</h5>
           <div className="grow" />
@@ -289,11 +299,16 @@ const SlidesArtful: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
 
       <Page
         title="Visual space"
-        skills={["Machine learning", "Neural networks", "Stable Diffusion"]}
+        skills={[
+          "Machine learning",
+          "Neural networks",
+          "PyTorch",
+          "Stable Diffusion",
+        ]}
       >
         <p>
-          Now, imagine that you are not constructing a single piece of art but a
-          whole space containing many possible images. All part of a single
+          Now, imagine that you are not constructing a single piece of art but
+          a whole space containing many possible images. All part of a single
           concept - "sample space". While still being able to control how it
           looks and behaves.
         </p>

@@ -32,14 +32,17 @@ const SlidesGameExperiments: FunctionComponent<{
         </p>
       </TitlePage>
 
-      <Page title="Game of Life" skills={["Cellular automata", "Hashing", "Python"]}>
+      <Page
+        title="Game of Life"
+        skills={["Cellular automata", "Python", "CLI"]}
+      >
         <p>
           Let's start with one of the simplest games there is.{" "}
           <a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life">
             Conway's Game of Life
           </a>{" "}
-          is a famous zero-player game turning a few simple rules into a living,
-          breathing world.
+          is a famous zero-player game turning a few simple rules into a
+          living, breathing world.
         </p>
         <p></p>
         <div className="grow"></div>
@@ -56,13 +59,13 @@ const SlidesGameExperiments: FunctionComponent<{
           <p>
             Based on The Game of Life, I've created a simple visual-hash
             function that turns any string or file into its unique
-            representation. It can either output an image representing the data
-            or compress it into a string.
+            representation. It can either output an image representing the
+            data or compress it into a string.
           </p>
           <p>
             <em className="smaller">
-              Disclaimer: I don't recommend using it tho, as I haven't validated
-              that its uniformity or its fitness for any secure use.
+              Disclaimer: I don't recommend using it tho, as I haven't
+              validated that its uniformity or its fitness for any secure use.
             </em>
           </p>
           <p>
@@ -82,19 +85,20 @@ const SlidesGameExperiments: FunctionComponent<{
           "Phong lighting",
           "C#",
           "GDScript",
-          "Shaders",
+          "GLSL",
+          "GDShader",
           "Blender",
           "Python",
         ]}
       >
         <p>
           A dungeon-building game produced with Godot and C#. Take a charge in
-          building rooms, setting traps, and assemble monsters from body parts,
-          defending from adventurers…
+          building rooms, setting traps, and assemble monsters from body
+          parts, defending from adventurers…
         </p>
         <p>
-          Its isometric look needed a custom lighting system blending 2D sprites
-          with 3D like Phong reflection model.
+          Its isometric look needed a custom lighting system blending 2D
+          sprites with 3D like Phong reflection model.
         </p>
         <div className="grow" />
         <div className="example">
@@ -108,9 +112,9 @@ const SlidesGameExperiments: FunctionComponent<{
             </a>
           </div>
           <p>
-            Isometric 2D lighting for Godot where lit surfaces live in isometric
-            world space projected onto the 2D sprites. It also supports wall
-            obstruction map for shadows.
+            Isometric 2D lighting for Godot where lit surfaces live in
+            isometric world space projected onto the 2D sprites. It also
+            supports wall obstruction map for shadows.
           </p>
           <p>
             <LightboxButton
@@ -124,6 +128,19 @@ const SlidesGameExperiments: FunctionComponent<{
       <Page
         title="NPCs"
         subtitle="Non-player characters"
+        titleNode={
+          <div className="order-1">
+            <h3>
+              NPCs <p className="subtitle">Non-player characters</p>
+            </h3>
+            <p>
+              A game world feels empty without characters that act on their
+              own. Adventurers in Necro Dungeon explore, fight, flee and loot
+              without anyone steering them.
+            </p>
+          </div>
+        }
+        className="four-squares"
         skills={[
           "NPC behavior",
           "Finite state machines",
@@ -134,57 +151,39 @@ const SlidesGameExperiments: FunctionComponent<{
           "C#",
         ]}
       >
-        <p>
-          A game world feels empty without characters that act on their own.
-          Adventurers in Necro Dungeon explore, fight, flee and loot without
-          anyone steering them.
-        </p>
-        <p>
-          Each party shares one picture of the dungeon, built only from what it
-          has seen. From that picture it chooses a goal, turns the goal into
-          tasks, and hands the tasks to the members best placed to do them.
-        </p>
-        <div className="grow" />
-        <div className="example">
-          <div className="example-title">
-            <h4>Adventurig party and monsters behaviors</h4>
-          </div>
-          <div className="col-7-5">
-            <div>
-              <Suspense fallback={null}>
-                <NecroDungeonNpcDiagram />
-              </Suspense>
-            </div>
-            <div>
-              <p>
-                The design had to solve a few problems at once. A party should
-                act like a group instead of a crowd. Its decisions should rely
-                only on what it has actually seen, so surprises stay possible.
-                No two members should end up doing the same job. And the cost
-                per frame should stay small, however large the dungeon grows.
-              </p>
-            </div>
-          </div>
+        <div className="order-2" />
+        <div className="order-3 tight">
+          <Suspense fallback={null}>
+            <NecroDungeonNpcDiagram />
+          </Suspense>
+        </div>
+        <div className="order-4">
+          <h4>Adventurig party and monsters behaviors</h4>
+          <p>
+            Each party shares one picture of the dungeon, built only from what
+            it has seen. From that picture it chooses a goal, turns the goal
+            into tasks, and hands the tasks to the members best placed to do
+            them.
+          </p>
         </div>
       </Page>
 
       <Page
         title="Idle progress"
         skills={[
-          "Idle game design",
-          "Simulation",
+          "Game design",
           "Game economy",
-          "C++",
+          "Simulation",
+          "Simplex solver",
           "Godot",
+          "C++",
+          "CMake",
+          "Game Backend",
           "TypeScript",
-          "PostgreSQL",
-          "Docker",
           "Node.js",
           "Express",
-          "CMake",
-          "Catch2",
-          "FlatBuffers",
-          "libsodium",
+          "PostgreSQL",
+          "Testing",
         ]}
       >
         <p>
@@ -193,9 +192,9 @@ const SlidesGameExperiments: FunctionComponent<{
           "you were away" bonus.
         </p>
         <p>
-          Project Regrow is an idle game about vehicles running on resources you
-          wire up. It works out what happened while you were away from only what
-          you decided and how long it has been.
+          Project Regrow is an idle game about vehicles running on resources
+          you wire up. It works out what happened while you were away from
+          only what you decided and how long it has been.
         </p>
         <div className="grow" />
         <div className="example">
@@ -210,10 +209,10 @@ const SlidesGameExperiments: FunctionComponent<{
             </div>
             <div>
               <p>
-                The design had to solve a few problems at once. Every player and
-                every device should reach the same result. Nothing should need
-                to run while a player is away. And resources are scarce enough
-                that every connection you wire matters.
+                The design had to solve a few problems at once. Every player
+                and every device should reach the same result. Nothing should
+                need to run while a player is away. And resources are scarce
+                enough that every connection you wire matters.
               </p>
             </div>
           </div>
@@ -243,8 +242,8 @@ const SlidesGameExperiments: FunctionComponent<{
           </div>
           <p>
             A low level implementation of a 3D scene using OpenGL you can walk
-            around in. It implements basic model loading, lighting, reflections,
-            and animations.
+            around in. It implements basic model loading, lighting,
+            reflections, and animations.
           </p>
           <p>
             <video
@@ -307,8 +306,8 @@ const SlidesGameExperiments: FunctionComponent<{
       >
         <p>
           One of the best known games that allow you to heavily modify its
-          content is Minecraft. Which I of course extensively used to create my
-          own mods, plugins, and servers at the time.
+          content is Minecraft. Which I of course extensively used to create
+          my own mods, plugins, and servers at the time.
         </p>
         <h4>Server side</h4>
         <div className="example-bar">
@@ -316,10 +315,10 @@ const SlidesGameExperiments: FunctionComponent<{
             <h4>Bukkit plugins (2010 – 2013)</h4>
           </div>
           <p>
-            I've made many plugins for Minecraft servers in that time. Including
-            a few public ones that gained decent popularity. But as that was over
-            a decade ago, they are no longer maintained and fell into obscurity.
-            For example:
+            I've made many plugins for Minecraft servers in that time.
+            Including a few public ones that gained decent popularity. But as
+            that was over a decade ago, they are no longer maintained and fell
+            into obscurity. For example:
           </p>
           <ul>
             <li>Adding "radiation" and protection</li>
@@ -351,6 +350,7 @@ const SlidesGameExperiments: FunctionComponent<{
           "Blockchain",
           "Unity",
           "WebGL",
+          "Websockets",
           "Solidity",
           "TypeScript",
           "Firebase",
@@ -379,8 +379,8 @@ const SlidesGameExperiments: FunctionComponent<{
             During my freelancing period I worked on a blockchain based card
             collecting game. My area of focus was integration of distributed
             systems, creating WebGL port, websocket based networking, and
-            backend. But I've also fixed several visual issues and replaced card
-            asset loading with a more efficient method.
+            backend. But I've also fixed several visual issues and replaced
+            card asset loading with a more efficient method.
           </p>
           <p className="text-center">
             <LightboxButton
@@ -410,8 +410,8 @@ const SlidesGameExperiments: FunctionComponent<{
             <h4>London map (2011 – 2013)</h4>
           </div>
           <p>
-            A very common practice is to pack as much as possible into a limited
-            space, trying to hide its borders in natural-looking
+            A very common practice is to pack as much as possible into a
+            limited space, trying to hide its borders in natural-looking
             surroundings.
           </p>
           <p className="text-center">
@@ -419,35 +419,6 @@ const SlidesGameExperiments: FunctionComponent<{
               path="london-map.png"
               alt="Minecraft London map"
               buttonClassName="w-80"
-            />
-          </p>
-        </div>
-      </Page>
-
-      <Page
-        title="Asset pipeline"
-        skills={["Asset pipeline", "Blender", "Neural style transfer", "Height maps"]}
-      >
-        <p>
-          Without any assets to look at, your game world would be a very boring
-          place. But creating them is an extremely time-consuming process. So there
-          always was this drive to automate it as much as possible.
-        </p>
-        <div className="grow" />
-        <div className="example">
-          <div className="example-title">
-            <h4>Tile builder (2017)</h4>
-          </div>
-          <p>
-            This tool takes two inputs: a color mask and a height map. Then
-            proceeds to build a 3D model which is used to render a base image.
-            As the next step it uses machine learning to enhance the texture
-            guessing some additional details.
-          </p>
-          <p>
-            <LightboxButton
-              path="tile-builder.png"
-              alt="Tile builder pipeline"
             />
           </p>
         </div>
@@ -464,7 +435,7 @@ const SlidesGameExperiments: FunctionComponent<{
           "Godot",
           "CMake",
           "Docker",
-          "Catch2",
+          "Testing",
           "Python",
         ]}
       >
@@ -487,11 +458,11 @@ const SlidesGameExperiments: FunctionComponent<{
             </div>
             <div>
               <p>
-                A turn-based game for up to four players. Only the opening seed
-                and each accepted move cross the network, and every client runs
-                the same rules to reach the same state. Local, LAN and Steam
-                play share one code path, and a dropped player rejoins by
-                replaying the moves.
+                A turn-based game for up to four players. Only the opening
+                seed and each accepted move cross the network, and every
+                client runs the same rules to reach the same state. Local, LAN
+                and Steam play share one code path, and a dropped player
+                rejoins by replaying the moves.
               </p>
             </div>
           </div>
@@ -520,12 +491,12 @@ const SlidesGameExperiments: FunctionComponent<{
             </a>
           </div>
           <p>
-            I made a web port of this popular puzzle game, making it again a bit
-            more accessible for the current age. Transpiling its source code
-            using a tool called <a href="https://emscripten.org/">Emscripten</a>{" "}
-            and fixing issues that arose in the process. Most notably replacing
-            some libraries with versions that are compatible with running in
-            browser.
+            I made a web port of this popular puzzle game, making it again a
+            bit more accessible for the current age. Transpiling its source
+            code using a tool called{" "}
+            <a href="https://emscripten.org/">Emscripten</a> and fixing issues
+            that arose in the process. Most notably replacing some libraries
+            with versions that are compatible with running in browser.
           </p>
           <p className="text-center">
             <LightboxButton

@@ -1,13 +1,13 @@
 .conversation {
   width: 100%;
   max-width: 900px;
-  padding: 10px 2rem;
+  padding: 6px 2rem;
   box-sizing: border-box;
   margin: 0 auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
   
   .sequence {
     display: flex;
@@ -27,6 +27,7 @@
 
         .message {
           padding: 15px;
+          font-size: 1rem;
         }
       }
     }
@@ -71,7 +72,7 @@
     .title {
       text-align: center;
       font-size: 1.25rem;
-      margin: 1.5rem 0 1.0rem 0;
+      margin: 1rem 0 0.75rem 0;
       color: #999;
     }
   }
@@ -101,5 +102,11 @@
 
   .scramble-part-4 {
     transform: translate(-2px, -2px);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .conversation .sequence .sequence-messages .message-container .message {
+    font-size: 0.75rem;
   }
 }
