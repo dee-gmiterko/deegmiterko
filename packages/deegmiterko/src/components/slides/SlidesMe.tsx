@@ -89,7 +89,11 @@ const SlidesMe: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <h3>Having fun solving problems</h3>
             <ul>
               <li>Board games</li>
-              <li>Puzzle races</li>
+              <li>
+                <a href="https://sifrovacky.cz/statistiky/hraci/domi-gmiterko">
+                  Puzzle races
+                </a>
+              </li>
             </ul>
           </div>
         }

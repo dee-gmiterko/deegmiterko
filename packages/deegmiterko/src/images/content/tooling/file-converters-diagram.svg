@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160" viewBox="0 20 600 160">
+  <title>File converters</title>
+  <desc>A file on the left is converted into a different file on the right.</desc>
+  <defs>
+    <linearGradient id="file-converters-arrow" gradientUnits="userSpaceOnUse" x1="238" y1="0" x2="368" y2="0">
+      <stop offset="0" stop-color="#A8C0FF"/>
+      <stop offset="1" stop-color="#3F2B96"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 150.00 L3 147.89 L6 145.97 L9 144.44 L12 143.41 L15 143.01 L18 143.25 L21 144.12 L24 145.54 L27 147.37 L30 149.45 L33 151.58 L36 153.56 L39 155.21 L42 156.38 L45 156.95 L48 156.88 L51 156.16 L54 154.87 L57 153.13 L60 151.10 L63 148.96 L66 146.92 L69 145.17 L72 143.87 L75 143.13 L78 143.04 L81 143.60 L84 144.75 L87 146.39 L90 148.37 L93 150.49 L96 152.58 L99 154.42 L102 155.85 L105 156.74 L108 157.00 L111 156.60 L114 155.60 L117 154.07 L120 152.16 L123 150.05 L126 147.94 L129 146.02 L132 144.47 L135 143.43 L138 143.01 L141 143.23 L144 144.09 L147 145.50 L150 147.32 L153 149.40 L156 151.53 L159 153.52 L162 155.18 L165 156.36 L168 156.94 L171 156.89 L174 156.19 L177 154.91 L180 153.18 L183 151.15 L186 149.01 L189 146.97 L192 145.21 L195 143.89 L198 143.15 L201 143.04 L204 143.58 L207 144.71 L210 146.34 L213 148.31 L216 150.44 L219 152.53 L222 154.38 L225 155.82 L228 156.72 L231 157.00 L234 156.62 L237 155.63 L240 154.11 L243 152.22 L246 150.11 L249 147.99 L252 146.07 L255 144.50 L258 143.45 L261 143.01 L264 143.22 L267 144.06 L270 145.45 L273 147.27 L276 149.34 L279 151.47 L282 153.47 L285 155.14 L288 156.33 L291 156.94 L294 156.90 L297 156.21 L300 154.95 L303 153.23 L306 151.20 L309 149.07 L312 147.02 L315 145.25 L318 143.92 L321 143.16 L324 143.03 L327 143.55 L330 144.68 L333 146.30 L336 148.26 L339 150.38 L342 152.47 L345 154.33 L348 155.79 L351 156.71 L354 157.00 L357 156.64 L360 155.66 L363 154.16 L366 152.27 L369 150.16 L372 148.05 L375 146.11 L378 144.54 L381 143.47 L384 143.01 L387 143.21 L390 144.03 L393 145.41 L396 147.22 L399 149.29 L402 151.42 L405 153.42 L408 155.10 L411 156.31 L414 156.93 L417 156.91 L420 156.24 L423 154.99 L426 153.28 L429 151.26 L432 149.12 L435 147.07 L438 145.29 L441 143.95 L444 143.17 L447 143.03 L450 143.53 L453 144.64 L456 146.25 L459 148.21 L462 150.33 L465 152.42 L468 154.29 L471 155.76 L474 156.69 L477 157.00 L480 156.66 L483 155.70 L486 154.20 L489 152.32 L492 150.22 L495 148.10 L498 146.16 L501 144.57 L504 143.49 L507 143.02 L510 143.19 L513 144.00 L516 145.37 L519 147.17 L522 149.23 L525 151.37 L528 153.37 L531 155.06 L534 156.29 L537 156.92 L540 156.91 L543 156.26 L546 155.03 L549 153.32 L552 151.31 L555 149.18 L558 147.12 L561 145.33 L564 143.97 L567 143.18 L570 143.02 L573 143.51 L576 144.61 L579 146.20 L582 148.15 L585 150.27 L588 152.37 L591 154.25 L594 155.73 L597 156.67 L600 157.00" fill="none" stroke="#3F2B96" stroke-opacity="0.6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g opacity="0.45">
+    <path d="M238 100C262 45 331 49 354 82" fill="none" stroke="url(#file-converters-arrow)" stroke-width="16"/>
+    <polygon points="367,74 340,91 368,104" fill="url(#file-converters-arrow)"/>
+  </g>
+  <g fill="none" stroke="#3F2B96" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <g opacity="0.25">
+      <g transform="translate(83 40) scale(0.6) translate(-60 -60)">
+        <path d="M60 60H128L156 88V196H60Z" fill="#ffffff"/>
+        <path d="M128 60V88H156"/>
+        <path d="M78 118H138M78 138H138M78 158H122"/>
+      </g>
+      <g transform="translate(463 40) scale(0.6) translate(-444 -60)">
+        <path d="M444 60H512L540 88V196H444Z" fill="#ffffff"/>
+        <path d="M512 60V88H540"/>
+        <rect x="462" y="112" width="30" height="30" rx="3"/>
+        <rect x="498" y="112" width="24" height="30" rx="3"/>
+        <rect x="462" y="150" width="60" height="30" rx="3"/>
+      </g>
+    </g>
+    <g opacity="0.1">
+      <g transform="translate(8 40) scale(0.6) translate(-60 -60)">
+        <path d="M60 60H128L156 88V196H60Z" fill="#ffffff"/>
+        <path d="M128 60V88H156"/>
+        <path d="M78 118H138M78 138H138M78 158H122"/>
+      </g>
+      <g transform="translate(538 40) scale(0.6) translate(-444 -60)">
+        <path d="M444 60H512L540 88V196H444Z" fill="#ffffff"/>
+        <path d="M512 60V88H540"/>
+        <rect x="462" y="112" width="30" height="30" rx="3"/>
+        <rect x="498" y="112" width="24" height="30" rx="3"/>
+        <rect x="462" y="150" width="60" height="30" rx="3"/>
+      </g>
+    </g>
+  </g>
+  <g fill="none" stroke="#3F2B96" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <g transform="translate(158 40) scale(0.6) translate(-60 -60)">
+      <path d="M60 60H128L156 88V196H60Z" fill="#ffffff"/>
+      <path d="M128 60V88H156"/>
+      <path d="M78 118H138M78 138H138M78 158H122"/>
+    </g>
+    <g transform="translate(388 40) scale(0.6) translate(-444 -60)">
+      <path d="M444 60H512L540 88V196H444Z" fill="#ffffff"/>
+      <path d="M512 60V88H540"/>
+      <rect x="462" y="112" width="30" height="30" rx="3"/>
+      <rect x="498" y="112" width="24" height="30" rx="3"/>
+      <rect x="462" y="150" width="60" height="30" rx="3"/>
+    </g>
+  </g>
+</svg>

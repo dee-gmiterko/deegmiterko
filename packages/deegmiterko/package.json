@@ -14,7 +14,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "generate-page-images": "node scripts/generate-page-images.mjs"
+    "generate-page-images": "node scripts/generate-page-images.mjs",
+    "export-github-activity": "node scripts/export-github-activity.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",

@@ -9,10 +9,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import clsx from "clsx";
 
-import { books, bookPath } from "../content/books";
 import { Slide } from "../types";
 
-const SiteHeader: FunctionComponent<{
+export const navLinks: { id: Slide; title: string }[] = [
+  { id: Slide.Styloma, title: "Styloma" },
+  { id: Slide.Artful, title: "Art" },
+  { id: Slide.GenerativeDesign, title: "Generative design" },
+  { id: Slide.GameExperiments, title: "Games" },
+  // { id: Slide.Tooling, title: "Tooling" },
+  { id: Slide.Professional, title: "Professional" },
+  { id: Slide.Me, title: "Me" },
+];
+
+const Header: FunctionComponent<{
   current?: Slide;
 }> = ({ current }) => {
   const [open, setOpen] = useState(false);
@@ -36,10 +45,10 @@ const SiteHeader: FunctionComponent<{
       <div id="site-menu" className={clsx("menu", open && "open")}>
         <nav aria-label="Pages">
           <ul>
-            {books.map(({ id, title }) => (
+            {navLinks.map(({ id, title }) => (
               <li key={id}>
                 <Link
-                  to={bookPath(id)}
+                  to={`/${id}/`}
                   className={clsx("nav-link", id === current && "current")}
                   aria-current={id === current ? "page" : undefined}
                   onClick={close}
@@ -58,7 +67,7 @@ const SiteHeader: FunctionComponent<{
         </nav>
         <div className="contact-link">
           <AnchorLink
-            to="/#contact"
+            to={`${current ? `/${current}/` : "/"}#contact`}
             className="nav-link"
             onAnchorLinkClick={close}
           >
@@ -70,4 +79,4 @@ const SiteHeader: FunctionComponent<{
   );
 };
 
-export default SiteHeader;
+export default Header;

@@ -5,6 +5,7 @@ export enum Slide {
   Artful = "artful",
   GenerativeDesign = "generative-design",
   GameExperiments = "game-experiments",
+  Tooling = "tooling",
   Professional = "professional",
   Me = "me",
 }

@@ -23,8 +23,8 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
     <Book bookId={Slide.Styloma} thumbnails={thumbnails}>
       <TitlePage title="Styloma" subtitle="AI fashion search" lecture={7}>
         <p>
-          What if you could search for clothes by showing what you mean, not by
-          trivial filtering.
+          What if you could search for clothes by showing what you mean, not
+          by trivial filtering.
         </p>
         <p className="subtitle">Lead solo developer</p>
       </TitlePage>
@@ -33,7 +33,8 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         title="Search fashion, visually"
         skills={[
           "Visual search",
-          "Semantic search",
+          "E-commerce",
+          "Object embedding",
           "Object detection",
           "React",
           "TypeScript",
@@ -51,8 +52,8 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <h4>Visual semantic search</h4>
             <p>
               I built a dedicated search for exploring many stores at once -
-              allowing you to find what you'd never discover by browsing page by
-              page.
+              allowing you to find what you'd never discover by browsing page
+              by page.
             </p>
           </div>
         </div>
@@ -61,15 +62,15 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <div>
               <h4 className="text-left">Image search</h4>
               <p className="text-left">
-                Upload a photo, iteratively explore similar items, until you find
-                exactly what you're looking for!
+                Upload a photo, iteratively explore similar items, until you
+                find exactly what you're looking for!
               </p>
             </div>
             <div>
               <h4 className="text-left">Text search</h4>
               <p className="text-left">
-                With natural language semantic understanding, you can give even
-                more details.
+                With natural language semantic understanding, you can give
+                even more details.
               </p>
             </div>
             <div>
@@ -108,11 +109,15 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         skills={[
           "Microservices",
           "Event-driven architecture",
+          "REST",
+          "JWT",
           "Web scraping",
           "Kafka",
           "Kubernetes",
           "Terraform",
           "NixOS",
+          "Linux server",
+          "GitHub pipelines",
           "Puppeteer",
           "PostgreSQL",
           "Redis",
@@ -129,8 +134,8 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
           <p>
             I architected this as 15+ microservices on self hosted server.
             Services coordinate through Kafka events - when a new item gets
-            ingested, it triggers embedding generation, duplicate detection, and
-            search indexing automatically.
+            ingested, it triggers embedding generation, duplicate detection,
+            and search indexing automatically.
           </p>
           <Suspense fallback={null}>
             <StylomaArchitectureDiagram />
@@ -140,9 +145,9 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
           <h4>Data ingestion challenges</h4>
           <p>
             Retailers can expose different data formats - some provide APIs,
-            feeds, others require scraping. I constructed a set of configurable
-            parsers handling each source's specific access method and
-            limitations.
+            feeds, others require scraping. I constructed a set of
+            configurable parsers handling each source's specific access method
+            and limitations.
           </p>
         </div>
       </Page>
@@ -151,7 +156,7 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         title="Vector embeddings for similarity"
         skills={[
           "Machine learning",
-          "Vector embeddings",
+          "Object embedding",
           "PyTorch",
           "Python",
           "ONNX",
@@ -160,8 +165,8 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         ]}
       >
         <p>
-          A picture is worth a thousand words? I think so, but a pixel match is
-          not enough. We need to go further to understand for example the
+          A picture is worth a thousand words? I think so, but a pixel match
+          is not enough. We need to go further to understand for example the
           difference between a wrap dress and a shift dress, not just "blue
           dress". Since the beginning I knew that embeddings need to capture
           semantic meaning, not keywords.
@@ -175,8 +180,8 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <div>
               <h5 className="text-left">Image embeddings</h5>
               <p className="text-left">
-                Visual similarity - Individual photos encoded as a vector - "find
-                pictures that match this".
+                Visual similarity - Individual photos encoded as a vector -
+                "find pictures that match this".
               </p>
             </div>
             <div>
@@ -189,8 +194,8 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <div>
               <h5 className="text-left">User embeddings</h5>
               <p className="text-left">
-                User interest - Past interest encoded as a vector - "prioritize
-                items that I will like".
+                User interest - Past interest encoded as a vector -
+                "prioritize items that I will like".
               </p>
             </div>
             <div>
@@ -215,6 +220,11 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         subtitle="The agentic development sub-system"
         skills={[
           "Agentic development",
+          "Tooling",
+          "MCP",
+          "Validation",
+          "Verification",
+          "QA",
           "CI/CD",
           "Docker",
           "GitHub Actions",
@@ -228,66 +238,16 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
       </Page>
 
       <Page
-        title="Reviewing at scale"
-        skills={[
-          "GitHub API",
-          "Code review",
-          "Electron",
-          "TypeScript",
-          "React",
-          "CodeMirror",
-          "LSP",
-          "Zustand",
-          "TanStack",
-          "Vitest",
-        ]}
+        title="Bibliography"
+        id="styloma-bibliography"
+        skills={["Tooling", "Validation", "ESLint"]}
       >
-        <p>
-          Agents produce changes faster than anyone can read them. And review
-          is the one step of the loop that can't be delegated, so it has to be
-          done properly, not skimmed. A pull request of a few thousand lines in
-          a web diff, with no way to jump to a definition, is exactly where
-          that goes wrong. So I review in the real repository instead.
-        </p>
-        <div className="grow"></div>
-        <div className="example">
-          <div className="example-title">
-            <h4>Gepard (2026)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/gepard"
-              target="_blank"
-              rel="noreferrer"
-            >
-              &lt;/&gt; Browse source code
-            </a>
-          </div>
-          <p>
-            A desktop app for reviewing large pull requests in a full local
-            clone. The whole repository is searchable, language servers give
-            definitions and references, and the review scope is a target - a
-            pull request, one of its commits, or a path. Files are walked from
-            the keyboard and marked viewed as you go; comments are drafted
-            locally and pushed to GitHub as a single review in one sync. Open
-            source.
-          </p>
-          <p className="text-center">
-            <LightboxButton
-              path="gepard/screenshot.png"
-              alt="Gepard reviewing a pull request: file tree with viewed marks, diff view, floating viewed and sync controls, file details panel"
-              buttonClassName="w-80"
-            />
-          </p>
-        </div>
-      </Page>
-
-      <Page title="Bibliography" id="styloma-bibliography">
         <StylomaTimeline />
         <div className="grow" />
         <ol className="bibliography">
           <li>
-            Gmiterko, D., <em>“Styloma β”</em>, 1.0.0, 2026, source is not open,
-            but you can test it yourself at{" "}
+            Gmiterko, D., <em>“Styloma β”</em>, 1.0.0, 2026, source is not
+            open, but you can test it yourself at{" "}
             <a
               className="btn-source"
               href="https://styloma.deegmiterko.com"
@@ -315,8 +275,8 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             </a>
           </li>
           <li>
-            Gmiterko, D., <em>“On ensurance of coding patterns”</em> at GitHub -
-            Where the world builds software, March 2026{" "}
+            Gmiterko, D., <em>“On ensurance of coding patterns”</em> at GitHub
+            - Where the world builds software, March 2026{" "}
             <a
               className="btn-source"
               href="https://github.com/dee-gmiterko/eslint-plugin-defensive-coding"

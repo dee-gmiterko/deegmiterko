@@ -38,7 +38,8 @@ const RenderPage: React.FC<RenderPageProps> = ({ pageContext }) => {
       margin: 0;
       font-family: "Arial";
     }
-    .render-container .thumbnail-nav {
+    .render-container .thumbnail-nav,
+    .render-container .conversation {
       display: none;
     }
     .render-container .pages-wrapper {

@@ -12,18 +12,17 @@ const SlidesProfessional: FunctionComponent<{
 }> = ({ thumbnails }) => {
   return (
     <Book bookId={Slide.Professional} thumbnails={thumbnails}>
-      <TitlePage title="Professional" subtitle="AKA “a real job”" lecture={5}>
+      <TitlePage title="Professional" subtitle="work experience" lecture={5}>
         <p>
           Working with others may provide its own challenges, but it's
-          essential to scale the things you can do well beyond what you could do
-          alone.
+          essential to scale the things you can do well beyond what you could
+          do alone.
         </p>
       </TitlePage>
 
       <Page
         title="Website development"
         skills={[
-          "Web",
           "Backend",
           "PHP",
           "Nette",
@@ -33,19 +32,23 @@ const SlidesProfessional: FunctionComponent<{
           "Frontend",
           "JavaScript",
           "CSS",
+          "SCSS",
+          "Bootstrap",
           "PrestaShop",
           "React",
+          "Redux",
+          "Styled Components",
         ]}
       >
         <p>
           Websites are the most common way to present information on the
-          internet. And I have experience with building many different kinds of
-          them. Blogs, static, eshops, internal applications, you name it.
+          internet. And I have experience with building many different kinds
+          of them. Blogs, static, eshops, internal applications, you name it.
         </p>
         <p>
           Their development is commonly split into two parts, frontend (what
-          users see in their browser) and backend (what happens on the server).
-          I've worked on both.
+          users see in their browser) and backend (what happens on the
+          server). I've worked on both.
         </p>
         <div className="example-bar">
           <div className="example-title">
@@ -90,21 +93,26 @@ const SlidesProfessional: FunctionComponent<{
         skills={[
           "Data processing",
           "Python",
+          "Jupyter",
           "Pipeline building",
           "Airflow",
           "PubSub",
           "PostgreSQL",
+          "SQL",
           "DataOps",
           "BigQuery",
+          "GCP",
           "Data Quality",
-          "Internal product",
+          "Data warehouse",
+          "Datadog",
+          "DBT",
         ]}
       >
         <p>
-          It's one thing to work on a closed order like an eshop that is more or
-          less built and delivered once. But it's a whole different story to have
-          a little bit of sway on a constantly evolving product while it's being
-          used by thousands of people.
+          It's one thing to work on a closed order like an eshop that is more
+          or less built and delivered once. But it's a whole different story
+          to have a little bit of sway on a constantly evolving product while
+          it's being used by thousands of people.
         </p>
         <div className="grow" />
         <div className="example-bar">
@@ -132,9 +140,9 @@ const SlidesProfessional: FunctionComponent<{
             The quintessential tool for managing data workflows.
           </p>
           <p>
-            As a link between server platform underneath and the data processing
-            scripts on top, it's a great tool for managing data workflows. At
-            this time I've been using it a lot in order to:
+            As a link between server platform underneath and the data
+            processing scripts on top, it's a great tool for managing data
+            workflows. At this time I've been using it a lot in order to:
           </p>
           <ul>
             <li>Automate data transformation tasks</li>
@@ -156,10 +164,10 @@ const SlidesProfessional: FunctionComponent<{
           "Services integration",
           "Ops",
           "Unity",
-          "Static websites",
-          "Application",
+          "Gatsby",
+          "Astro",
+          "Smart contracts",
           "TypeScript",
-          "Video streaming",
           "Adaptive learning",
           "User analytics",
           "Firebase",
@@ -182,7 +190,7 @@ const SlidesProfessional: FunctionComponent<{
           )
         </p>
         <div className="grow" />
-        <div className="example">
+        <div className="example-bar">
           <div className="example-title">
             <h4>
               Fullstack @{" "}
@@ -200,7 +208,9 @@ const SlidesProfessional: FunctionComponent<{
             <li>Ethereum, Immutable X, Avalanche</li>
             <li>Blockchain-based gaming</li>
           </ul>
-          <div className="grow" />
+        </div>
+        <div className="grow" />
+        <div className="example">
           <div className="example-title">
             <h4>
               Fullstack @{" "}
@@ -208,21 +218,19 @@ const SlidesProfessional: FunctionComponent<{
               (2023 – 2024)
             </h4>
           </div>
-          <div className="col-8-4">
-            <p className="mb-0">
-              Afterwards I moved onto more traditional projects. Working on
-              tailored systems for clients, there is one project in particular I
-              would like to highlight.
-            </p>
-            <div className="text-right align-self-end">
-              <a
-                className="btn-source"
-                href="#freelance-development-na-medicinu"
-              >
-                Project details&nbsp;&nbsp;&nbsp;▷
-              </a>
-            </div>
-          </div>
+          <p>
+            Afterwards I moved onto more traditional projects. Working on
+            tailored systems for clients, there is one project in particular I
+            would like to highlight.
+          </p>
+          <p className="text-right">
+            <a
+              className="btn-source"
+              href="#freelance-development-na-medicinu"
+            >
+              Project details&nbsp;&nbsp;&nbsp;▷
+            </a>
+          </p>
         </div>
       </Page>
 
@@ -231,8 +239,10 @@ const SlidesProfessional: FunctionComponent<{
         subtitle="Na medicínu"
         skills={[
           "E-commerce",
-          "Video streaming",
+          "CDN",
+          "Video transcoding",
           "Adaptive learning",
+          "Google Analytics",
           "React",
           "Gatsby",
           "Firebase",
@@ -330,14 +340,110 @@ const SlidesProfessional: FunctionComponent<{
       </Page>
 
       <Page
+        title="Full-stack developer"
+        skills={[
+          "Frontend",
+          "Angular",
+          "AngularJS",
+          "Backend",
+          "Scala",
+          "AWS",
+          "Jenkins",
+          "LLM",
+          "Refactoring",
+          "TDD",
+        ]}
+      >
+        <p>
+          I like covering a product end to end. It's the only way to put every
+          skill I have into making it better.
+        </p>
+        <div className="grow" />
+        <div className="example-bar">
+          <div className="example-title">
+            <h4>
+              Fullstack @{" "}
+              <a
+                className="subheading"
+                href="https://www.blackboard.com/solutions/ally"
+              >
+                Anthology Ally
+              </a>{" "}
+              (2024 – 2025)
+            </h4>
+          </div>
+          <p>
+            Ally allows students to download content in converted (e.g.
+            braille, voice) formats and instructors to easily remediate
+            content to make it more accessible for their class.
+          </p>
+          <ul className="two-columns">
+            <li>
+              <span className="subheading">Front-end:</span> implementing new
+              end user (students and lecturers) features
+            </li>
+            <li>
+              <span className="subheading">Back-end:</span> integration with
+              learning management systems data sources
+            </li>
+            <li>
+              <span className="subheading">AI integration:</span> suggestions
+              for image captioning to speed up work of lecturers, including
+              safety testing
+            </li>
+            <li>
+              <span className="subheading">Community:</span> Technical
+              responsibility for smooth running of a community event,{" "}
+              <a href="https://ally.ac/fycd/">Fix Your Content Day</a>
+            </li>
+          </ul>
+          <p className="text-right">
+            <a
+              className="btn-source"
+              href="https://www.blackboard.com/solutions/ally"
+            >
+              Product website&nbsp;&nbsp;&nbsp;▷
+            </a>
+          </p>
+        </div>
+        <div className="grow" />
+        <div className="example">
+          <div className="example-title">
+            <h4>Code refactoring</h4>
+          </div>
+          <p>
+            A large part of my contribution was improving a long-lived
+            front-end codebase, improving development experience for everyone,
+            while still shipping features:
+          </p>
+          <ul>
+            <li>
+              Led the Angular upgrades 12 → 13 → latest compatible version,
+              unifying outdated logic and divergent approaches
+            </li>
+            <li>
+              Unblocked the removal of legacy AngularJS through a series of
+              large refactors
+            </li>
+            <li>
+              Refactored webpack build pipeline to speed up build and clean up
+              releases
+            </li>
+          </ul>
+        </div>
+      </Page>
+
+      <Page
         title="Education"
         subtitle="Masaryk University - Bc."
         skills={[
-          "Applications",
+          "Integrated systems",
           "Python",
           "Database management",
           "Java",
           "C++",
+          "OpenGL",
+          "CUDA",
           "Algorithms",
           "Computational theory",
           "Data science",
@@ -366,9 +472,8 @@ const SlidesProfessional: FunctionComponent<{
             Techniques for measuring similarity of educational items
           </h5>
           <p>
-            Focuses on measuring of item similarity of questions from
-            adaptive tutoring systems utilizing correctness of answers from
-            students.
+            Focuses on measuring of item similarity of questions from adaptive
+            tutoring systems utilizing correctness of answers from students.
           </p>
           <p className="text-center">
             <LightboxButton
@@ -404,6 +509,7 @@ const SlidesProfessional: FunctionComponent<{
           "Data processing",
           "Data science",
           "Neural networks",
+          "NLP",
           "Visualization",
           "Constraint programming",
         ]}
