@@ -6,17 +6,17 @@ import TitlePage from "../TitlePage";
 import Page from "../Page";
 
 import imgOutputImage from "../../images/content/output-image.png";
-import vidOutputImage from "../../images/content/output-image.mp4";
+import vidOutputImage from "../../images/content/output-image.webm";
 import imgTransformation from "../../images/content/transformation.png";
 import vidTransformation from "../../images/content/transformation.webm";
 import imgParametrizationA from "../../images/content/parametrization-a.png";
-import vidParametrizationA from "../../images/content/parametrization-a.mp4";
+import vidParametrizationA from "../../images/content/parametrization-a.webm";
 import imgParametrizationB from "../../images/content/parametrization-b.png";
-import vidParametrizationB from "../../images/content/parametrization-b.mp4";
+import vidParametrizationB from "../../images/content/parametrization-b.webm";
 import imgParametrizationC from "../../images/content/parametrization-c.png";
-import vidParametrizationC from "../../images/content/parametrization-c.mp4";
+import vidParametrizationC from "../../images/content/parametrization-c.webm";
 import imgSimulation from "../../images/content/simulation.png";
-import vidSimulation from "../../images/content/simulation.mp4";
+import vidSimulation from "../../images/content/simulation.webm";
 import LightboxButton from "../LightboxButton";
 import { Slide, ThumbnailNode } from "../../types";
 
