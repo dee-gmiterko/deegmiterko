@@ -9,6 +9,8 @@ import imgOpenGlForest from "../../images/content/opengl-forest.png";
 import vidOpenGlForest from "../../images/content/opengl-forest.webm";
 import imgTrainwreck from "../../images/content/trainwreck.png";
 import vidTrainwreck from "../../images/content/trainwreck.webm";
+import imgNecroDungeonNpc from "../../images/content/necro-dungeon-npc.png";
+import vidNecroDungeonNpc from "../../images/content/necro-dungeon-npc.webm";
 import LightboxButton from "../LightboxButton";
 import { Slide, ThumbnailNode } from "../../types";
 
@@ -151,8 +153,16 @@ const SlidesGameExperiments: FunctionComponent<{
           "C#",
         ]}
       >
-        <div className="order-2" />
-        <div className="order-3 tight">
+        <div className="order-2 no-padding">
+          <video
+            poster={imgNecroDungeonNpc}
+            src={vidNecroDungeonNpc}
+            loop={true}
+            autoPlay={true}
+            muted={true}
+          />
+        </div>
+        <div className="order-3 no-padding">
           <Suspense fallback={null}>
             <NecroDungeonNpcDiagram />
           </Suspense>
@@ -160,10 +170,9 @@ const SlidesGameExperiments: FunctionComponent<{
         <div className="order-4">
           <h4>Adventurig party and monsters behaviors</h4>
           <p>
-            Each party shares one picture of the dungeon, built only from what
-            it has seen. From that picture it chooses a goal, turns the goal
-            into tasks, and hands the tasks to the members best placed to do
-            them.
+            Each party shares an idea of how the dungeon looks, from what they
+            collectively observed. Known state is then used by the group to change
+            goals, determine individual tasks, and distribute amongs them.
           </p>
         </div>
       </Page>

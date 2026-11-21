@@ -109,7 +109,8 @@ html {
   display: flex;
   justify-content: center;
   padding: 0 2rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 
   a {
     display: block;
@@ -117,11 +118,53 @@ html {
     transition: opacity 0.5s;
 
     .link-content {
-      padding: 1rem 2rem;
+      min-width: 13rem;
+      min-height: 3rem;
       text-align: center;
       background-image: linear-gradient(170deg, rgba(224, 198, 93, 1) 0%, rgba(118, 67, 142, 1) 47%, rgba(56, 23, 74, 1) 100%);
       background-attachment: fixed;
       color: white;
+
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: 2fr 3fr;
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .label {
+        grid-area: 1 / 1;
+        align-items: flex-end;
+
+        small {
+          font-size: 0.6em;
+          opacity: 0.5;
+        }
+      }
+
+      .title {
+        grid-area: 2 / 1;
+        align-items: flex-start;
+      }
+
+      .caret {
+        grid-area: 1 / 2 / 3 / 3;
+      }
+
+      &.no-label {
+        grid-template-rows: auto;
+
+        .title {
+          grid-area: 1 / 1;
+        }
+
+        .caret {
+          grid-area: 1 / 2;
+        }
+      }
     }
 
     &:hover {

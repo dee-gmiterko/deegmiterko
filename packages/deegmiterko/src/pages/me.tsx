@@ -33,7 +33,9 @@ const MePage = ({
       <Conversation messages={pre} />
       <SlidesMe thumbnails={thumbnails} />
       <Conversation messages={after} />
-      <NextPage to="/#contact">Contact me</NextPage>
+      <NextPage to="/#contact" label="">
+        Contact me
+      </NextPage>
     </BookPageLayout>
   );
 };
