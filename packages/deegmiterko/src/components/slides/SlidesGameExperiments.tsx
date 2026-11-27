@@ -426,8 +426,8 @@ const SlidesGameExperiments: FunctionComponent<{
       </Page>
 
       <Page
-        title="Emulation"
-        skills={["Platform porting", "Emscripten", "C++", "SDL", "Lua"]}
+        title="Platform porting"
+        skills={["Platform porting", "Emulation", "Emscripten", "C", "C++", "SDL", "Lua"]}
       >
         <p>
           Another area where game development reached a level of complexity
@@ -448,6 +448,11 @@ const SlidesGameExperiments: FunctionComponent<{
             <a href="https://emscripten.org/">Emscripten</a> and fixing issues
             that arose in the process. Most notably replacing some libraries
             with versions that are compatible with running in browser.
+          </p>
+          <p>
+            The most stubborn part was implementation of Lua, as the game levels are
+            scripted in it, it was strictly necessary to have it compiled for web
+            environment.
           </p>
           <p className="text-center">
             <LightboxButton
