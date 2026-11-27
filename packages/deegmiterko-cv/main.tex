@@ -59,6 +59,23 @@
 %----------------------------------------------------------------------------------
 \providecommand{\variant}{plain}
 
+\def\sitepage{}
+\newcommand{\siteurl}{https://deegmiterko.com/\ifx\sitepage\empty\else\sitepage/\fi}
+\makeatletter
+\def\applysitepage#1\sitepage#2\@nil{\ifx\relax#2\relax\else\variationfirstline\fi}
+\newread\variationfile
+\openin\variationfile=variations/\variant.tex
+\ifeof\variationfile\else
+  \read\variationfile to \variationfirstline
+  \expandafter\applysitepage\variationfirstline\sitepage\@nil
+\fi
+\closein\variationfile
+\renewcommand*{\httplink}[2][]{%
+  \ifthenelse{\equal{#2}{deegmiterko.com}}%
+    {\href{\siteurl}{deegmiterko.com}}%
+    {\ifthenelse{\equal{#1}{}}{\href{http://#2}{#2}}{\href{http://#2}{#1}}}}
+\makeatother
+
 \begin{document}
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
