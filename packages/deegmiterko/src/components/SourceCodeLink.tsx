@@ -3,23 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 const SourceCodeLink: FunctionComponent<
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children"> & {
-    disabled?: boolean;
-  }
-> = ({ disabled, ...props }) => {
-  const content = (
-    <>
-      <FontAwesomeIcon icon={faCode} /> Browse source code
-    </>
-  );
-
-  if (disabled) {
-    return <span className="btn-source disabled">{content}</span>;
-  }
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children">
+> = (props) => {
+  const title = `Repository: ${props.href?.replace(/\/$/, "").split("/").pop()}`;
 
   return (
-    <a className="btn-source" {...props}>
-      {content}
+    <a className="btn-source" title={title} {...props}>
+      <FontAwesomeIcon icon={faCode} /> Browse source code
     </a>
   );
 };

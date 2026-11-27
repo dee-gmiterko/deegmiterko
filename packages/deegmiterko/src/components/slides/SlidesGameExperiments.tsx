@@ -297,7 +297,6 @@ const SlidesGameExperiments: FunctionComponent<{
           <LightboxButton
             path="regrow.png"
             alt="Project Regrow screenshot"
-            objectFit="cover"
             buttonClassName="example-image"
           />
         </div>
@@ -357,9 +356,8 @@ const SlidesGameExperiments: FunctionComponent<{
           "Solidity",
           "TypeScript",
           "Firebase",
-          "Hardhat",
           "ethers",
-          "OpenZeppelin",
+          "ImmutableX",
           "Gatsby",
           "React",
         ]}

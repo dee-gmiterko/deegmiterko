@@ -445,21 +445,9 @@ const SlidesGenerativeDesign: FunctionComponent<{
           in game development. But I can imagine understanding individual
           concepts can help you create visuals of any kind.
         </p>
-        {/*
-      <div className="example-bar">
-        <div className="example-title">
-          <h4>Puzzles (<em title="To be defined"> TBD </em>)</h4>
-          <SourceCodeLink disabled />
-        </div>
         <p>
-          <Scramble text="A very secret description of an ongoing project that you read very successfully." />
+          But we can still experiment more, with differnet tools. Follow me to the next page...
         </p>
-        <p className="text-center">
-          <LightboxButton path="puzzles.jpg" alt="Generative design concept mixing" buttonClassName="w-50 opacity-50" />
-        </p>
-      </div>
-      <p className="text-center">...</p>
-      */}
         <div className="grow" />
       </Page>
 

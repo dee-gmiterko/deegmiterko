@@ -4,7 +4,7 @@ export const pageCounts = {
   'artful': 9,
   'generative-design': 14,
   'game-experiments': 12,
-  'tooling': 9,
+  'tooling': 8,
   'professional': 9,
   'me': 6,
 };

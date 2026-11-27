@@ -105,23 +105,35 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         ]}
       >
         <p>
-          A single control room that starts, builds and checks every part of
-          the product's local environment, so developers stop juggling
-          terminals. And it doesn't care whether you're a human or an AI
-          agent.
+          Imagine a single control room that starts, builds and checks every
+          part of the product's local environment, so developers stop juggling
+          terminals and exchange personal knowledge for an environment that knows
+          how to run each service for you (regardless of developer being a human
+          or an AI agent).
+        </p>
+        <p>
+          This allows for independent development withot having to share all knowledge
+          about the system, and any systemic changes are made into the environment itself.
         </p>
         <div className="grow" />
-        <div className="example">
-          <div className="col-6-6">
-            <div />
-            <div>
-              <ul>
-                <li>Whole environment starts in the right order</li>
-                <li>Changes trigger rebuilds automatically</li>
-                <li>One screen for every task</li>
-                <li>One-click restart and rerun</li>
-              </ul>
+        <div className="example example-half-image">
+          <LightboxButton
+            path="dev-server.png"
+            alt="Development server control room showing the local environment's services, builds and tasks"
+            buttonClassName="example-image"
+          />
+          <div className="example-content">
+            <div className="example-title">
+              <h4>Styloma dev server (2025)</h4>
             </div>
+            <ul>
+              <li>Whole environment starts in the right order</li>
+              <li>Changes trigger rebuilds automatically</li>
+              <li>One screen for every task</li>
+              <li>One-click restart and rerun</li>
+              <li>MCP access for agents</li>
+              <li>Remote access to agent sessions in progress</li>
+            </ul>
           </div>
         </div>
       </Page>
@@ -147,14 +159,11 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <div className="example-bar">
           <div className="example-title">
             <h4>Actionable formatter (2026)</h4>
-            <a
-              className="btn-source"
+            <SourceCodeLink
               href="https://github.com/dee-gmiterko/eslint-formatter-actionable"
               target="_blank"
               rel="noreferrer"
-            >
-              eslint-formatter-actionable&nbsp;▷
-            </a>
+            />
           </div>
           <p>
             Originally built for agentic work, it allows guided action instead
@@ -174,14 +183,11 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <div className="example">
           <div className="example-title">
             <h4>Defensive coding plugin (2026)</h4>
-            <a
-              className="btn-source"
+            <SourceCodeLink
               href="https://github.com/dee-gmiterko/eslint-plugin-defensive-coding"
               target="_blank"
               rel="noreferrer"
-            >
-              eslint-plugin-defensive-coding&nbsp;▷
-            </a>
+            />
           </div>
           <p>
             Plugin detects defensive coding anti-patterns and helps enforce
@@ -223,14 +229,11 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <div className="example-bar">
           <div className="example-title">
             <h4>Production lockfiles (2026)</h4>
-            <a
-              className="btn-source"
+            <SourceCodeLink
               href="https://github.com/dee-gmiterko/yarn-plugin-prod-lockfiles"
               target="_blank"
               rel="noreferrer"
-            >
-              yarn-plugin-prod-lockfiles&nbsp;▷
-            </a>
+            />
           </div>
           <p>
             Yarn plugin that generates production-only docker.yarn.lock
@@ -251,14 +254,11 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <div className="example">
           <div className="example-title">
             <h4>Tidy cache (2026)</h4>
-            <a
-              className="btn-source"
+            <SourceCodeLink
               href="https://github.com/dee-gmiterko/clang-tidy-cache"
               target="_blank"
               rel="noreferrer"
-            >
-              clang-tidy-cache&nbsp;▷
-            </a>
+            />
           </div>
           <p>
             A drop-in clang-tidy wrapper that caches results, so unchanged
@@ -306,7 +306,7 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
       </Page>
 
       <Page
-        title="Personal streamer platform"
+        title="Custom platforms"
         skills={[
           "ProdX",
           "OBS",
@@ -320,35 +320,48 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         ]}
       >
         <p>
-          A personal live-streaming studio with animated avatar and custom
-          overlays.
+          When no existing product does exactly what I need it is often not too terrible to
+          put one together from the pieces that do fit.
         </p>
         <div className="grow" />
         <div className="example">
+          <div className="example-title">
+            <h4>Personal streaming platform (2026)</h4>
+          </div>
+          <p>
+            A personal live-streaming studio with animated avatar and custom overlays.
+          </p>
+          <p className="text-center">
+            <LightboxButton
+              path="stream-overlay.png"
+              alt="Extended OBS stream platform with animated avatar, layout and control panels"
+              buttonClassName="w-80"
+            />
+          </p>
           <ul>
             <li>
               <span className="subheading">
                 Custom stream layout tooling
-              </span>{" "}
-              - hand-built on-screen layouts: scenes, panels, chat, schedule
-              and countdown
+              </span>{" - "}
+              hand-built on-screen layouts: scenes, panels, chat, schedule and countdown
             </li>
             <li>
               <span className="subheading">
                 VRM renderer, body detection, face shape recognition
-              </span>{" "}
-              - a camera tracks head, face and hands; the avatar mirrors
-              expressions and movement live
+              </span>{" - "}
+              while camera tracks head, face shapes and hands the avatar mirrors
+              each expression on the screen
             </li>
             <li>
-              <span className="subheading">OBS integrations</span> - the
-              overlay plugs into OBS and reacts to microphone loudness
+              <span className="subheading">
+                OBS integrations
+              </span>
             </li>
           </ul>
         </div>
       </Page>
 
-      <Page
+      {/* <Page
         title="Countless file converters"
         skills={["DataX", "Tooling"]}
       >
@@ -367,7 +380,7 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
             <li />
           </ul>
         </div>
-      </Page>
+      </Page> */}
 
       <ReferencesPage references={["linkedin", "github"]} />
     </Book>

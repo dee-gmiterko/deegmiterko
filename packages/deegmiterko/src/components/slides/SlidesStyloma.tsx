@@ -6,6 +6,7 @@ import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
 import LightboxButton from "../LightboxButton";
+import SourceCodeLink from "../SourceCodeLink";
 import { Slide, ThumbnailNode } from "../../types";
 import StylomaTimeline from "../styloma/StylomaTimeline";
 
@@ -265,26 +266,20 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
           <li>
             Gmiterko, D., <em>“Framing for actionable lint reports”</em> at
             GitHub - Built for developers, March 2026{" "}
-            <a
-              className="btn-source"
+            <SourceCodeLink
               href="https://github.com/dee-gmiterko/eslint-formatter-actionable"
               target="_blank"
               rel="noreferrer"
-            >
-              eslint-formatter-actionable ▷
-            </a>
+            />
           </li>
           <li>
             Gmiterko, D., <em>“On ensurance of coding patterns”</em> at GitHub
             - Where the world builds software, March 2026{" "}
-            <a
-              className="btn-source"
+            <SourceCodeLink
               href="https://github.com/dee-gmiterko/eslint-plugin-defensive-coding"
               target="_blank"
               rel="noreferrer"
-            >
-              eslint-plugin-defensive-coding ▷
-            </a>
+            />
           </li>
           <li>
             Gmiterko, D.,{" "}
@@ -292,14 +287,11 @@ const SlidesStyloma: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
               “Dependency subgraphs and their application in image building”
             </em>{" "}
             at GitHub - Build software better, together, Jun 2026{" "}
-            <a
-              className="btn-source"
+            <SourceCodeLink
               href="https://github.com/dee-gmiterko/yarn-plugin-prod-lockfiles"
               target="_blank"
               rel="noreferrer"
-            >
-              yarn-plugin-prod-lockfiles ▷
-            </a>
+            />
           </li>
         </ol>
       </Page>

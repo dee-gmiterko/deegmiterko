@@ -16,7 +16,7 @@ export const navLinks: { id: Slide; title: string }[] = [
   { id: Slide.Artful, title: "Art" },
   { id: Slide.GenerativeDesign, title: "Generative design" },
   { id: Slide.GameExperiments, title: "Games" },
-  // { id: Slide.Tooling, title: "Tooling" },
+  { id: Slide.Tooling, title: "Tooling" },
   { id: Slide.Professional, title: "Professional" },
   { id: Slide.Me, title: "Me" },
 ];
