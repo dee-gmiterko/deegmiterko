@@ -1,4 +1,6 @@
 import React, { FunctionComponent, lazy, Suspense } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 import Book from "../Book";
 import Page from "../Page";
@@ -75,7 +77,7 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
               target="_blank"
               rel="noreferrer"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -300,7 +302,7 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
               target="_blank"
               rel="noreferrer"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>

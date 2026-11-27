@@ -1,4 +1,6 @@
 import React, { FunctionComponent } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 import Book from "../Book";
 import ReferencesPage from "../ReferencesPage";
@@ -96,7 +98,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/processing-sketches/tree/master/sketch_161106x"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -173,7 +175,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/py-2050/"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -218,7 +220,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/processing-sketches/tree/master/ponyo"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -281,7 +283,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/processing-sketches/tree/master/interactive-fern"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -326,7 +328,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/processing-sketches/tree/master/sketch_161006d"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -369,7 +371,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/2d-color-picker/"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -408,7 +410,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/cacheviz"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -483,7 +485,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
       <div className="example-bar">
         <div className="example-title">
           <h4>Puzzles (<em title="To be defined"> TBD </em>)</h4>
-          <span className="btn-source disabled">&lt;/&gt; Browse source code</span>
+          <span className="btn-source disabled"><FontAwesomeIcon icon={faCode} /> Browse source code</span>
         </div>
         <p>
           <Scramble text="A very secret description of an ongoing project that you read very successfully." />
