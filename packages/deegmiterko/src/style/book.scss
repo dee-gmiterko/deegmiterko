@@ -395,6 +395,27 @@ body {
       &.disabled {
         filter: grayscale(0.5);
       }
+
+      &.in-development {
+        background-color: #1F7A3A;
+        background-image: linear-gradient(90deg, #A8E6B4 0%, #1F7A3A 100%);
+        cursor: default;
+
+        &:hover {
+          background-position-x: 0;
+        }
+      }
+    }
+
+    .title-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .btn-source {
+        margin: 0 0 0 16px;
+      }
     }
 
     .two-columns {
@@ -413,6 +434,30 @@ body {
       justify-content: space-between;
     }
     
+    .example-half-image {
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .example-content {
+        padding: 40px 40px 100px 100px;
+      }
+
+      .example-image {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        border: 0;
+
+        .gatsby-image-wrapper {
+          position: absolute;
+          inset: 0;
+          max-width: none;
+          margin: 0;
+        }
+      }
+    }
+
     .example-bar {
       background: white;
       margin: 0px -100px 20px -100px;

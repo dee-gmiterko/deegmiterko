@@ -1,4 +1,6 @@
 import React, { FunctionComponent, lazy, Suspense } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode, faWrench } from "@fortawesome/free-solid-svg-icons";
 
 import Book from "../Book";
 import Page from "../Page";
@@ -55,7 +57,7 @@ const SlidesGameExperiments: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/gol-hash"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -81,6 +83,14 @@ const SlidesGameExperiments: FunctionComponent<{
 
       <Page
         title="Necro Dungeon"
+        titleNode={
+          <div className="title-row">
+            <h3>Necro Dungeon</h3>
+            <span className="btn-source in-development">
+              <FontAwesomeIcon icon={faWrench} /> In development
+            </span>
+          </div>
+        }
         skills={[
           "Game dev",
           "Godot",
@@ -110,7 +120,7 @@ const SlidesGameExperiments: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/isolit"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -178,57 +188,6 @@ const SlidesGameExperiments: FunctionComponent<{
       </Page>
 
       <Page
-        title="Idle progress"
-        skills={[
-          "Game design",
-          "Game economy",
-          "Simulation",
-          "Simplex solver",
-          "Godot",
-          "C++",
-          "CMake",
-          "Game Backend",
-          "TypeScript",
-          "Node.js",
-          "Express",
-          "PostgreSQL",
-          "Testing",
-        ]}
-      >
-        <p>
-          A game world keeps moving when nobody is watching: engines drive,
-          stock runs out. Most games fake it with a background loop or a flat
-          "you were away" bonus.
-        </p>
-        <p>
-          Project Regrow is an idle game about vehicles running on resources
-          you wire up. It works out what happened while you were away from
-          only what you decided and how long it has been.
-        </p>
-        <div className="grow" />
-        <div className="example">
-          <div className="example-title">
-            <h4>Project Regrow (2026)</h4>
-          </div>
-          <div className="col-7-5">
-            <div>
-              <Suspense fallback={null}>
-                <RegrowIdleDiagram />
-              </Suspense>
-            </div>
-            <div>
-              <p>
-                The design had to solve a few problems at once. Every player
-                and every device should reach the same result. Nothing should
-                need to run while a player is away. And resources are scarce
-                enough that every connection you wire matters.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Page>
-
-      <Page
         title="Engine or not to engine?"
         level={2}
         skills={["3D graphics", "C++", "OpenGL", "GLSL", "GLEW", "freeglut"]}
@@ -246,7 +205,7 @@ const SlidesGameExperiments: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/opengl-forest"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -283,7 +242,7 @@ const SlidesGameExperiments: FunctionComponent<{
               className="btn-source"
               href="https://github.com/dee-gmiterko/trainwreck"
             >
-              &lt;/&gt; Browse source code
+              <FontAwesomeIcon icon={faCode} /> Browse source code
             </a>
           </div>
           <p>
@@ -306,6 +265,65 @@ const SlidesGameExperiments: FunctionComponent<{
               Try it out for yourself
             </a>
           </p>
+        </div>
+      </Page>
+
+      <Page
+        title="Idle progress"
+        skills={[
+          "Game design",
+          "Game economy",
+          "Simulation",
+          "Simplex solver",
+          "Godot",
+          "C++",
+          "CMake",
+          "Game Backend",
+          "TypeScript",
+          "Node.js",
+          "Express",
+          "PostgreSQL",
+          "Testing",
+        ]}
+      >
+        <p>
+          A game world keeps moving when nobody is watching: engines drive,
+          stock runs out. Most games fake it with a background loop or a flat
+          "you were away" bonus.
+        </p>
+        <p>
+          The design had to solve a few problems at once. Every player and
+          every device should reach the same result. Nothing should need
+          to run while a player is away. And resources are scarce enough
+          that every connection you wire matters.
+        </p>
+        <Suspense fallback={null}>
+          <RegrowIdleDiagram />
+        </Suspense>
+        <p>
+          The solver system, in theory, allows to view the game state at any point in time.
+        </p>
+        <div className="grow" />
+        <div className="example example-half-image">
+          <div className="example-content">
+            <div className="example-title">
+              <h4>Project Regrow (2026)</h4>
+              <span className="btn-source in-development">
+                <FontAwesomeIcon icon={faWrench} /> In development
+              </span>
+            </div>
+            <p>
+              Project Regrow is an offline-first idle game about building vehicles
+              and running with them over wast distances without running out of resources.
+              Countdowns to the end is an essential part of the game design.
+            </p>
+          </div>
+          <LightboxButton
+            path="regrow.png"
+            alt="Project Regrow screenshot"
+            objectFit="cover"
+            buttonClassName="example-image"
+          />
         </div>
       </Page>
 
@@ -434,6 +452,50 @@ const SlidesGameExperiments: FunctionComponent<{
       </Page>
 
       <Page
+        title="Emulation"
+        skills={["Platform porting", "Emscripten", "C++", "SDL", "Lua"]}
+      >
+        <p>
+          Another area where game development reached a level of complexity
+          preceding or not at all present in other fields is emulation and
+          platform porting.
+        </p>
+        <div className="example">
+          <div className="example-title">
+            <h4>
+              Fish Fillets <span className="subheading">online</span> (2018)
+            </h4>
+            <a
+              className="btn-source"
+              href="https://github.com/dee-gmiterko/fillets-online"
+            >
+              <FontAwesomeIcon icon={faCode} /> Browse source code
+            </a>
+          </div>
+          <p>
+            I made a web port of this popular puzzle game, making it again a
+            bit more accessible for the current age. Transpiling its source
+            code using a tool called{" "}
+            <a href="https://emscripten.org/">Emscripten</a> and fixing issues
+            that arose in the process. Most notably replacing some libraries
+            with versions that are compatible with running in browser.
+          </p>
+          <p className="text-center">
+            <LightboxButton
+              path="fillets-online.png"
+              alt="Fish Fillets online"
+              buttonClassName="w-50"
+            />
+          </p>
+          <p className="text-center">
+            <a className="btn-source" href="https://ienze.me/fillets-online">
+              Play now
+            </a>
+          </p>
+        </div>
+      </Page>
+
+      <Page
         title="Supporting tech"
         level={2}
         skills={[
@@ -477,52 +539,8 @@ const SlidesGameExperiments: FunctionComponent<{
           </div>
         </div>
       </Page>
-
-      <Page
-        title="Emulation"
-        skills={["Platform porting", "Emscripten", "C++", "SDL", "Lua"]}
-      >
-        <p>
-          Another area where game development reached a level of complexity
-          preceding or not at all present in other fields is emulation and
-          platform porting.
-        </p>
-        <div className="example">
-          <div className="example-title">
-            <h4>
-              Fish Fillets <span className="subheading">online</span> (2018)
-            </h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/fillets-online"
-            >
-              &lt;/&gt; Browse source code
-            </a>
-          </div>
-          <p>
-            I made a web port of this popular puzzle game, making it again a
-            bit more accessible for the current age. Transpiling its source
-            code using a tool called{" "}
-            <a href="https://emscripten.org/">Emscripten</a> and fixing issues
-            that arose in the process. Most notably replacing some libraries
-            with versions that are compatible with running in browser.
-          </p>
-          <p className="text-center">
-            <LightboxButton
-              path="fillets-online.png"
-              alt="Fish Fillets online"
-              buttonClassName="w-50"
-            />
-          </p>
-          <p className="text-center">
-            <a className="btn-source" href="https://ienze.me/fillets-online">
-              Play now
-            </a>
-          </p>
-        </div>
-      </Page>
-
-      <Page title="Pushing the limits" level={2}>
+      
+      {/* <Page title="Pushing the limits" level={2}>
         <p>
           No matter whether it comes to packing the most into limited space on
           cartridge, pioneering new 3D rendering tricks, or virtual reality.
@@ -536,7 +554,7 @@ const SlidesGameExperiments: FunctionComponent<{
         </p>
         <div className="grow" />
         <p>See you there.</p>
-      </Page>
+      </Page> */}
 
       <ReferencesPage references={["ienze.me", "github"]} />
     </Book>
