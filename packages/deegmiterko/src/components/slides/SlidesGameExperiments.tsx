@@ -1,9 +1,9 @@
 import React, { FunctionComponent, lazy, Suspense } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faWrench } from "@fortawesome/free-solid-svg-icons";
 
 import Book from "../Book";
 import Page from "../Page";
+import InDevelopment from "../InDevelopment";
+import SourceCodeLink from "../SourceCodeLink";
 import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 
@@ -53,12 +53,7 @@ const SlidesGameExperiments: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>GOL-hash (2016)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/gol-hash"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/gol-hash" />
           </div>
           <p>
             Based on The Game of Life, I've created a simple visual-hash
@@ -86,9 +81,7 @@ const SlidesGameExperiments: FunctionComponent<{
         titleNode={
           <div className="title-row">
             <h3>Necro Dungeon</h3>
-            <span className="btn-source in-development">
-              <FontAwesomeIcon icon={faWrench} /> In development
-            </span>
+            <InDevelopment />
           </div>
         }
         skills={[
@@ -116,12 +109,7 @@ const SlidesGameExperiments: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>IsoLit (2026)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/isolit"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/isolit" />
           </div>
           <p>
             Isometric 2D lighting for Godot where lit surfaces live in
@@ -201,12 +189,7 @@ const SlidesGameExperiments: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>OpenGL forest (2017)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/opengl-forest"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/opengl-forest" />
           </div>
           <p>
             A low level implementation of a 3D scene using OpenGL you can walk
@@ -238,12 +221,7 @@ const SlidesGameExperiments: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>Trainwreck (2017, 2022)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/trainwreck"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/trainwreck" />
           </div>
           <p>
             A simple game that I've created using{" "}
@@ -300,22 +278,20 @@ const SlidesGameExperiments: FunctionComponent<{
         <Suspense fallback={null}>
           <RegrowIdleDiagram />
         </Suspense>
-        <p>
-          The solver system, in theory, allows to view the game state at any point in time.
-        </p>
         <div className="grow" />
         <div className="example example-half-image">
           <div className="example-content">
             <div className="example-title">
               <h4>Project Regrow (2026)</h4>
-              <span className="btn-source in-development">
-                <FontAwesomeIcon icon={faWrench} /> In development
-              </span>
+              <InDevelopment />
             </div>
             <p>
               Project Regrow is an offline-first idle game about building vehicles
               and running with them over wast distances without running out of resources.
               Countdowns to the end is an essential part of the game design.
+            </p>
+            <p>
+              Can you get there or will you have to abort and return to safety of an outpost?
             </p>
           </div>
           <LightboxButton
@@ -465,12 +441,7 @@ const SlidesGameExperiments: FunctionComponent<{
             <h4>
               Fish Fillets <span className="subheading">online</span> (2018)
             </h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/fillets-online"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/fillets-online" />
           </div>
           <p>
             I made a web port of this popular puzzle game, making it again a
@@ -495,7 +466,7 @@ const SlidesGameExperiments: FunctionComponent<{
         </div>
       </Page>
 
-      <Page
+      {/* <Page
         title="Supporting tech"
         level={2}
         skills={[
@@ -520,6 +491,7 @@ const SlidesGameExperiments: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>Turn-based multiplayer (2026)</h4>
+            <InDevelopment />
           </div>
           <div className="col-7-5">
             <div>
@@ -538,7 +510,7 @@ const SlidesGameExperiments: FunctionComponent<{
             </div>
           </div>
         </div>
-      </Page>
+      </Page> */}
       
       {/* <Page title="Pushing the limits" level={2}>
         <p>

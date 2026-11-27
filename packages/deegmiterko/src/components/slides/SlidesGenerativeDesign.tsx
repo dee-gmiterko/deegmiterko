@@ -1,11 +1,10 @@
 import React, { FunctionComponent } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 import Book from "../Book";
 import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 import Page from "../Page";
+import SourceCodeLink from "../SourceCodeLink";
 
 import imgOutputImage from "../../images/content/output-image.png";
 import vidOutputImage from "../../images/content/output-image.webm";
@@ -94,12 +93,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>Block animation (2016)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/processing-sketches/tree/master/sketch_161106x"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/processing-sketches/tree/master/sketch_161106x" />
           </div>
           <p>
             To show this output format I have chosen a very simple animation
@@ -171,12 +165,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>Infinite procedural worlds (2015)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/py-2050/"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/py-2050/" />
           </div>
           <p>
             The next example is in an old procedurally generated world of
@@ -216,12 +205,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>“Ponyo” animation (2016)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/processing-sketches/tree/master/ponyo"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/processing-sketches/tree/master/ponyo" />
           </div>
           <p>
             If you watch this example closely you can notice that it's only
@@ -279,12 +263,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>Fern profile picture (2022)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/processing-sketches/tree/master/interactive-fern"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/processing-sketches/tree/master/interactive-fern" />
           </div>
           <p>
             I decided to demonstrate this concept on this simple “profile
@@ -324,12 +303,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>A tri-tree (2016)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/processing-sketches/tree/master/sketch_161006d"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/processing-sketches/tree/master/sketch_161006d" />
           </div>
           <p>
             In this example I am using a stream of random numbers to place new
@@ -367,12 +341,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>Album mood (2018)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/2d-color-picker/"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/2d-color-picker/" />
           </div>
           <p>
             To demonstrate this concept I chose a project that turns a series
@@ -406,12 +375,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
         <div className="example">
           <div className="example-title">
             <h4>Geocache density (2019)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/cacheviz"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/cacheviz" />
           </div>
           <p>
             For example here I used a heatmap view, and various plots to
@@ -485,7 +449,7 @@ const SlidesGenerativeDesign: FunctionComponent<{
       <div className="example-bar">
         <div className="example-title">
           <h4>Puzzles (<em title="To be defined"> TBD </em>)</h4>
-          <span className="btn-source disabled"><FontAwesomeIcon icon={faCode} /> Browse source code</span>
+          <SourceCodeLink disabled />
         </div>
         <p>
           <Scramble text="A very secret description of an ongoing project that you read very successfully." />

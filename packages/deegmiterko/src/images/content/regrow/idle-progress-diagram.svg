@@ -1,25 +1,27 @@
 <?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="100" viewBox="0 0 760 100">
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="100" viewBox="0 0 840 100">
   <title>Idle progress</title>
   <desc>Player decisions directly affect rates of resource gain or loose, nothing else, solver computes times of "arrival" not ticked updates.</desc>
-  <g font-family="Comfortaa, Arial, sans-serif" fill="currentColor">
-    <rect x="0" y="25" width="160" height="50" rx="6" class="box"/>
-    <rect x="200" y="25" width="160" height="50" rx="6" class="box"/>
-    <rect x="400" y="25" width="160" height="50" rx="6" class="box" stroke-dasharray="6 4"/>
-    <rect x="600" y="25" width="160" height="50" rx="6" class="box"/>
+  <g font-family="Comfortaa, Arial, sans-serif" fill="currentColor" transform="translate(20 0)">
+    <rect x="0" y="25" width="170" height="50" rx="6" class="box"/>
+    <rect x="210" y="25" width="170" height="50" rx="6" class="box"/>
+    <rect x="420" y="25" width="170" height="50" rx="6" class="box" stroke-dasharray="6 4"/>
+    <rect x="630" y="25" width="170" height="50" rx="6" class="box"/>
 
-    <path d="M160 50H200" class="arrow"/>
-    <path d="M360 50H400" class="arrow"/>
-    <path d="M560 50H600" class="arrow"/>
-    <path d="M150 44L160 50L150 56Z" class="arrowhead"/>
-    <path d="M310 44L320 50L310 56Z" class="arrowhead"/>
-    <path d="M470 44L480 50L470 56Z" class="arrowhead"/>
+    <path d="M170 50H210" class="arrow"/>
+    <path d="M380 50H420" class="arrow"/>
+    <path d="M590 50H630" class="arrow"/>
+    <path d="M200 44L210 50L200 56Z" class="arrowhead"/>
+    <path d="M410 44L420 50L410 56Z" class="arrowhead"/>
+    <path d="M620 44L630 50L620 56Z" class="arrowhead"/>
+    <path d="M800 50H820V90H-20V50H0" class="arrow" stroke-dasharray="6 4"/>
+    <path d="M-10 44L0 50L-10 56Z" class="arrowhead"/>
 
     <g font-size="20" text-anchor="middle">
-      <text x="80" y="57">Player action</text>
-      <text x="280" y="57">Solve rates</text>
-      <text x="480" y="57">Reactions</text>
-      <text x="680" y="57">Countdowns</text>
+      <text x="85" y="57">Player action</text>
+      <text x="295" y="57">Solve rates</text>
+      <text x="505" y="57">Game reactions</text>
+      <text x="715" y="57">Countdowns</text>
     </g>
   </g>
 </svg>
