@@ -1,9 +1,8 @@
 import React, { FunctionComponent, lazy, Suspense } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 import Book from "../Book";
 import Page from "../Page";
+import SourceCodeLink from "../SourceCodeLink";
 import ReferencesPage from "../ReferencesPage";
 import TitlePage from "../TitlePage";
 import LightboxButton from "../LightboxButton";
@@ -71,14 +70,7 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <div className="example">
           <div className="example-title">
             <h4>Gepard (2026)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/gepard"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/gepard" target="_blank" rel="noreferrer" />
           </div>
           <p>
             A desktop app for reviewing large pull requests in a full local
@@ -296,14 +288,7 @@ const SlidesTooling: FunctionComponent<{ thumbnails: ThumbnailNode[] }> = ({
         <div className="example">
           <div className="example-title">
             <h4>Tile builder (2017)</h4>
-            <a
-              className="btn-source"
-              href="https://github.com/dee-gmiterko/dee-garden-asset-pipeline"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon icon={faCode} /> Browse source code
-            </a>
+            <SourceCodeLink href="https://github.com/dee-gmiterko/dee-garden-asset-pipeline" target="_blank" rel="noreferrer" />
           </div>
           <p>
             This tool takes two inputs: a color mask and a height map. Then
